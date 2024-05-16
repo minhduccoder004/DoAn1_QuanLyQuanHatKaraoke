@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DoAn1_QuanLyQuanHatKaraokeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblDichVu">
+          <Key>
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaDichVu" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenDichVu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GiaDichVu" Type="float" />
+          <Property Name="MaLoaiDichVu" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tblGoiDichVu">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+            <PropertyRef Name="MaHoaDonBan" />
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaPhongDat" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaHoaDonBan" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaDichVu" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGoiMatHang">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+            <PropertyRef Name="MaHoaDonBan" />
+            <PropertyRef Name="MaMatHang" />
+          </Key>
+          <Property Name="MaPhongDat" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaHoaDonBan" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaMatHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="SoLuong" Type="int" />
+        </EntityType>
+        <EntityType Name="tblHoaDonBan">
+          <Key>
+            <PropertyRef Name="MaHoaDonBan" />
+          </Key>
+          <Property Name="MaHoaDonBan" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="ThoiGianTaoHoaDon" Type="datetime" />
+          <Property Name="ThanhTien" Type="float" />
+        </EntityType>
+        <EntityType Name="tblKhachHang">
+          <Key>
+            <PropertyRef Name="MaKhachHang" />
+          </Key>
+          <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SoDienThoai" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblLoaiDichVu">
+          <Key>
+            <PropertyRef Name="MaLoaiDichVu" />
+          </Key>
+          <Property Name="MaLoaiDichVu" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenLoaiDichVu" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblLoaiHang">
+          <Key>
+            <PropertyRef Name="MaLoaiHang" />
+          </Key>
+          <Property Name="MaLoaiHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenLoaiHang" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblLoaiPhong">
+          <Key>
+            <PropertyRef Name="MaLoaiPhong" />
+          </Key>
+          <Property Name="MaLoaiPhong" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenLoaiPhong" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DonGiaPhong" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMatHang">
+          <Key>
+            <PropertyRef Name="MaMatHang" />
+          </Key>
+          <Property Name="MaMatHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenMatHang" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonGiaMatHang" Type="float" Nullable="false" />
+          <Property Name="MaLoaiHang" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tblNguoiDung">
+          <Key>
+            <PropertyRef Name="TenTaiKhoan" />
+          </Key>
+          <Property Name="TenTaiKhoan" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="MatKhau" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="SoDienThoai" Type="char" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="QuyenHan" Type="int" />
+        </EntityType>
+        <EntityType Name="tblNhanVien">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenNhanVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="SoDienThoai" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileAnh" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tblPhongDat">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+          </Key>
+          <Property Name="MaPhongDat" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaPhong" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="ThoiGianPhongDat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblPhongHat">
+          <Key>
+            <PropertyRef Name="MaPhongHat" />
+          </Key>
+          <Property Name="MaPhongHat" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TenPhongHat" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TrangThaiPhong" Type="int" />
+          <Property Name="MaLoaiPhong" Type="char" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__tblDichVu__MaLoa__534D60F1">
+          <End Role="tblLoaiDichVu" Type="Self.tblLoaiDichVu" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblDichVu" Type="Self.tblDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiDichVu">
+              <PropertyRef Name="MaLoaiDichVu" />
+            </Principal>
+            <Dependent Role="tblDichVu">
+              <PropertyRef Name="MaLoaiDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaDic__6754599E">
+          <End Role="tblDichVu" Type="Self.tblDichVu" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaHoa__66603565">
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHoaDonBan">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaPho__656C112C">
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongDat">
+              <PropertyRef Name="MaPhongDat" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaPhongDat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaHoa__619B8048">
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHoaDonBan">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaMat__628FA481">
+          <End Role="tblMatHang" Type="Self.tblMatHang" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMatHang">
+              <PropertyRef Name="MaMatHang" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaMatHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaPho__60A75C0F">
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongDat">
+              <PropertyRef Name="MaPhongDat" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaPhongDat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblHoaDon__MaKha__5CD6CB2B">
+          <End Role="tblNhanVien" Type="Self.tblNhanVien" Multiplicity="1" />
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="tblHoaDonBan">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblHoaDon__MaNha__5DCAEF64">
+          <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1" />
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblKhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="tblHoaDonBan">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblMatHan__MaLoa__4CA06362">
+          <End Role="tblLoaiHang" Type="Self.tblLoaiHang" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblMatHang" Type="Self.tblMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiHang">
+              <PropertyRef Name="MaLoaiHang" />
+            </Principal>
+            <Dependent Role="tblMatHang">
+              <PropertyRef Name="MaLoaiHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaKha__59063A47">
+          <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblKhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaNha__5812160E">
+          <End Role="tblNhanVien" Type="Self.tblNhanVien" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaPho__571DF1D5">
+          <End Role="tblPhongHat" Type="Self.tblPhongHat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongHat">
+              <PropertyRef Name="MaPhongHat" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongH__MaLoa__45F365D3">
+          <End Role="tblLoaiPhong" Type="Self.tblLoaiPhong" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongHat" Type="Self.tblPhongHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiPhong">
+              <PropertyRef Name="MaLoaiPhong" />
+            </Principal>
+            <Dependent Role="tblPhongHat">
+              <PropertyRef Name="MaLoaiPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DoAn1_QuanLyQuanHatKaraokeModelStoreContainer">
+          <EntitySet Name="tblDichVu" EntityType="Self.tblDichVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGoiDichVu" EntityType="Self.tblGoiDichVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGoiMatHang" EntityType="Self.tblGoiMatHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHoaDonBan" EntityType="Self.tblHoaDonBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblKhachHang" EntityType="Self.tblKhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLoaiDichVu" EntityType="Self.tblLoaiDichVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLoaiHang" EntityType="Self.tblLoaiHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLoaiPhong" EntityType="Self.tblLoaiPhong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMatHang" EntityType="Self.tblMatHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNguoiDung" EntityType="Self.tblNguoiDung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNhanVien" EntityType="Self.tblNhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPhongDat" EntityType="Self.tblPhongDat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPhongHat" EntityType="Self.tblPhongHat" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblDichVu__MaLoa__534D60F1" Association="Self.FK__tblDichVu__MaLoa__534D60F1">
+            <End Role="tblLoaiDichVu" EntitySet="tblLoaiDichVu" />
+            <End Role="tblDichVu" EntitySet="tblDichVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaDic__6754599E" Association="Self.FK__tblGoiDic__MaDic__6754599E">
+            <End Role="tblDichVu" EntitySet="tblDichVu" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaHoa__66603565" Association="Self.FK__tblGoiDic__MaHoa__66603565">
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaPho__656C112C" Association="Self.FK__tblGoiDic__MaPho__656C112C">
+            <End Role="tblPhongDat" EntitySet="tblPhongDat" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaHoa__619B8048" Association="Self.FK__tblGoiMat__MaHoa__619B8048">
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaMat__628FA481" Association="Self.FK__tblGoiMat__MaMat__628FA481">
+            <End Role="tblMatHang" EntitySet="tblMatHang" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaPho__60A75C0F" Association="Self.FK__tblGoiMat__MaPho__60A75C0F">
+            <End Role="tblPhongDat" EntitySet="tblPhongDat" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblHoaDon__MaKha__5CD6CB2B" Association="Self.FK__tblHoaDon__MaKha__5CD6CB2B">
+            <End Role="tblNhanVien" EntitySet="tblNhanVien" />
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblHoaDon__MaNha__5DCAEF64" Association="Self.FK__tblHoaDon__MaNha__5DCAEF64">
+            <End Role="tblKhachHang" EntitySet="tblKhachHang" />
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblMatHan__MaLoa__4CA06362" Association="Self.FK__tblMatHan__MaLoa__4CA06362">
+            <End Role="tblLoaiHang" EntitySet="tblLoaiHang" />
+            <End Role="tblMatHang" EntitySet="tblMatHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaKha__59063A47" Association="Self.FK__tblPhongD__MaKha__59063A47">
+            <End Role="tblKhachHang" EntitySet="tblKhachHang" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaNha__5812160E" Association="Self.FK__tblPhongD__MaNha__5812160E">
+            <End Role="tblNhanVien" EntitySet="tblNhanVien" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaPho__571DF1D5" Association="Self.FK__tblPhongD__MaPho__571DF1D5">
+            <End Role="tblPhongHat" EntitySet="tblPhongHat" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongH__MaLoa__45F365D3" Association="Self.FK__tblPhongH__MaLoa__45F365D3">
+            <End Role="tblLoaiPhong" EntitySet="tblLoaiPhong" />
+            <End Role="tblPhongHat" EntitySet="tblPhongHat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DoAn1_QuanLyQuanHatKaraokeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblDichVu">
+          <Key>
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaDichVu" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenDichVu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GiaDichVu" Type="Double" />
+          <Property Name="MaLoaiDichVu" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblLoaiDichVu" Relationship="Self.FK__tblDichVu__MaLoa__534D60F1" FromRole="tblDichVu" ToRole="tblLoaiDichVu" />
+          <NavigationProperty Name="tblGoiDichVus" Relationship="Self.FK__tblGoiDic__MaDic__6754599E" FromRole="tblDichVu" ToRole="tblGoiDichVu" />
+        </EntityType>
+        <EntityType Name="tblGoiDichVu">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+            <PropertyRef Name="MaHoaDonBan" />
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaPhongDat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaHoaDonBan" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaDichVu" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblDichVu" Relationship="Self.FK__tblGoiDic__MaDic__6754599E" FromRole="tblGoiDichVu" ToRole="tblDichVu" />
+          <NavigationProperty Name="tblHoaDonBan" Relationship="Self.FK__tblGoiDic__MaHoa__66603565" FromRole="tblGoiDichVu" ToRole="tblHoaDonBan" />
+          <NavigationProperty Name="tblPhongDat" Relationship="Self.FK__tblGoiDic__MaPho__656C112C" FromRole="tblGoiDichVu" ToRole="tblPhongDat" />
+        </EntityType>
+        <EntityType Name="tblGoiMatHang">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+            <PropertyRef Name="MaHoaDonBan" />
+            <PropertyRef Name="MaMatHang" />
+          </Key>
+          <Property Name="MaPhongDat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaHoaDonBan" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaMatHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <NavigationProperty Name="tblHoaDonBan" Relationship="Self.FK__tblGoiMat__MaHoa__619B8048" FromRole="tblGoiMatHang" ToRole="tblHoaDonBan" />
+          <NavigationProperty Name="tblMatHang" Relationship="Self.FK__tblGoiMat__MaMat__628FA481" FromRole="tblGoiMatHang" ToRole="tblMatHang" />
+          <NavigationProperty Name="tblPhongDat" Relationship="Self.FK__tblGoiMat__MaPho__60A75C0F" FromRole="tblGoiMatHang" ToRole="tblPhongDat" />
+        </EntityType>
+        <EntityType Name="tblHoaDonBan">
+          <Key>
+            <PropertyRef Name="MaHoaDonBan" />
+          </Key>
+          <Property Name="MaHoaDonBan" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ThoiGianTaoHoaDon" Type="DateTime" Precision="3" />
+          <Property Name="ThanhTien" Type="Double" />
+          <NavigationProperty Name="tblGoiDichVus" Relationship="Self.FK__tblGoiDic__MaHoa__66603565" FromRole="tblHoaDonBan" ToRole="tblGoiDichVu" />
+          <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaHoa__619B8048" FromRole="tblHoaDonBan" ToRole="tblGoiMatHang" />
+          <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblHoaDonBan" ToRole="tblNhanVien" />
+          <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblHoaDon__MaNha__5DCAEF64" FromRole="tblHoaDonBan" ToRole="tblKhachHang" />
+        </EntityType>
+        <EntityType Name="tblKhachHang">
+          <Key>
+            <PropertyRef Name="MaKhachHang" />
+          </Key>
+          <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblHoaDonBans" Relationship="Self.FK__tblHoaDon__MaNha__5DCAEF64" FromRole="tblKhachHang" ToRole="tblHoaDonBan" />
+          <NavigationProperty Name="tblPhongDats" Relationship="Self.FK__tblPhongD__MaKha__59063A47" FromRole="tblKhachHang" ToRole="tblPhongDat" />
+        </EntityType>
+        <EntityType Name="tblLoaiDichVu">
+          <Key>
+            <PropertyRef Name="MaLoaiDichVu" />
+          </Key>
+          <Property Name="MaLoaiDichVu" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenLoaiDichVu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblDichVus" Relationship="Self.FK__tblDichVu__MaLoa__534D60F1" FromRole="tblLoaiDichVu" ToRole="tblDichVu" />
+        </EntityType>
+        <EntityType Name="tblLoaiHang">
+          <Key>
+            <PropertyRef Name="MaLoaiHang" />
+          </Key>
+          <Property Name="MaLoaiHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenLoaiHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblMatHangs" Relationship="Self.FK__tblMatHan__MaLoa__4CA06362" FromRole="tblLoaiHang" ToRole="tblMatHang" />
+        </EntityType>
+        <EntityType Name="tblLoaiPhong">
+          <Key>
+            <PropertyRef Name="MaLoaiPhong" />
+          </Key>
+          <Property Name="MaLoaiPhong" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenLoaiPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DonGiaPhong" Type="Double" Nullable="false" />
+          <NavigationProperty Name="tblPhongHats" Relationship="Self.FK__tblPhongH__MaLoa__45F365D3" FromRole="tblLoaiPhong" ToRole="tblPhongHat" />
+        </EntityType>
+        <EntityType Name="tblMatHang">
+          <Key>
+            <PropertyRef Name="MaMatHang" />
+          </Key>
+          <Property Name="MaMatHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenMatHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DonGiaMatHang" Type="Double" Nullable="false" />
+          <Property Name="MaLoaiHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaMat__628FA481" FromRole="tblMatHang" ToRole="tblGoiMatHang" />
+          <NavigationProperty Name="tblLoaiHang" Relationship="Self.FK__tblMatHan__MaLoa__4CA06362" FromRole="tblMatHang" ToRole="tblLoaiHang" />
+        </EntityType>
+        <EntityType Name="tblNguoiDung">
+          <Key>
+            <PropertyRef Name="TenTaiKhoan" />
+          </Key>
+          <Property Name="TenTaiKhoan" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="QuyenHan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblNhanVien">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenNhanVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FileAnh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblHoaDonBans" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblNhanVien" ToRole="tblHoaDonBan" />
+          <NavigationProperty Name="tblPhongDats" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblNhanVien" ToRole="tblPhongDat" />
+        </EntityType>
+        <EntityType Name="tblPhongDat">
+          <Key>
+            <PropertyRef Name="MaPhongDat" />
+          </Key>
+          <Property Name="MaPhongDat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaPhong" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ThoiGianPhongDat" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblGoiDichVus" Relationship="Self.FK__tblGoiDic__MaPho__656C112C" FromRole="tblPhongDat" ToRole="tblGoiDichVu" />
+          <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaPho__60A75C0F" FromRole="tblPhongDat" ToRole="tblGoiMatHang" />
+          <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblPhongD__MaKha__59063A47" FromRole="tblPhongDat" ToRole="tblKhachHang" />
+          <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblPhongDat" ToRole="tblNhanVien" />
+          <NavigationProperty Name="tblPhongHat" Relationship="Self.FK__tblPhongD__MaPho__571DF1D5" FromRole="tblPhongDat" ToRole="tblPhongHat" />
+        </EntityType>
+        <EntityType Name="tblPhongHat">
+          <Key>
+            <PropertyRef Name="MaPhongHat" />
+          </Key>
+          <Property Name="MaPhongHat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenPhongHat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrangThaiPhong" Type="Int32" />
+          <Property Name="MaLoaiPhong" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tblLoaiPhong" Relationship="Self.FK__tblPhongH__MaLoa__45F365D3" FromRole="tblPhongHat" ToRole="tblLoaiPhong" />
+          <NavigationProperty Name="tblPhongDats" Relationship="Self.FK__tblPhongD__MaPho__571DF1D5" FromRole="tblPhongHat" ToRole="tblPhongDat" />
+        </EntityType>
+        <Association Name="FK__tblDichVu__MaLoa__534D60F1">
+          <End Role="tblLoaiDichVu" Type="Self.tblLoaiDichVu" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblDichVu" Type="Self.tblDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiDichVu">
+              <PropertyRef Name="MaLoaiDichVu" />
+            </Principal>
+            <Dependent Role="tblDichVu">
+              <PropertyRef Name="MaLoaiDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaDic__6754599E">
+          <End Role="tblDichVu" Type="Self.tblDichVu" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaHoa__66603565">
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHoaDonBan">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiDic__MaPho__656C112C">
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+          <End Role="tblGoiDichVu" Type="Self.tblGoiDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongDat">
+              <PropertyRef Name="MaPhongDat" />
+            </Principal>
+            <Dependent Role="tblGoiDichVu">
+              <PropertyRef Name="MaPhongDat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaHoa__619B8048">
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHoaDonBan">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaHoaDonBan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaMat__628FA481">
+          <End Role="tblMatHang" Type="Self.tblMatHang" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMatHang">
+              <PropertyRef Name="MaMatHang" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaMatHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblGoiMat__MaPho__60A75C0F">
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+          <End Role="tblGoiMatHang" Type="Self.tblGoiMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongDat">
+              <PropertyRef Name="MaPhongDat" />
+            </Principal>
+            <Dependent Role="tblGoiMatHang">
+              <PropertyRef Name="MaPhongDat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblHoaDon__MaKha__5CD6CB2B">
+          <End Role="tblNhanVien" Type="Self.tblNhanVien" Multiplicity="1" />
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="tblHoaDonBan">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblHoaDon__MaNha__5DCAEF64">
+          <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1" />
+          <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblKhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="tblHoaDonBan">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaKha__59063A47">
+          <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblKhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblMatHan__MaLoa__4CA06362">
+          <End Role="tblLoaiHang" Type="Self.tblLoaiHang" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblMatHang" Type="Self.tblMatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiHang">
+              <PropertyRef Name="MaLoaiHang" />
+            </Principal>
+            <Dependent Role="tblMatHang">
+              <PropertyRef Name="MaLoaiHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongH__MaLoa__45F365D3">
+          <End Role="tblLoaiPhong" Type="Self.tblLoaiPhong" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongHat" Type="Self.tblPhongHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoaiPhong">
+              <PropertyRef Name="MaLoaiPhong" />
+            </Principal>
+            <Dependent Role="tblPhongHat">
+              <PropertyRef Name="MaLoaiPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaNha__5812160E">
+          <End Role="tblNhanVien" Type="Self.tblNhanVien" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPhongD__MaPho__571DF1D5">
+          <End Role="tblPhongHat" Type="Self.tblPhongHat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPhongHat">
+              <PropertyRef Name="MaPhongHat" />
+            </Principal>
+            <Dependent Role="tblPhongDat">
+              <PropertyRef Name="MaPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseKaraoke" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDichVus" EntityType="Self.tblDichVu" />
+          <EntitySet Name="tblGoiDichVus" EntityType="Self.tblGoiDichVu" />
+          <EntitySet Name="tblGoiMatHangs" EntityType="Self.tblGoiMatHang" />
+          <EntitySet Name="tblHoaDonBans" EntityType="Self.tblHoaDonBan" />
+          <EntitySet Name="tblKhachHangs" EntityType="Self.tblKhachHang" />
+          <EntitySet Name="tblLoaiDichVus" EntityType="Self.tblLoaiDichVu" />
+          <EntitySet Name="tblLoaiHangs" EntityType="Self.tblLoaiHang" />
+          <EntitySet Name="tblLoaiPhongs" EntityType="Self.tblLoaiPhong" />
+          <EntitySet Name="tblMatHangs" EntityType="Self.tblMatHang" />
+          <EntitySet Name="tblNguoiDungs" EntityType="Self.tblNguoiDung" />
+          <EntitySet Name="tblNhanViens" EntityType="Self.tblNhanVien" />
+          <EntitySet Name="tblPhongDats" EntityType="Self.tblPhongDat" />
+          <EntitySet Name="tblPhongHats" EntityType="Self.tblPhongHat" />
+          <AssociationSet Name="FK__tblDichVu__MaLoa__534D60F1" Association="Self.FK__tblDichVu__MaLoa__534D60F1">
+            <End Role="tblLoaiDichVu" EntitySet="tblLoaiDichVus" />
+            <End Role="tblDichVu" EntitySet="tblDichVus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaDic__6754599E" Association="Self.FK__tblGoiDic__MaDic__6754599E">
+            <End Role="tblDichVu" EntitySet="tblDichVus" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaHoa__66603565" Association="Self.FK__tblGoiDic__MaHoa__66603565">
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiDic__MaPho__656C112C" Association="Self.FK__tblGoiDic__MaPho__656C112C">
+            <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+            <End Role="tblGoiDichVu" EntitySet="tblGoiDichVus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaHoa__619B8048" Association="Self.FK__tblGoiMat__MaHoa__619B8048">
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaMat__628FA481" Association="Self.FK__tblGoiMat__MaMat__628FA481">
+            <End Role="tblMatHang" EntitySet="tblMatHangs" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblGoiMat__MaPho__60A75C0F" Association="Self.FK__tblGoiMat__MaPho__60A75C0F">
+            <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+            <End Role="tblGoiMatHang" EntitySet="tblGoiMatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblHoaDon__MaKha__5CD6CB2B" Association="Self.FK__tblHoaDon__MaKha__5CD6CB2B">
+            <End Role="tblNhanVien" EntitySet="tblNhanViens" />
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblHoaDon__MaNha__5DCAEF64" Association="Self.FK__tblHoaDon__MaNha__5DCAEF64">
+            <End Role="tblKhachHang" EntitySet="tblKhachHangs" />
+            <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaKha__59063A47" Association="Self.FK__tblPhongD__MaKha__59063A47">
+            <End Role="tblKhachHang" EntitySet="tblKhachHangs" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblMatHan__MaLoa__4CA06362" Association="Self.FK__tblMatHan__MaLoa__4CA06362">
+            <End Role="tblLoaiHang" EntitySet="tblLoaiHangs" />
+            <End Role="tblMatHang" EntitySet="tblMatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongH__MaLoa__45F365D3" Association="Self.FK__tblPhongH__MaLoa__45F365D3">
+            <End Role="tblLoaiPhong" EntitySet="tblLoaiPhongs" />
+            <End Role="tblPhongHat" EntitySet="tblPhongHats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaNha__5812160E" Association="Self.FK__tblPhongD__MaNha__5812160E">
+            <End Role="tblNhanVien" EntitySet="tblNhanViens" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPhongD__MaPho__571DF1D5" Association="Self.FK__tblPhongD__MaPho__571DF1D5">
+            <End Role="tblPhongHat" EntitySet="tblPhongHats" />
+            <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DoAn1_QuanLyQuanHatKaraokeModelStoreContainer" CdmEntityContainer="DatabaseKaraoke">
+          <EntitySetMapping Name="tblDichVus">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblDichVu">
+              <MappingFragment StoreEntitySet="tblDichVu">
+                <ScalarProperty Name="MaDichVu" ColumnName="MaDichVu" />
+                <ScalarProperty Name="TenDichVu" ColumnName="TenDichVu" />
+                <ScalarProperty Name="GiaDichVu" ColumnName="GiaDichVu" />
+                <ScalarProperty Name="MaLoaiDichVu" ColumnName="MaLoaiDichVu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGoiDichVus">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblGoiDichVu">
+              <MappingFragment StoreEntitySet="tblGoiDichVu">
+                <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
+                <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
+                <ScalarProperty Name="MaDichVu" ColumnName="MaDichVu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGoiMatHangs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblGoiMatHang">
+              <MappingFragment StoreEntitySet="tblGoiMatHang">
+                <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
+                <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
+                <ScalarProperty Name="MaMatHang" ColumnName="MaMatHang" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHoaDonBans">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblHoaDonBan">
+              <MappingFragment StoreEntitySet="tblHoaDonBan">
+                <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="ThoiGianTaoHoaDon" ColumnName="ThoiGianTaoHoaDon" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblKhachHangs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblKhachHang">
+              <MappingFragment StoreEntitySet="tblKhachHang">
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoaiDichVus">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiDichVu">
+              <MappingFragment StoreEntitySet="tblLoaiDichVu">
+                <ScalarProperty Name="MaLoaiDichVu" ColumnName="MaLoaiDichVu" />
+                <ScalarProperty Name="TenLoaiDichVu" ColumnName="TenLoaiDichVu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoaiHangs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiHang">
+              <MappingFragment StoreEntitySet="tblLoaiHang">
+                <ScalarProperty Name="MaLoaiHang" ColumnName="MaLoaiHang" />
+                <ScalarProperty Name="TenLoaiHang" ColumnName="TenLoaiHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoaiPhongs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiPhong">
+              <MappingFragment StoreEntitySet="tblLoaiPhong">
+                <ScalarProperty Name="MaLoaiPhong" ColumnName="MaLoaiPhong" />
+                <ScalarProperty Name="TenLoaiPhong" ColumnName="TenLoaiPhong" />
+                <ScalarProperty Name="DonGiaPhong" ColumnName="DonGiaPhong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMatHangs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblMatHang">
+              <MappingFragment StoreEntitySet="tblMatHang">
+                <ScalarProperty Name="MaMatHang" ColumnName="MaMatHang" />
+                <ScalarProperty Name="TenMatHang" ColumnName="TenMatHang" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+                <ScalarProperty Name="DonGiaMatHang" ColumnName="DonGiaMatHang" />
+                <ScalarProperty Name="MaLoaiHang" ColumnName="MaLoaiHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNguoiDungs">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblNguoiDung">
+              <MappingFragment StoreEntitySet="tblNguoiDung">
+                <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="QuyenHan" ColumnName="QuyenHan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNhanViens">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblNhanVien">
+              <MappingFragment StoreEntitySet="tblNhanVien">
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FileAnh" ColumnName="FileAnh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPhongDats">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongDat">
+              <MappingFragment StoreEntitySet="tblPhongDat">
+                <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
+                <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="ThoiGianPhongDat" ColumnName="ThoiGianPhongDat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPhongHats">
+            <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongHat">
+              <MappingFragment StoreEntitySet="tblPhongHat">
+                <ScalarProperty Name="MaPhongHat" ColumnName="MaPhongHat" />
+                <ScalarProperty Name="TenPhongHat" ColumnName="TenPhongHat" />
+                <ScalarProperty Name="TrangThaiPhong" ColumnName="TrangThaiPhong" />
+                <ScalarProperty Name="MaLoaiPhong" ColumnName="MaLoaiPhong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

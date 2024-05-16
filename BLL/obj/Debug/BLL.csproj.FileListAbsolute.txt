@@ -1,0 +1,17 @@
+D:\DoAn1_01\BLL\bin\Debug\BLL.dll
+D:\DoAn1_01\BLL\bin\Debug\BLL.pdb
+D:\DoAn1_01\BLL\bin\Debug\DAL.dll
+D:\DoAn1_01\BLL\bin\Debug\DTO.dll
+D:\DoAn1_01\BLL\bin\Debug\EntityFramework.dll
+D:\DoAn1_01\BLL\bin\Debug\DAL.pdb
+D:\DoAn1_01\BLL\bin\Debug\DTO.pdb
+D:\DoAn1_01\BLL\bin\Debug\DTO.dll.config
+D:\DoAn1_01\BLL\bin\Debug\EntityFramework.xml
+D:\DoAn1_01\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\DoAn1_01\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\DoAn1_01\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\DoAn1_01\BLL\obj\Debug\BLL.dll
+D:\DoAn1_01\BLL\obj\Debug\BLL.pdb
+D:\DoAn1_01\BLL\bin\Debug\DAL.dll.config
+D:\DoAn1_01\BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAn1_01\BLL\bin\Debug\EntityFramework.SqlServer.xml

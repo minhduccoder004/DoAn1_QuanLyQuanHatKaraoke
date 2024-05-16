@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FC79137-2B37-424F-BF6D-4F0E9AE5EF35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement_BLL\BLL_DangKy.cs" />
+    <Compile Include="Implement_BLL\BLL_DangNhap.cs" />
+    <Compile Include="Implement_BLL\BLL_DoiMatKhau.cs" />
+    <Compile Include="Implement_BLL\BLL_InfoAccount.cs" />
+    <Compile Include="Implement_BLL\BLL_ManagementKaraoke.cs" />
+    <Compile Include="Implement_BLL\BLL_MenuNhanVien.cs" />
+    <Compile Include="Implement_BLL\BLL_MenuQuanLy.cs" />
+    <Compile Include="Implement_BLL\BLL_NguoiDung.cs" />
+    <Compile Include="Implement_BLL\BLL_QuanLyDoanhThu.cs" />
+    <Compile Include="Implement_BLL\BLL_QuanLyKhachHang.cs" />
+    <Compile Include="Implement_BLL\BLL_QuanLyNhanVien.cs" />
+    <Compile Include="Implement_BLL\BLL_QuanLyPhongHat.cs" />
+    <Compile Include="Implement_BLL\BLL_QuanLyQuanHat.cs" />
+    <Compile Include="Implement_BLL\BLL_QuenMatKhau.cs" />
+    <Compile Include="Implement_BLL\BLL_TimKiem.cs" />
+    <Compile Include="Implement_BLL\ImplementBLL.cs" />
+    <Compile Include="Interface_BLL\I_BLL_Karaoke.cs" />
+    <Compile Include="Interface_BLL\I_BLL_QuanLyKhachHang.cs" />
+    <Compile Include="Interface_BLL\I_BLL_QuanLyNhanVien.cs" />
+    <Compile Include="Interface_BLL\I_BLL_QuanLyPhongHat.cs" />
+    <Compile Include="Interface_BLL\I_BLL_TimKiem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{fa929000-1019-46ce-bf1c-0783f60defed}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{1347eb6c-22ab-433f-8e3e-69f742661d65}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

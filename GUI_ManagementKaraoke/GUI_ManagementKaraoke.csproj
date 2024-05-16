@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29423AA8-1FF8-43DC-8807-B3BCB07F102D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI_ManagementKaraoke</RootNamespace>
+    <AssemblyName>GUI_ManagementKaraoke</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net48\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Event\Event_LayDSKhachHang.cs" />
+    <Compile Include="Event\Event_LayDSNhanVien.cs" />
+    <Compile Include="Event\Event_LayDSPhongHat.cs" />
+    <Compile Include="ManagementKaraoke\DatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\DatPhong.Designer.cs">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyHoaDon.Designer.cs">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyQuanHat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyQuanHat.Designer.cs">
+      <DependentUpon>QuanLyQuanHat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemKhachHang.Designer.cs">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemNhanVien.Designer.cs">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThemPhong.Designer.cs">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management_Karaoke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management_Karaoke.Designer.cs">
+      <DependentUpon>Management_Karaoke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\InfoAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\InfoAccount.Designer.cs">
+      <DependentUpon>InfoAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\MenuNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\MenuNhanVien.Designer.cs">
+      <DependentUpon>MenuNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\MenuQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\MenuQuanLy.Designer.cs">
+      <DependentUpon>MenuQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyDoanhThu.Designer.cs">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyKhachHang.Designer.cs">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyPhongHat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyPhongHat.Designer.cs">
+      <DependentUpon>QuanLyPhongHat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nguoi_Dung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguoi_Dung.Designer.cs">
+      <DependentUpon>Nguoi_Dung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung\DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung\DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung\DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung\QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung\QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picture\XuLyAnh.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ManagementKaraoke\DatPhong.resx">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\InfoAccount.resx">
+      <DependentUpon>InfoAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\MenuNhanVien.resx">
+      <DependentUpon>MenuNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\MenuQuanLy.resx">
+      <DependentUpon>MenuQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyDoanhThu.resx">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyHoaDon.resx">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyKhachHang.resx">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyPhongHat.resx">
+      <DependentUpon>QuanLyPhongHat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyQuanHat.resx">
+      <DependentUpon>QuanLyQuanHat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\ThemKhachHang.resx">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\ThemNhanVien.resx">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\ThemPhong.resx">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management_Karaoke.resx">
+      <DependentUpon>Management_Karaoke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDung\DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDung\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDung\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDung\QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nguoi_Dung.resx">
+      <DependentUpon>Nguoi_Dung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{8fc79137-2b37-424f-bf6d-4f0e9ae5ef35}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{1347eb6c-22ab-433f-8e3e-69f742661d65}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\LogoLoginKaraoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\bill1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\guest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\avatar-meo-cute.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\issua-invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\recycle-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Picture\AnhNhanVien\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
