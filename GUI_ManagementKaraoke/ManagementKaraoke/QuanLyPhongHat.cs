@@ -15,6 +15,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 {
     public partial class QuanLyPhongHat : Form
     {
+        // Khởi tạo event lấy danh sách phòng hát
+        public event EventHandler<Event_LayDSPhongHat> Event_PhongHats;
         // Khởi tạo lớp BLL
         BLL_QuanLyPhongHat BLL = new BLL_QuanLyPhongHat();
 
@@ -53,6 +55,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             txt_TenPhong.Text = string.Empty;
             txt_TrangThaiPhong.Text = string.Empty;
             cbb_SapXepTheo.SelectedIndex = -1;
+            cbb_TrangThai.SelectedIndex = 2;
 
             // Đổi trạng thái cờ
             Flag_Status = false;
@@ -86,6 +89,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             // cbb
             cbb_LoaiPhong.DataSource = BLL.LoaiPhongs();
+
+            // Khởi chạy sự kiện cho tìm kiếm
+            SuKien_LayDS((List<tblPhongHat>)dgv_DanhSachPhong.DataSource);
+
+            // format các đối tượng trên form
+            cbb_TrangThai.SelectedIndex = 2;
         }
 
         private void dgv_DanhSachPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -191,14 +200,28 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void cbb_SapXepTheo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgv_DanhSachPhong.DataSource = BLL.SapXep(cbb_SapXepTheo.Text);
+            dgv_DanhSachPhong.DataSource = BLL.SapXep((List<tblPhongHat>)dgv_DanhSachPhong.DataSource, cbb_SapXepTheo.Text);
             dgv_DanhSachPhong.Refresh();
         }
 
+        private void cbb_TrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgv_DanhSachPhong.DataSource = BLL.LayPhongTheoTrangThai(cbb_TrangThai.Text);
+            dgv_DanhSachPhong.Refresh();
+
+            SuKien_LayDS((List<tblPhongHat>)dgv_DanhSachPhong.DataSource);
+        }
+
+        void SuKien_LayDS(List<tblPhongHat> DanhSachPhongHat)
+        {
+            Event_LayDSPhongHat e = new Event_LayDSPhongHat();
+            e.DanhSachPhongHat = DanhSachPhongHat;
+            Event_PhongHats?.Invoke(this, e);
+        }
         public void BatSuKien_LayDanhSach(object sender, Event_LayDSPhongHat e)
         {
             dgv_DanhSachPhong.DataSource = e.DanhSachPhongHat;
             dgv_DanhSachPhong.Refresh();
-        } 
+        }
     }
 }

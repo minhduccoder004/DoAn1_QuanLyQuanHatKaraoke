@@ -46,15 +46,15 @@ namespace BLL.Implement_BLL
             }
         }
 
-        public List<tblPhongHat> DuLieuTimKiemPhongHat(string LoaiTimKiem, string ThongTinTimKiem)
+        public List<tblPhongHat> DuLieuTimKiemPhongHat(List<tblPhongHat> DanhSachPhongHat, string LoaiTimKiem, string ThongTinTimKiem)
         {
             // "Tên phòng", "Loại phòng"
             switch (LoaiTimKiem.ToLower())
             {
                 case "tên phòng":
-                    return DAL.DuLieuBangPhongHat().FindAll(x => x.TenPhongHat.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DanhSachPhongHat.FindAll(x => x.TenPhongHat.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "loại phòng":
-                    return DAL.DuLieuBangPhongHat().FindAll(x => x.tblLoaiPhong.TenLoaiPhong.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DanhSachPhongHat.FindAll(x => x.tblLoaiPhong.TenLoaiPhong.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 default:
                     return default;
             }

@@ -14,7 +14,7 @@ namespace BLL.Interface_BLL
 
         List<tblNhanVien> DuLieuTimKiemNhanVien(string LoaiTimKiem, string ThongTinTimKiem);
 
-        List<tblPhongHat> DuLieuTimKiemPhongHat(string LoaiTimKiem, string ThongTinTimKiem);
+        List<tblPhongHat> DuLieuTimKiemPhongHat(List<tblPhongHat> DanhSachPhongHat, string LoaiTimKiem, string ThongTinTimKiem);
 
     }
 }

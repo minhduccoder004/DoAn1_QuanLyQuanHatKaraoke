@@ -21,21 +21,24 @@ namespace GUI_ManagementKaraoke
         QuanLyKhachHang QL_KhachHang = new QuanLyKhachHang() { TopLevel = false };
         QuanLyPhongHat QL_PhongHat = new QuanLyPhongHat() { TopLevel = false };
         QuanLyNhanVien QL_NhanVien = new QuanLyNhanVien() { TopLevel = false };
-        DatPhong datPhong = new DatPhong();
+        
         // Khởi tạo các form chức năng
         InfoAccount infoAccount;
         InfoForm infoForm;
-        MenuQuanLy menuQL = new MenuQuanLy() { TopLevel = false };
-        MenuNhanVien menuNV = new MenuNhanVien() { TopLevel = false };
+        MenuQuanLy menuQL;
+        MenuNhanVien menuNV;
         int QuyenHan_Acc { get; set; }
         // Infomation form
         string[] arr_info = { "Trang Chủ", "Quản Lý Hoá Đơn", "Thống Kê", "Quản Lý Khách Hàng", "Quản Lý Nhân Viên", "Quản Lý Phòng Hát" };
         void MoForm(Form form, Guna2GradientPanel panel)
         {
+
             panel.Controls.Add(form);
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+
         public Management_Karaoke(int quyenHan_Acc, string TaiKhoan)
         {
             InitializeComponent();
@@ -43,9 +46,12 @@ namespace GUI_ManagementKaraoke
             infoAccount = new InfoAccount(quyenHan_Acc, TaiKhoan) { TopLevel = false };
             infoForm = new InfoForm() { TopLevel = false };
             infoForm.DoiTenForm(arr_info[0]);
+            menuQL = new MenuQuanLy() { TopLevel = false };
+            menuNV = new MenuNhanVien() { TopLevel = false };
         }
         private void Management_Karaoke_Load(object sender, EventArgs e)
         {
+
             // Mở form thông tin tài khoản
             MoForm(infoAccount, pn_infoacc);
             // Mở form info form
@@ -81,6 +87,8 @@ namespace GUI_ManagementKaraoke
             // Bắt sự kiện khi tìm kiếm
             infoForm.Event_KhachHangs += QL_KhachHang.BatSuKien_LayDanhSach;
             infoForm.Event_NhanViens += QL_NhanVien.BatSuKien_LayDanhSach;
+            // Sự kiện tìm kiếm của phòng hát
+            QL_PhongHat.Event_PhongHats += infoForm.BatSuKien_LayDanhSach;
             infoForm.Event_PhongHats += QL_PhongHat.BatSuKien_LayDanhSach;
 
         }
@@ -135,7 +143,10 @@ namespace GUI_ManagementKaraoke
         }
         public void Click_DatPhong(object sender, EventArgs e)
         {
-            datPhong.ShowDialog();
+            using (DatPhong datPhong = new DatPhong())
+            {
+                datPhong.ShowDialog();
+            } 
         }
     }
 }

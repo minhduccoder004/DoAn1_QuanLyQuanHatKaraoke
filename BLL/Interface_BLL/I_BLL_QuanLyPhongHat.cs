@@ -18,6 +18,8 @@ namespace BLL.Interface_BLL
 
         string LayMaLoaiPhong(string TenLoaiPhong);
 
-        List<tblPhongHat> SapXep(string LoaiSapXep);
+        List<tblPhongHat> SapXep(List<tblPhongHat> PhongHats, string LoaiSapXep);
+
+        List<tblPhongHat> LayPhongTheoTrangThai(string LoaiTrangThai);
     }
 }

@@ -14,9 +14,18 @@ namespace GUI_ManagementKaraoke
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Nguoi_Dung());
+            using (var mutex = new System.Threading.Mutex(false, Application.ProductName))
+            {
+                if (!mutex.WaitOne(0, false))
+                {
+                    MessageBox.Show("Ứng dụng đang chạy, không thể chạy thêm !!");
+                    return;
+                }
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Nguoi_Dung());
+            }
         }
     }
 }

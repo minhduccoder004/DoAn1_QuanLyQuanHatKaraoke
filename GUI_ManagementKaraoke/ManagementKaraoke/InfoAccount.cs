@@ -1,4 +1,5 @@
 ﻿using BLL.Implement_BLL;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,33 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         private void InfoAccount_Load(object sender, EventArgs e)
         {
             // label4 = tên tài khoản
-            label4.Text = TaiKhoan;
+            txt_Account.Text = TaiKhoan;
             // label3 = quyền hạn
-            label3.Text = BLL.Check_QuyenHan(QuyenHan);
+            txt_QuyenHan.Text = BLL.Check_QuyenHan(QuyenHan);
+
+            switch (QuyenHan)
+            {
+                case 1:
+                    bt_Menu.ContextMenuStrip = menuNhanVien_QLTaiKhoan;
+                    break;
+                case 0:
+                    bt_Menu.ContextMenuStrip = menuQuanLy_QLTaiKhoan;
+                    break;
+            }
+        }
+
+        private void bt_Menu_Click(object sender, EventArgs e)
+        {
+            switch (QuyenHan)
+            {
+                case 1:
+                    bt_Menu.ContextMenuStrip.Show(bt_Menu, new Point(0, 76));
+
+                    break;
+                case 0:
+                    bt_Menu.ContextMenuStrip.Show(bt_Menu, new Point(0, 76));
+                    break;
+            }
         }
     }
 }

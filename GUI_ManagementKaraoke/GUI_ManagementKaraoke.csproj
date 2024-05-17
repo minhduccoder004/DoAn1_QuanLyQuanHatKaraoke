@@ -351,5 +351,11 @@
   <ItemGroup>
     <Folder Include="Picture\AnhNhanVien\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrow1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

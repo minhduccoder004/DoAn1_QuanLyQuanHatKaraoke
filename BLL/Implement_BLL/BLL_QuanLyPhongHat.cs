@@ -34,6 +34,26 @@ namespace BLL.Implement_BLL
             return BangLoaiPhong().Find(x => Equals(x.TenLoaiPhong.Trim(), TenLoaiPhong.Trim())).MaLoaiPhong;
         }
 
+        public List<tblPhongHat> LayPhongTheoTrangThai(string LoaiTrangThai)
+        {
+            switch (LoaiTrangThai.ToLower().Trim())
+            {
+                case "không hoạt động":
+                    return DanhSachDoiTuong().FindAll(x => x.TrangThaiPhong == 0);
+                case "đang hoạt động":
+                    return DanhSachDoiTuong().FindAll(x => x.TrangThaiPhong == 1);
+                case "tất cả":
+                    return DanhSachDoiTuong();
+                default:
+                    return DanhSachDoiTuong();
+            }
+        }
+
+        public List<tblPhongHat> LayPhongTheoTrangThai(List<tblPhongHat> PhongHats, int LoaiTrangThai)
+        {
+            throw new NotImplementedException();
+        }
+
         public string LayTenLoaiPhong(string ID)
         {
             return BangLoaiPhong().Find(x => Equals(x.MaLoaiPhong.Trim(), ID.Trim())).TenLoaiPhong;
@@ -51,14 +71,14 @@ namespace BLL.Implement_BLL
             return arr_LoaiPhong;
         }
 
-        public  List<tblPhongHat> SapXep(string LoaiSapXep)
+        public  List<tblPhongHat> SapXep(List<tblPhongHat> PhongHats, string LoaiSapXep)
         {
             switch(LoaiSapXep.ToLower().Trim())
             {
                 case "tên phòng":
-                    return DanhSachDoiTuong().OrderBy(x => x.TenPhongHat).ToList();
+                    return PhongHats.OrderBy(x => x.TenPhongHat).ToList();
                 case "loại phòng":
-                    return DanhSachDoiTuong().OrderBy(x => x.MaLoaiPhong).ToList();
+                    return PhongHats.OrderBy(x => x.MaLoaiPhong).ToList();
                 default:
                     return DanhSachDoiTuong();
             }

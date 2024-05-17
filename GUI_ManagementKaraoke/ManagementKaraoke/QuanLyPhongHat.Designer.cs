@@ -66,6 +66,8 @@
             this.lb_LoaiPhong = new System.Windows.Forms.Label();
             this.sp_Line3 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_ThongTinPhong = new System.Windows.Forms.Label();
+            this.lb_TrangThai = new System.Windows.Forms.Label();
+            this.cbb_TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pn_Container1.SuspendLayout();
             this.pn_Parents1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachPhong)).BeginInit();
@@ -93,6 +95,8 @@
             // pn_Parents1
             // 
             this.pn_Parents1.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Parents1.Controls.Add(this.cbb_TrangThai);
+            this.pn_Parents1.Controls.Add(this.lb_TrangThai);
             this.pn_Parents1.Controls.Add(this.bt_Create);
             this.pn_Parents1.Controls.Add(this.bt_LamMoi);
             this.pn_Parents1.Controls.Add(this.sp_Line2);
@@ -175,9 +179,10 @@
             this.cbb_SapXepTheo.Items.AddRange(new object[] {
             "Tên phòng",
             "Loại phòng"});
-            this.cbb_SapXepTheo.Location = new System.Drawing.Point(188, 61);
+            this.cbb_SapXepTheo.ItemsAppearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_SapXepTheo.Location = new System.Drawing.Point(417, 63);
             this.cbb_SapXepTheo.Name = "cbb_SapXepTheo";
-            this.cbb_SapXepTheo.Size = new System.Drawing.Size(211, 36);
+            this.cbb_SapXepTheo.Size = new System.Drawing.Size(183, 36);
             this.cbb_SapXepTheo.TabIndex = 4;
             this.cbb_SapXepTheo.SelectedIndexChanged += new System.EventHandler(this.cbb_SapXepTheo_SelectedIndexChanged);
             // 
@@ -186,7 +191,7 @@
             this.lb_SapXepTheo.AutoSize = true;
             this.lb_SapXepTheo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SapXepTheo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_SapXepTheo.Location = new System.Drawing.Point(77, 68);
+            this.lb_SapXepTheo.Location = new System.Drawing.Point(305, 72);
             this.lb_SapXepTheo.Name = "lb_SapXepTheo";
             this.lb_SapXepTheo.Size = new System.Drawing.Size(104, 19);
             this.lb_SapXepTheo.TabIndex = 3;
@@ -589,6 +594,39 @@
             this.title_ThongTinPhong.TabIndex = 1;
             this.title_ThongTinPhong.Text = "Thông tin phòng";
             // 
+            // lb_TrangThai
+            // 
+            this.lb_TrangThai.AutoSize = true;
+            this.lb_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.lb_TrangThai.Location = new System.Drawing.Point(39, 72);
+            this.lb_TrangThai.Name = "lb_TrangThai";
+            this.lb_TrangThai.Size = new System.Drawing.Size(86, 19);
+            this.lb_TrangThai.TabIndex = 8;
+            this.lb_TrangThai.Text = "Trạng thái :";
+            // 
+            // cbb_TrangThai
+            // 
+            this.cbb_TrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_TrangThai.BorderRadius = 15;
+            this.cbb_TrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_TrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_TrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_TrangThai.ItemHeight = 30;
+            this.cbb_TrangThai.Items.AddRange(new object[] {
+            "Không hoạt động",
+            "Đang hoạt động",
+            "Tất cả"});
+            this.cbb_TrangThai.ItemsAppearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TrangThai.Location = new System.Drawing.Point(133, 63);
+            this.cbb_TrangThai.Name = "cbb_TrangThai";
+            this.cbb_TrangThai.Size = new System.Drawing.Size(164, 36);
+            this.cbb_TrangThai.TabIndex = 9;
+            this.cbb_TrangThai.SelectedIndexChanged += new System.EventHandler(this.cbb_TrangThai_SelectedIndexChanged);
+            // 
             // QuanLyPhongHat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,5 +687,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_MaPhong;
         private System.Windows.Forms.Label lb_MaPhong;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_LoaiPhong;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_TrangThai;
+        private System.Windows.Forms.Label lb_TrangThai;
     }
 }

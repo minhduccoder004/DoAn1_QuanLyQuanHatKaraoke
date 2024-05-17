@@ -30,9 +30,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         readonly string[] arr_SearchByQLKhachHang = { "Tên khách hàng", "Số điện thoại" };
         readonly string[] arr_SearchByQLNhanVien = { "Tên nhân viên", "Số điện thoại", "Địa chỉ", "Năm sinh", "Email" };
         readonly string[] arr_SearchByQLPhongHat = { "Tên phòng", "Loại phòng" };
+        // Khởi tạo thuộc tính
+        List<tblPhongHat> DanhSachPhongHat;
         public InfoForm()
         {
             InitializeComponent();
+            DanhSachPhongHat = new List<tblPhongHat>();
         }
 
         public void DoiTenForm(string TenForm)
@@ -87,7 +90,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     break;
                 case "quản lý phòng hát":
 
-                    SuKien_PhongHats(BLL.DuLieuTimKiemPhongHat(cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text));
+                    SuKien_PhongHats(BLL.DuLieuTimKiemPhongHat(DanhSachPhongHat, cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text)) ;
 
                     break;
             }
@@ -107,11 +110,16 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             Event_NhanViens?.Invoke(this, e);
         }
 
-        void SuKien_PhongHats(List<tblPhongHat> tblPhongHats)
+        void SuKien_PhongHats(List<tblPhongHat> tblPhongHat)
         {
             Event_LayDSPhongHat e = new Event_LayDSPhongHat();
-            e.DanhSachPhongHat = tblPhongHats;
+            e.DanhSachPhongHat = tblPhongHat;
             Event_PhongHats?.Invoke(this, e);
+        }
+
+        public void BatSuKien_LayDanhSach(object sender, Event_LayDSPhongHat e)
+        {
+            DanhSachPhongHat = e.DanhSachPhongHat;
         }
     }
 }
