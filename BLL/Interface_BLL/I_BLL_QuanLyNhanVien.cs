@@ -17,6 +17,7 @@ namespace BLL.Interface_BLL
         List<tblNhanVien> LayDanhSach_NhanVienNam();
         List<tblNhanVien> LayDanhSach_NhanVienNu();
 
-
+        string LayChucVu(int ChucVu);
+        int LayChucVu(string ChucVu);
     }
 }

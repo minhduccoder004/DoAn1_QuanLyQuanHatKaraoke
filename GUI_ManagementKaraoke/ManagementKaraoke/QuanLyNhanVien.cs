@@ -24,6 +24,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         bool Flag_Status = false;
         string TenAnh;
         string DuongDanTuyetDoi;
+        public string[] arr_ChucVu = { "Quản lý", "Thu ngân", "Phục vụ" };
 
         // Khởi tạo lớp xử lý ảnh
 
@@ -98,10 +99,14 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DSNhanVien.Columns[6].HeaderText = "Email";
             dgv_DSNhanVien.Columns[6].Width = 250;
             dgv_DSNhanVien.Columns[7].Visible = false;
-            dgv_DSNhanVien.Columns[8].Visible = false;
+            dgv_DSNhanVien.Columns[8].HeaderText = "Chức vụ";
+            dgv_DSNhanVien.Columns[8].Width = 100;
             dgv_DSNhanVien.Columns[9].Visible = false;
+            dgv_DSNhanVien.Columns[10].Visible = false;
 
-            // 
+            // thêm dữ liệu cho combobox chức vụ
+            cbb_ChucVu.DataSource = arr_ChucVu;
+            cbb_ChucVu.SelectedIndex = -1;
         }
 
         private void dgv_DSNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -136,6 +141,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     rbt_Nu.Checked = false;
                 }
                 txt_Email.Text = dgv_DSNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString().Trim();
+
+                cbb_ChucVu.Text = BLL.LayChucVu(Convert.ToInt32(dgv_DSNhanVien.Rows[e.RowIndex].Cells[8].Value));
             }
             // Thay đổi trạng thái cờ
             Flag_Status = true;
@@ -216,6 +223,26 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         public void BatSuKien_LayDanhSach(object sender, Event_LayDSNhanVien e)
         {
             dgv_DSNhanVien.DataSource = e.DanhSachNhanVien;
+        }
+
+        private void dgv_DSNhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                int ChucVu = Convert.ToInt32(e.Value);
+                switch (ChucVu)
+                {
+                    case 0:
+                        e.Value = "Quản lý";
+                        break;
+                    case 1:
+                        e.Value = "Thu ngân";
+                        break;
+                    case 2:
+                        e.Value = "Phục vụ";
+                        break;
+                }
+            }
         }
     }
 }

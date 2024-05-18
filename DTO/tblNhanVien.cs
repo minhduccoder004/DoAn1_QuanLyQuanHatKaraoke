@@ -29,6 +29,7 @@ namespace DTO
         public string GioiTinh { get; set; }
         public string Email { get; set; }
         public string FileAnh { get; set; }
+        public Nullable<int> ChucVu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblHoaDonBan> tblHoaDonBans { get; set; }

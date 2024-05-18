@@ -61,6 +61,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         NV.Email = txt_Email.Text;
                         NV.SoDienThoai = txt_SoDienThoai.Text;
                         NV.FileAnh = TenAnh_DuongDanTuyetDoi.Item1;
+                        NV.ChucVu = BLL.LayChucVu(cbb_ChucVu.Text);
 
                         if (TenAnh_DuongDanTuyetDoi.Item1 != "")
                         {
@@ -101,6 +102,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             }
         }
 
-        
+        private void ThemNhanVien_Load(object sender, EventArgs e)
+        {
+            // Thêm dữ liệu cho combobox chức vụ
+            cbb_ChucVu.DataSource = QuanLys.arr_ChucVu;
+            cbb_ChucVu.SelectedIndex = -1;
+        }
     }
 }

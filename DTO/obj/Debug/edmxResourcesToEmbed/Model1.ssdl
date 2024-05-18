@@ -103,6 +103,7 @@
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
     <Property Name="FileAnh" Type="nvarchar" MaxLength="200" />
+    <Property Name="ChucVu" Type="int" />
   </EntityType>
   <EntityType Name="tblPhongDat">
     <Key>
@@ -113,6 +114,7 @@
     <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="ThoiGianPhongDat" Type="datetime" />
+    <Property Name="ThoiGianPhongHoatDong" Type="datetime" />
   </EntityType>
   <EntityType Name="tblPhongHat">
     <Key>

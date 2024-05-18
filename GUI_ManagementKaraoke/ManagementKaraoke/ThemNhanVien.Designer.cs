@@ -51,6 +51,8 @@
             this.sp_Line1 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_ThemNhanVien = new System.Windows.Forms.Label();
             this.pn_InfoNhanVien = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pn_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhNhanVien)).BeginInit();
             this.pn_InfoNhanVien.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             this.pn_Container.BackColor = System.Drawing.Color.Transparent;
             this.pn_Container.BorderRadius = 30;
+            this.pn_Container.Controls.Add(this.cbb_ChucVu);
+            this.pn_Container.Controls.Add(this.label1);
             this.pn_Container.Controls.Add(this.dtp_NgaySinh);
             this.pn_Container.Controls.Add(this.rbt_Nu);
             this.pn_Container.Controls.Add(this.rbt_Nam);
@@ -83,7 +87,7 @@
             this.pn_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Container.Location = new System.Drawing.Point(0, 0);
             this.pn_Container.Name = "pn_Container";
-            this.pn_Container.Size = new System.Drawing.Size(654, 475);
+            this.pn_Container.Size = new System.Drawing.Size(654, 513);
             this.pn_Container.TabIndex = 0;
             // 
             // dtp_NgaySinh
@@ -154,7 +158,7 @@
             this.bt_ThemAnh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_ThemAnh.ForeColor = System.Drawing.Color.White;
             this.bt_ThemAnh.Image = global::GUI_ManagementKaraoke.Properties.Resources.Plus;
-            this.bt_ThemAnh.Location = new System.Drawing.Point(107, 310);
+            this.bt_ThemAnh.Location = new System.Drawing.Point(107, 346);
             this.bt_ThemAnh.Name = "bt_ThemAnh";
             this.bt_ThemAnh.Size = new System.Drawing.Size(107, 32);
             this.bt_ThemAnh.TabIndex = 35;
@@ -167,14 +171,14 @@
             this.pic_AnhNhanVien.ImageRotate = 0F;
             this.pic_AnhNhanVien.Location = new System.Drawing.Point(71, 73);
             this.pic_AnhNhanVien.Name = "pic_AnhNhanVien";
-            this.pic_AnhNhanVien.Size = new System.Drawing.Size(179, 228);
+            this.pic_AnhNhanVien.Size = new System.Drawing.Size(179, 253);
             this.pic_AnhNhanVien.TabIndex = 34;
             this.pic_AnhNhanVien.TabStop = false;
             // 
             // sp_Line2
             // 
             this.sp_Line2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.sp_Line2.Location = new System.Drawing.Point(69, 359);
+            this.sp_Line2.Location = new System.Drawing.Point(69, 393);
             this.sp_Line2.Name = "sp_Line2";
             this.sp_Line2.Size = new System.Drawing.Size(520, 10);
             this.sp_Line2.TabIndex = 33;
@@ -298,7 +302,7 @@
             this.bt_XacNhan.Image = global::GUI_ManagementKaraoke.Properties.Resources.done;
             this.bt_XacNhan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_XacNhan.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_XacNhan.Location = new System.Drawing.Point(347, 386);
+            this.bt_XacNhan.Location = new System.Drawing.Point(347, 420);
             this.bt_XacNhan.Name = "bt_XacNhan";
             this.bt_XacNhan.ShadowDecoration.BorderRadius = 20;
             this.bt_XacNhan.ShadowDecoration.Color = System.Drawing.Color.Yellow;
@@ -324,7 +328,7 @@
             this.bt_Cancel.Image = global::GUI_ManagementKaraoke.Properties.Resources.cancel;
             this.bt_Cancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_Cancel.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_Cancel.Location = new System.Drawing.Point(114, 386);
+            this.bt_Cancel.Location = new System.Drawing.Point(114, 420);
             this.bt_Cancel.Name = "bt_Cancel";
             this.bt_Cancel.ShadowDecoration.BorderRadius = 20;
             this.bt_Cancel.ShadowDecoration.Color = System.Drawing.Color.Yellow;
@@ -427,21 +431,51 @@
             this.pn_InfoNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
             this.pn_InfoNhanVien.Location = new System.Drawing.Point(12, 12);
             this.pn_InfoNhanVien.Name = "pn_InfoNhanVien";
-            this.pn_InfoNhanVien.Size = new System.Drawing.Size(654, 475);
+            this.pn_InfoNhanVien.Size = new System.Drawing.Size(654, 513);
             this.pn_InfoNhanVien.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(309, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Chức vụ :";
+            // 
+            // cbb_ChucVu
+            // 
+            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_ChucVu.BorderRadius = 15;
+            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.ItemHeight = 30;
+            this.cbb_ChucVu.Location = new System.Drawing.Point(392, 339);
+            this.cbb_ChucVu.Name = "cbb_ChucVu";
+            this.cbb_ChucVu.Size = new System.Drawing.Size(220, 36);
+            this.cbb_ChucVu.TabIndex = 40;
             // 
             // ThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(677, 499);
+            this.ClientSize = new System.Drawing.Size(677, 537);
             this.Controls.Add(this.pn_InfoNhanVien);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(693, 538);
             this.Name = "ThemNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm nhân viên";
+            this.Load += new System.EventHandler(this.ThemNhanVien_Load);
             this.pn_Container.ResumeLayout(false);
             this.pn_Container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhNhanVien)).EndInit();
@@ -474,5 +508,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtp_NgaySinh;
         private Guna.UI2.WinForms.Guna2RadioButton rbt_Nu;
         private Guna.UI2.WinForms.Guna2RadioButton rbt_Nam;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_ChucVu;
+        private System.Windows.Forms.Label label1;
     }
 }

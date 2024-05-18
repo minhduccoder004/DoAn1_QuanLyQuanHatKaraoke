@@ -124,6 +124,7 @@
     <Property Name="FileAnh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tblHoaDonBans" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblNhanVien" ToRole="tblHoaDonBan" />
     <NavigationProperty Name="tblPhongDats" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblNhanVien" ToRole="tblPhongDat" />
+    <Property Name="ChucVu" Type="Int32" />
   </EntityType>
   <EntityType Name="tblPhongDat">
     <Key>
@@ -139,6 +140,7 @@
     <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblPhongD__MaKha__59063A47" FromRole="tblPhongDat" ToRole="tblKhachHang" />
     <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblPhongDat" ToRole="tblNhanVien" />
     <NavigationProperty Name="tblPhongHat" Relationship="Self.FK__tblPhongD__MaPho__571DF1D5" FromRole="tblPhongDat" ToRole="tblPhongHat" />
+    <Property Name="ThoiGianPhongHoatDong" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="tblPhongHat">
     <Key>

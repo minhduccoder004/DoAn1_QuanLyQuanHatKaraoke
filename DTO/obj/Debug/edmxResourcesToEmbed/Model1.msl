@@ -101,6 +101,7 @@
     <EntitySetMapping Name="tblNhanViens">
       <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblNhanVien">
         <MappingFragment StoreEntitySet="tblNhanVien">
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
           <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
           <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -115,6 +116,7 @@
     <EntitySetMapping Name="tblPhongDats">
       <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongDat">
         <MappingFragment StoreEntitySet="tblPhongDat">
+          <ScalarProperty Name="ThoiGianPhongHoatDong" ColumnName="ThoiGianPhongHoatDong" />
           <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
           <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
           <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />

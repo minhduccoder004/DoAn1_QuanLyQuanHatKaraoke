@@ -52,7 +52,6 @@ C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\Guna.
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\Guna.UI2.dll
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\DAL.dll
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.dll
-C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\BLL.pdb
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\DTO.pdb
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\DTO.dll.config
@@ -60,7 +59,6 @@ C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\Guna.
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\DAL.pdb
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\DAL.dll.config
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.xml
-C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.csproj.AssemblyReference.cache
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.ManagementKaraoke.DatPhong.resources
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.ManagementKaraoke.InfoAccount.resources
@@ -88,3 +86,5 @@ C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_M
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.exe
 C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\obj\Debug\GUI_ManagementKaraoke.pdb
+C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\Desktop\Code\DoAn1\DoAn1_01\GUI_ManagementKaraoke\bin\Debug\EntityFramework.SqlServer.xml

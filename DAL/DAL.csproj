@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implement_DAL\DAL_DatPhong.cs" />
     <Compile Include="Implement_DAL\DAL_InfoAccount.cs" />
     <Compile Include="Implement_DAL\DAL_ManagementKaraoke.cs" />
     <Compile Include="Implement_DAL\DAL_MenuNhanVien.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Implement_DAL\DAL_QuenMatKhau.cs" />
     <Compile Include="Implement_DAL\DAL_TimKiem.cs" />
     <Compile Include="Implement_DAL\ImplementDAL.cs" />
+    <Compile Include="Interface_DAL\I_DAL_DatPhong.cs" />
     <Compile Include="Interface_DAL\I_DAL_Karaoke.cs" />
     <Compile Include="Interface_DAL\I_DAL_NhanVien.cs" />
     <Compile Include="Interface_DAL\I_DAL_PhongHat.cs" />

@@ -67,6 +67,8 @@
             this.title_MaNhanVien = new System.Windows.Forms.Label();
             this.lb_TenNhanVien = new System.Windows.Forms.Label();
             this.title_ThongTinNhanVien = new System.Windows.Forms.Label();
+            this.lb_ChucVu = new System.Windows.Forms.Label();
+            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pn_ContainerDanhSach.SuspendLayout();
             this.pn_Child_DanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSNhanVien)).BeginInit();
@@ -144,10 +146,10 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_DSNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_DSNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
@@ -198,6 +200,7 @@
             this.dgv_DSNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.dgv_DSNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_DSNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSNhanVien_CellClick);
+            this.dgv_DSNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_DSNhanVien_CellFormatting);
             // 
             // bt_Create
             // 
@@ -299,6 +302,8 @@
             // pn_Child_Info
             // 
             this.pn_Child_Info.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Child_Info.Controls.Add(this.cbb_ChucVu);
+            this.pn_Child_Info.Controls.Add(this.lb_ChucVu);
             this.pn_Child_Info.Controls.Add(this.bt_ThemAnh);
             this.pn_Child_Info.Controls.Add(this.rbt_Nu);
             this.pn_Child_Info.Controls.Add(this.rbt_Nam);
@@ -356,7 +361,7 @@
             this.rbt_Nu.CheckedState.InnerOffset = -4;
             this.rbt_Nu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbt_Nu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.rbt_Nu.Location = new System.Drawing.Point(281, 259);
+            this.rbt_Nu.Location = new System.Drawing.Point(292, 217);
             this.rbt_Nu.Name = "rbt_Nu";
             this.rbt_Nu.Size = new System.Drawing.Size(45, 21);
             this.rbt_Nu.TabIndex = 21;
@@ -376,7 +381,7 @@
             this.rbt_Nam.CheckedState.InnerOffset = -4;
             this.rbt_Nam.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbt_Nam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.rbt_Nam.Location = new System.Drawing.Point(217, 259);
+            this.rbt_Nam.Location = new System.Drawing.Point(217, 217);
             this.rbt_Nam.Name = "rbt_Nam";
             this.rbt_Nam.Size = new System.Drawing.Size(55, 21);
             this.rbt_Nam.TabIndex = 20;
@@ -491,7 +496,7 @@
             this.txt_TenNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_TenNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_TenNhanVien.Location = new System.Drawing.Point(202, 186);
+            this.txt_TenNhanVien.Location = new System.Drawing.Point(202, 150);
             this.txt_TenNhanVien.Name = "txt_TenNhanVien";
             this.txt_TenNhanVien.PasswordChar = '\0';
             this.txt_TenNhanVien.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
@@ -515,7 +520,7 @@
             this.txt_MaNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_MaNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_MaNhanVien.Location = new System.Drawing.Point(202, 125);
+            this.txt_MaNhanVien.Location = new System.Drawing.Point(202, 93);
             this.txt_MaNhanVien.Name = "txt_MaNhanVien";
             this.txt_MaNhanVien.PasswordChar = '\0';
             this.txt_MaNhanVien.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
@@ -635,7 +640,7 @@
             this.lb_GioiTinh.AutoSize = true;
             this.lb_GioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_GioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_GioiTinh.Location = new System.Drawing.Point(199, 225);
+            this.lb_GioiTinh.Location = new System.Drawing.Point(199, 190);
             this.lb_GioiTinh.Name = "lb_GioiTinh";
             this.lb_GioiTinh.Size = new System.Drawing.Size(73, 17);
             this.lb_GioiTinh.TabIndex = 4;
@@ -655,7 +660,7 @@
             this.title_MaNhanVien.AutoSize = true;
             this.title_MaNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title_MaNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.title_MaNhanVien.Location = new System.Drawing.Point(199, 103);
+            this.title_MaNhanVien.Location = new System.Drawing.Point(199, 78);
             this.title_MaNhanVien.Name = "title_MaNhanVien";
             this.title_MaNhanVien.Size = new System.Drawing.Size(106, 17);
             this.title_MaNhanVien.TabIndex = 2;
@@ -666,7 +671,7 @@
             this.lb_TenNhanVien.AutoSize = true;
             this.lb_TenNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TenNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_TenNhanVien.Location = new System.Drawing.Point(199, 164);
+            this.lb_TenNhanVien.Location = new System.Drawing.Point(199, 134);
             this.lb_TenNhanVien.Name = "lb_TenNhanVien";
             this.lb_TenNhanVien.Size = new System.Drawing.Size(110, 17);
             this.lb_TenNhanVien.TabIndex = 1;
@@ -682,6 +687,33 @@
             this.title_ThongTinNhanVien.Size = new System.Drawing.Size(216, 26);
             this.title_ThongTinNhanVien.TabIndex = 0;
             this.title_ThongTinNhanVien.Text = "Thông tin nhân viên";
+            // 
+            // lb_ChucVu
+            // 
+            this.lb_ChucVu.AutoSize = true;
+            this.lb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.lb_ChucVu.Location = new System.Drawing.Point(201, 248);
+            this.lb_ChucVu.Name = "lb_ChucVu";
+            this.lb_ChucVu.Size = new System.Drawing.Size(72, 17);
+            this.lb_ChucVu.TabIndex = 37;
+            this.lb_ChucVu.Text = "Chức vụ :";
+            // 
+            // cbb_ChucVu
+            // 
+            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_ChucVu.BorderRadius = 15;
+            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.ItemHeight = 30;
+            this.cbb_ChucVu.Location = new System.Drawing.Point(205, 275);
+            this.cbb_ChucVu.Name = "cbb_ChucVu";
+            this.cbb_ChucVu.Size = new System.Drawing.Size(177, 36);
+            this.cbb_ChucVu.TabIndex = 38;
             // 
             // QuanLyNhanVien
             // 
@@ -743,5 +775,7 @@
         private Guna.UI2.WinForms.Guna2RadioButton rbt_Nu;
         private Guna.UI2.WinForms.Guna2RadioButton rbt_Nam;
         private Guna.UI2.WinForms.Guna2Button bt_ThemAnh;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_ChucVu;
+        private System.Windows.Forms.Label lb_ChucVu;
     }
 }

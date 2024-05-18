@@ -41,5 +41,35 @@ namespace BLL.Implement_BLL
         public List<tblNhanVien> LayDanhSach_NhanVienNam() => DanhSachDoiTuong().FindAll(x => Equals(x.GioiTinh.Trim(), 0));
 
         public List<tblNhanVien> LayDanhSach_NhanVienNu() => DanhSachDoiTuong().FindAll(x => Equals(x.GioiTinh.Trim(), 1));
+
+        public string LayChucVu(int ChucVu)
+        {
+            switch (ChucVu)
+            {
+                case 0:
+                    return "Quản lý";
+                case 1:
+                    return "Thu ngân";
+                case 2:
+                    return "Phục vụ";
+                default:
+                    return default;
+            }
+        }
+
+        public int LayChucVu(string ChucVu)
+        {
+            switch (ChucVu)
+            {
+                case "Quản lý":
+                    return 0;
+                case "Thu ngân":
+                    return 1;
+                case "Phục vụ":
+                    return 2;
+                default:
+                    return default;
+            }
+        }
     }
 }
