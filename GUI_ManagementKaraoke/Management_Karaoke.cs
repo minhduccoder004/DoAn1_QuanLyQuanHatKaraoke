@@ -143,7 +143,7 @@ namespace GUI_ManagementKaraoke
         }
         public void Click_DatPhong(object sender, EventArgs e)
         {
-            using (DatPhong datPhong = new DatPhong())
+            using (DatPhong datPhong = new DatPhong(TrangChu))
             {
                 datPhong.ShowDialog();
             } 

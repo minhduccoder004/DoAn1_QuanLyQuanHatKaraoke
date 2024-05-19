@@ -33,6 +33,8 @@
     <EntitySetMapping Name="tblHoaDonBans">
       <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblHoaDonBan">
         <MappingFragment StoreEntitySet="tblHoaDonBan">
+          <ScalarProperty Name="TrangThaiHoaDon" ColumnName="TrangThaiHoaDon" />
+          <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
           <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
           <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
           <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
@@ -116,6 +118,8 @@
     <EntitySetMapping Name="tblPhongDats">
       <EntityTypeMapping TypeName="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongDat">
         <MappingFragment StoreEntitySet="tblPhongDat">
+          <ScalarProperty Name="TrangThaiPhongDat" ColumnName="TrangThaiPhongDat" />
+          <ScalarProperty Name="ThoiGianPhongDung" ColumnName="ThoiGianPhongDung" />
           <ScalarProperty Name="ThoiGianPhongHoatDong" ColumnName="ThoiGianPhongHoatDong" />
           <ScalarProperty Name="MaPhongDat" ColumnName="MaPhongDat" />
           <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />

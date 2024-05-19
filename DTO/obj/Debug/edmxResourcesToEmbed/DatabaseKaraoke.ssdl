@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DatabaseKaraoke.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="DoAn1_QuanLyQuanHatKaraokeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="tblDichVu">
     <Key>
       <PropertyRef Name="MaDichVu" />
@@ -35,10 +45,12 @@
       <PropertyRef Name="MaHoaDonBan" />
     </Key>
     <Property Name="MaHoaDonBan" Type="char" MaxLength="20" Nullable="false" />
-    <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="ThoiGianTaoHoaDon" Type="datetime" />
     <Property Name="ThanhTien" Type="float" />
+    <Property Name="MaPhongDat" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TrangThaiHoaDon" Type="int" />
   </EntityType>
   <EntityType Name="tblKhachHang">
     <Key>
@@ -103,6 +115,7 @@
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
     <Property Name="FileAnh" Type="nvarchar" MaxLength="200" />
+    <Property Name="ChucVu" Type="int" />
   </EntityType>
   <EntityType Name="tblPhongDat">
     <Key>
@@ -113,6 +126,9 @@
     <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="ThoiGianPhongDat" Type="datetime" />
+    <Property Name="ThoiGianPhongHoatDong" Type="datetime" />
+    <Property Name="ThoiGianPhongDung" Type="datetime" />
+    <Property Name="TrangThaiPhongDat" Type="int" />
   </EntityType>
   <EntityType Name="tblPhongHat">
     <Key>
@@ -217,7 +233,7 @@
         <PropertyRef Name="MaNhanVien" />
       </Principal>
       <Dependent Role="tblHoaDonBan">
-        <PropertyRef Name="MaKhachHang" />
+        <PropertyRef Name="MaNhanVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -229,7 +245,19 @@
         <PropertyRef Name="MaKhachHang" />
       </Principal>
       <Dependent Role="tblHoaDonBan">
-        <PropertyRef Name="MaNhanVien" />
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblHoaDon__MaPho__787EE5A0">
+    <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+    <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhongDat">
+        <PropertyRef Name="MaPhongDat" />
+      </Principal>
+      <Dependent Role="tblHoaDonBan">
+        <PropertyRef Name="MaPhongDat" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -303,7 +331,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DatabaseKaraokeStoreContainer">
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DoAn1_QuanLyQuanHatKaraokeModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblDichVu" EntityType="Self.tblDichVu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblGoiDichVu" EntityType="Self.tblGoiDichVu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblGoiMatHang" EntityType="Self.tblGoiMatHang" Schema="dbo" store:Type="Tables" />
@@ -351,6 +411,10 @@
     </AssociationSet>
     <AssociationSet Name="FK__tblHoaDon__MaNha__5DCAEF64" Association="Self.FK__tblHoaDon__MaNha__5DCAEF64">
       <End Role="tblKhachHang" EntitySet="tblKhachHang" />
+      <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblHoaDon__MaPho__787EE5A0" Association="Self.FK__tblHoaDon__MaPho__787EE5A0">
+      <End Role="tblPhongDat" EntitySet="tblPhongDat" />
       <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
     </AssociationSet>
     <AssociationSet Name="FK__tblMatHan__MaLoa__4CA06362" Association="Self.FK__tblMatHan__MaLoa__4CA06362">

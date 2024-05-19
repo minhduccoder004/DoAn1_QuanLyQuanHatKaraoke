@@ -19,6 +19,7 @@ namespace DTO
         {
             this.tblGoiDichVus = new HashSet<tblGoiDichVu>();
             this.tblGoiMatHangs = new HashSet<tblGoiMatHang>();
+            this.tblHoaDonBans = new HashSet<tblHoaDonBan>();
         }
     
         public string MaPhongDat { get; set; }
@@ -27,11 +28,15 @@ namespace DTO
         public string MaKhachHang { get; set; }
         public Nullable<System.DateTime> ThoiGianPhongDat { get; set; }
         public Nullable<System.DateTime> ThoiGianPhongHoatDong { get; set; }
+        public Nullable<System.DateTime> ThoiGianPhongDung { get; set; }
+        public Nullable<int> TrangThaiPhongDat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblGoiDichVu> tblGoiDichVus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblGoiMatHang> tblGoiMatHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblHoaDonBan> tblHoaDonBans { get; set; }
         public virtual tblKhachHang tblKhachHang { get; set; }
         public virtual tblNhanVien tblNhanVien { get; set; }
         public virtual tblPhongHat tblPhongHat { get; set; }

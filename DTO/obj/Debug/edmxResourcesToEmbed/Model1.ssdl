@@ -39,6 +39,8 @@
     <Property Name="MaNhanVien" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="ThoiGianTaoHoaDon" Type="datetime" />
     <Property Name="ThanhTien" Type="float" />
+    <Property Name="MaPhongDat" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TrangThaiHoaDon" Type="int" />
   </EntityType>
   <EntityType Name="tblKhachHang">
     <Key>
@@ -115,6 +117,8 @@
     <Property Name="MaKhachHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="ThoiGianPhongDat" Type="datetime" />
     <Property Name="ThoiGianPhongHoatDong" Type="datetime" />
+    <Property Name="ThoiGianPhongDung" Type="datetime" />
+    <Property Name="TrangThaiPhongDat" Type="int" />
   </EntityType>
   <EntityType Name="tblPhongHat">
     <Key>
@@ -232,6 +236,18 @@
       </Principal>
       <Dependent Role="tblHoaDonBan">
         <PropertyRef Name="MaNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblHoaDon__MaPho__787EE5A0">
+    <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+    <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhongDat">
+        <PropertyRef Name="MaPhongDat" />
+      </Principal>
+      <Dependent Role="tblHoaDonBan">
+        <PropertyRef Name="MaPhongDat" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -353,6 +369,10 @@
     </AssociationSet>
     <AssociationSet Name="FK__tblHoaDon__MaNha__5DCAEF64" Association="Self.FK__tblHoaDon__MaNha__5DCAEF64">
       <End Role="tblKhachHang" EntitySet="tblKhachHang" />
+      <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblHoaDon__MaPho__787EE5A0" Association="Self.FK__tblHoaDon__MaPho__787EE5A0">
+      <End Role="tblPhongDat" EntitySet="tblPhongDat" />
       <End Role="tblHoaDonBan" EntitySet="tblHoaDonBan" />
     </AssociationSet>
     <AssociationSet Name="FK__tblMatHan__MaLoa__4CA06362" Association="Self.FK__tblMatHan__MaLoa__4CA06362">

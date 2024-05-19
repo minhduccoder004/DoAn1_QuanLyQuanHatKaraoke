@@ -63,6 +63,7 @@
     <Compile Include="Interface_BLL\I_BLL_QuanLyKhachHang.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyNhanVien.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyPhongHat.cs" />
+    <Compile Include="Interface_BLL\I_BLL_QuanLyQuanHat.cs" />
     <Compile Include="Interface_BLL\I_BLL_TimKiem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

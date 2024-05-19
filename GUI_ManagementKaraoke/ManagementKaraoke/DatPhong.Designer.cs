@@ -66,6 +66,8 @@
             this.pn_Child_DanhMucDichVu = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child_btChucNang = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_btChucNang = new Guna.UI2.WinForms.Guna2Panel();
+            this.cb_KhachHangVangLai = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cb_SuDungDichVu = new Guna.UI2.WinForms.Guna2CheckBox();
             this.pn_ThongTinKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Phut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Gio)).BeginInit();
@@ -81,6 +83,7 @@
             // pn_ThongTinKhachHang
             // 
             this.pn_ThongTinKhachHang.BackColor = System.Drawing.Color.Transparent;
+            this.pn_ThongTinKhachHang.Controls.Add(this.cb_KhachHangVangLai);
             this.pn_ThongTinKhachHang.Controls.Add(this.cbb_NhanVienPhucVu);
             this.pn_ThongTinKhachHang.Controls.Add(this.lb_NhanVienPhucVu);
             this.pn_ThongTinKhachHang.Controls.Add(this.sp_Line1);
@@ -99,7 +102,7 @@
             this.pn_ThongTinKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_ThongTinKhachHang.Location = new System.Drawing.Point(0, 0);
             this.pn_ThongTinKhachHang.Name = "pn_ThongTinKhachHang";
-            this.pn_ThongTinKhachHang.Size = new System.Drawing.Size(474, 396);
+            this.pn_ThongTinKhachHang.Size = new System.Drawing.Size(474, 436);
             this.pn_ThongTinKhachHang.TabIndex = 0;
             // 
             // cbb_NhanVienPhucVu
@@ -113,7 +116,7 @@
             this.cbb_NhanVienPhucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_NhanVienPhucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.cbb_NhanVienPhucVu.ItemHeight = 30;
-            this.cbb_NhanVienPhucVu.Location = new System.Drawing.Point(170, 336);
+            this.cbb_NhanVienPhucVu.Location = new System.Drawing.Point(170, 384);
             this.cbb_NhanVienPhucVu.Name = "cbb_NhanVienPhucVu";
             this.cbb_NhanVienPhucVu.Size = new System.Drawing.Size(260, 36);
             this.cbb_NhanVienPhucVu.TabIndex = 18;
@@ -123,7 +126,7 @@
             this.lb_NhanVienPhucVu.AutoSize = true;
             this.lb_NhanVienPhucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NhanVienPhucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_NhanVienPhucVu.Location = new System.Drawing.Point(23, 336);
+            this.lb_NhanVienPhucVu.Location = new System.Drawing.Point(23, 384);
             this.lb_NhanVienPhucVu.Name = "lb_NhanVienPhucVu";
             this.lb_NhanVienPhucVu.Size = new System.Drawing.Size(141, 19);
             this.lb_NhanVienPhucVu.TabIndex = 17;
@@ -141,7 +144,7 @@
             // 
             this.lb_Phut.AutoSize = true;
             this.lb_Phut.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Phut.Location = new System.Drawing.Point(330, 286);
+            this.lb_Phut.Location = new System.Drawing.Point(330, 334);
             this.lb_Phut.Name = "lb_Phut";
             this.lb_Phut.Size = new System.Drawing.Size(33, 15);
             this.lb_Phut.TabIndex = 14;
@@ -151,7 +154,7 @@
             // 
             this.lb_Gio.AutoSize = true;
             this.lb_Gio.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Gio.Location = new System.Drawing.Point(239, 286);
+            this.lb_Gio.Location = new System.Drawing.Point(239, 334);
             this.lb_Gio.Name = "lb_Gio";
             this.lb_Gio.Size = new System.Drawing.Size(27, 15);
             this.lb_Gio.TabIndex = 13;
@@ -163,7 +166,12 @@
             this.nud_Phut.BorderRadius = 10;
             this.nud_Phut.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nud_Phut.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Phut.Location = new System.Drawing.Point(272, 275);
+            this.nud_Phut.Location = new System.Drawing.Point(272, 323);
+            this.nud_Phut.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nud_Phut.Name = "nud_Phut";
             this.nud_Phut.Size = new System.Drawing.Size(52, 36);
             this.nud_Phut.TabIndex = 12;
@@ -174,7 +182,12 @@
             this.nud_Gio.BorderRadius = 10;
             this.nud_Gio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nud_Gio.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_Gio.Location = new System.Drawing.Point(181, 275);
+            this.nud_Gio.Location = new System.Drawing.Point(181, 323);
+            this.nud_Gio.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.nud_Gio.Name = "nud_Gio";
             this.nud_Gio.Size = new System.Drawing.Size(52, 36);
             this.nud_Gio.TabIndex = 10;
@@ -183,12 +196,13 @@
             // 
             this.dtp_NgayDatPhong.BorderRadius = 15;
             this.dtp_NgayDatPhong.Checked = true;
+            this.dtp_NgayDatPhong.CustomFormat = "dd / MM / yyyy";
             this.dtp_NgayDatPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.dtp_NgayDatPhong.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.dtp_NgayDatPhong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayDatPhong.ForeColor = System.Drawing.Color.White;
-            this.dtp_NgayDatPhong.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtp_NgayDatPhong.Location = new System.Drawing.Point(170, 218);
+            this.dtp_NgayDatPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayDatPhong.Location = new System.Drawing.Point(170, 266);
             this.dtp_NgayDatPhong.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_NgayDatPhong.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayDatPhong.Name = "dtp_NgayDatPhong";
@@ -202,7 +216,7 @@
             this.lb_NgayDatPhong.AutoSize = true;
             this.lb_NgayDatPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NgayDatPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_NgayDatPhong.Location = new System.Drawing.Point(41, 222);
+            this.lb_NgayDatPhong.Location = new System.Drawing.Point(41, 270);
             this.lb_NgayDatPhong.Name = "lb_NgayDatPhong";
             this.lb_NgayDatPhong.Size = new System.Drawing.Size(123, 19);
             this.lb_NgayDatPhong.TabIndex = 8;
@@ -213,7 +227,7 @@
             this.lb_ThoiGianDatPhong.AutoSize = true;
             this.lb_ThoiGianDatPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ThoiGianDatPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_ThoiGianDatPhong.Location = new System.Drawing.Point(14, 279);
+            this.lb_ThoiGianDatPhong.Location = new System.Drawing.Point(14, 327);
             this.lb_ThoiGianDatPhong.Name = "lb_ThoiGianDatPhong";
             this.lb_ThoiGianDatPhong.Size = new System.Drawing.Size(150, 19);
             this.lb_ThoiGianDatPhong.TabIndex = 6;
@@ -232,7 +246,7 @@
             this.txt_TenKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_TenKhachHang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_TenKhachHang.Location = new System.Drawing.Point(170, 150);
+            this.txt_TenKhachHang.Location = new System.Drawing.Point(170, 198);
             this.txt_TenKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_TenKhachHang.Name = "txt_TenKhachHang";
             this.txt_TenKhachHang.PasswordChar = '\0';
@@ -254,7 +268,7 @@
             this.txt_SoDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_SoDienThoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_SoDienThoai.Location = new System.Drawing.Point(170, 89);
+            this.txt_SoDienThoai.Location = new System.Drawing.Point(170, 137);
             this.txt_SoDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_SoDienThoai.Name = "txt_SoDienThoai";
             this.txt_SoDienThoai.PasswordChar = '\0';
@@ -268,7 +282,7 @@
             this.lb_TenKhachHang.AutoSize = true;
             this.lb_TenKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_TenKhachHang.Location = new System.Drawing.Point(40, 165);
+            this.lb_TenKhachHang.Location = new System.Drawing.Point(40, 213);
             this.lb_TenKhachHang.Name = "lb_TenKhachHang";
             this.lb_TenKhachHang.Size = new System.Drawing.Size(124, 19);
             this.lb_TenKhachHang.TabIndex = 2;
@@ -279,7 +293,7 @@
             this.lb_SoDienThoai.AutoSize = true;
             this.lb_SoDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_SoDienThoai.Location = new System.Drawing.Point(60, 108);
+            this.lb_SoDienThoai.Location = new System.Drawing.Point(60, 156);
             this.lb_SoDienThoai.Name = "lb_SoDienThoai";
             this.lb_SoDienThoai.Size = new System.Drawing.Size(104, 19);
             this.lb_SoDienThoai.TabIndex = 1;
@@ -317,10 +331,12 @@
             this.bt_DatPhong.Text = "Đặt phòng";
             this.bt_DatPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_DatPhong.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_DatPhong.Click += new System.EventHandler(this.bt_DatPhong_Click);
             // 
             // pn_DanhMucDichVu
             // 
             this.pn_DanhMucDichVu.BackColor = System.Drawing.Color.Transparent;
+            this.pn_DanhMucDichVu.Controls.Add(this.cb_SuDungDichVu);
             this.pn_DanhMucDichVu.Controls.Add(this.sp_Line3);
             this.pn_DanhMucDichVu.Controls.Add(this.cbb_DichVu);
             this.pn_DanhMucDichVu.Controls.Add(this.lb_DichVu);
@@ -330,7 +346,7 @@
             this.pn_DanhMucDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_DanhMucDichVu.Location = new System.Drawing.Point(0, 0);
             this.pn_DanhMucDichVu.Name = "pn_DanhMucDichVu";
-            this.pn_DanhMucDichVu.Size = new System.Drawing.Size(361, 187);
+            this.pn_DanhMucDichVu.Size = new System.Drawing.Size(361, 227);
             this.pn_DanhMucDichVu.TabIndex = 1;
             // 
             // sp_Line3
@@ -347,12 +363,13 @@
             this.cbb_DichVu.BorderRadius = 15;
             this.cbb_DichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbb_DichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_DichVu.Enabled = false;
             this.cbb_DichVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_DichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_DichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_DichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.cbb_DichVu.ItemHeight = 30;
-            this.cbb_DichVu.Location = new System.Drawing.Point(153, 127);
+            this.cbb_DichVu.Location = new System.Drawing.Point(153, 170);
             this.cbb_DichVu.Name = "cbb_DichVu";
             this.cbb_DichVu.Size = new System.Drawing.Size(159, 36);
             this.cbb_DichVu.TabIndex = 6;
@@ -362,7 +379,7 @@
             this.lb_DichVu.AutoSize = true;
             this.lb_DichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_DichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_DichVu.Location = new System.Drawing.Point(78, 137);
+            this.lb_DichVu.Location = new System.Drawing.Point(78, 180);
             this.lb_DichVu.Name = "lb_DichVu";
             this.lb_DichVu.Size = new System.Drawing.Size(69, 19);
             this.lb_DichVu.TabIndex = 2;
@@ -374,12 +391,13 @@
             this.cbb_LoaiDichVu.BorderRadius = 15;
             this.cbb_LoaiDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbb_LoaiDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LoaiDichVu.Enabled = false;
             this.cbb_LoaiDichVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_LoaiDichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbb_LoaiDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_LoaiDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.cbb_LoaiDichVu.ItemHeight = 30;
-            this.cbb_LoaiDichVu.Location = new System.Drawing.Point(153, 77);
+            this.cbb_LoaiDichVu.Location = new System.Drawing.Point(153, 120);
             this.cbb_LoaiDichVu.Name = "cbb_LoaiDichVu";
             this.cbb_LoaiDichVu.Size = new System.Drawing.Size(159, 36);
             this.cbb_LoaiDichVu.TabIndex = 5;
@@ -390,7 +408,7 @@
             this.lb_LoaiDichVu.AutoSize = true;
             this.lb_LoaiDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_LoaiDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_LoaiDichVu.Location = new System.Drawing.Point(48, 86);
+            this.lb_LoaiDichVu.Location = new System.Drawing.Point(48, 129);
             this.lb_LoaiDichVu.Name = "lb_LoaiDichVu";
             this.lb_LoaiDichVu.Size = new System.Drawing.Size(99, 19);
             this.lb_LoaiDichVu.TabIndex = 1;
@@ -506,7 +524,7 @@
             this.pn_Child_ThongTinKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
             this.pn_Child_ThongTinKhachHang.Location = new System.Drawing.Point(12, 10);
             this.pn_Child_ThongTinKhachHang.Name = "pn_Child_ThongTinKhachHang";
-            this.pn_Child_ThongTinKhachHang.Size = new System.Drawing.Size(474, 396);
+            this.pn_Child_ThongTinKhachHang.Size = new System.Drawing.Size(474, 436);
             this.pn_Child_ThongTinKhachHang.TabIndex = 2;
             // 
             // bt_Cancel
@@ -530,6 +548,7 @@
             this.bt_Cancel.Text = "Huỷ bỏ";
             this.bt_Cancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_Cancel.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_Cancel.Click += new System.EventHandler(this.bt_Cancel_Click);
             // 
             // pn_Child_DanhMucPhong
             // 
@@ -555,7 +574,7 @@
             this.pn_Child_DanhMucDichVu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
             this.pn_Child_DanhMucDichVu.Location = new System.Drawing.Point(492, 219);
             this.pn_Child_DanhMucDichVu.Name = "pn_Child_DanhMucDichVu";
-            this.pn_Child_DanhMucDichVu.Size = new System.Drawing.Size(361, 187);
+            this.pn_Child_DanhMucDichVu.Size = new System.Drawing.Size(361, 227);
             this.pn_Child_DanhMucDichVu.TabIndex = 4;
             // 
             // pn_Child_btChucNang
@@ -565,7 +584,7 @@
             this.pn_Child_btChucNang.CustomizableEdges.TopLeft = false;
             this.pn_Child_btChucNang.CustomizableEdges.TopRight = false;
             this.pn_Child_btChucNang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
-            this.pn_Child_btChucNang.Location = new System.Drawing.Point(12, 412);
+            this.pn_Child_btChucNang.Location = new System.Drawing.Point(12, 452);
             this.pn_Child_btChucNang.Name = "pn_Child_btChucNang";
             this.pn_Child_btChucNang.Size = new System.Drawing.Size(841, 102);
             this.pn_Child_btChucNang.TabIndex = 17;
@@ -581,12 +600,52 @@
             this.pn_btChucNang.Size = new System.Drawing.Size(841, 102);
             this.pn_btChucNang.TabIndex = 18;
             // 
+            // cb_KhachHangVangLai
+            // 
+            this.cb_KhachHangVangLai.AutoSize = true;
+            this.cb_KhachHangVangLai.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.CheckedState.BorderRadius = 2;
+            this.cb_KhachHangVangLai.CheckedState.BorderThickness = 0;
+            this.cb_KhachHangVangLai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_KhachHangVangLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.Location = new System.Drawing.Point(156, 95);
+            this.cb_KhachHangVangLai.Name = "cb_KhachHangVangLai";
+            this.cb_KhachHangVangLai.Size = new System.Drawing.Size(163, 23);
+            this.cb_KhachHangVangLai.TabIndex = 19;
+            this.cb_KhachHangVangLai.Text = "Khách hàng vãng lai";
+            this.cb_KhachHangVangLai.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_KhachHangVangLai.UncheckedState.BorderRadius = 2;
+            this.cb_KhachHangVangLai.UncheckedState.BorderThickness = 0;
+            this.cb_KhachHangVangLai.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_KhachHangVangLai.CheckedChanged += new System.EventHandler(this.cb_KhachHangVangLai_CheckedChanged);
+            // 
+            // cb_SuDungDichVu
+            // 
+            this.cb_SuDungDichVu.AutoSize = true;
+            this.cb_SuDungDichVu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.CheckedState.BorderRadius = 2;
+            this.cb_SuDungDichVu.CheckedState.BorderThickness = 0;
+            this.cb_SuDungDichVu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_SuDungDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.Location = new System.Drawing.Point(113, 80);
+            this.cb_SuDungDichVu.Name = "cb_SuDungDichVu";
+            this.cb_SuDungDichVu.Size = new System.Drawing.Size(134, 23);
+            this.cb_SuDungDichVu.TabIndex = 8;
+            this.cb_SuDungDichVu.Text = "Sử dụng dịch vụ";
+            this.cb_SuDungDichVu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungDichVu.UncheckedState.BorderRadius = 2;
+            this.cb_SuDungDichVu.UncheckedState.BorderThickness = 0;
+            this.cb_SuDungDichVu.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungDichVu.CheckedChanged += new System.EventHandler(this.cb_SuDungDichVu_CheckedChanged);
+            // 
             // DatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(864, 524);
+            this.ClientSize = new System.Drawing.Size(864, 565);
             this.Controls.Add(this.pn_Child_btChucNang);
             this.Controls.Add(this.pn_Child_DanhMucDichVu);
             this.Controls.Add(this.pn_Child_DanhMucPhong);
@@ -652,5 +711,7 @@
         private Guna.UI2.WinForms.Guna2Separator sp_Line3;
         private Guna.UI2.WinForms.Guna2Panel pn_Child_btChucNang;
         private Guna.UI2.WinForms.Guna2Panel pn_btChucNang;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_KhachHangVangLai;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_SuDungDichVu;
     }
 }

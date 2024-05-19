@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DatabaseKaraoke" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DoAn1_QuanLyQuanHatKaraokeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="tblDichVu">
     <Key>
       <PropertyRef Name="MaDichVu" />
@@ -43,14 +53,17 @@
       <PropertyRef Name="MaHoaDonBan" />
     </Key>
     <Property Name="MaHoaDonBan" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ThoiGianTaoHoaDon" Type="DateTime" Precision="3" />
     <Property Name="ThanhTien" Type="Double" />
+    <Property Name="MaPhongDat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TrangThaiHoaDon" Type="Int32" />
     <NavigationProperty Name="tblGoiDichVus" Relationship="Self.FK__tblGoiDic__MaHoa__66603565" FromRole="tblHoaDonBan" ToRole="tblGoiDichVu" />
     <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaHoa__619B8048" FromRole="tblHoaDonBan" ToRole="tblGoiMatHang" />
     <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblHoaDonBan" ToRole="tblNhanVien" />
     <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblHoaDon__MaNha__5DCAEF64" FromRole="tblHoaDonBan" ToRole="tblKhachHang" />
+    <NavigationProperty Name="tblPhongDat" Relationship="Self.FK__tblHoaDon__MaPho__787EE5A0" FromRole="tblHoaDonBan" ToRole="tblPhongDat" />
   </EntityType>
   <EntityType Name="tblKhachHang">
     <Key>
@@ -122,6 +135,7 @@
     <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="FileAnh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ChucVu" Type="Int32" />
     <NavigationProperty Name="tblHoaDonBans" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblNhanVien" ToRole="tblHoaDonBan" />
     <NavigationProperty Name="tblPhongDats" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblNhanVien" ToRole="tblPhongDat" />
   </EntityType>
@@ -134,8 +148,12 @@
     <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="MaKhachHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ThoiGianPhongDat" Type="DateTime" Precision="3" />
+    <Property Name="ThoiGianPhongHoatDong" Type="DateTime" Precision="3" />
+    <Property Name="ThoiGianPhongDung" Type="DateTime" Precision="3" />
+    <Property Name="TrangThaiPhongDat" Type="Int32" />
     <NavigationProperty Name="tblGoiDichVus" Relationship="Self.FK__tblGoiDic__MaPho__656C112C" FromRole="tblPhongDat" ToRole="tblGoiDichVu" />
     <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaPho__60A75C0F" FromRole="tblPhongDat" ToRole="tblGoiMatHang" />
+    <NavigationProperty Name="tblHoaDonBans" Relationship="Self.FK__tblHoaDon__MaPho__787EE5A0" FromRole="tblPhongDat" ToRole="tblHoaDonBan" />
     <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblPhongD__MaKha__59063A47" FromRole="tblPhongDat" ToRole="tblKhachHang" />
     <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblPhongDat" ToRole="tblNhanVien" />
     <NavigationProperty Name="tblPhongHat" Relationship="Self.FK__tblPhongD__MaPho__571DF1D5" FromRole="tblPhongDat" ToRole="tblPhongHat" />
@@ -245,7 +263,7 @@
         <PropertyRef Name="MaNhanVien" />
       </Principal>
       <Dependent Role="tblHoaDonBan">
-        <PropertyRef Name="MaKhachHang" />
+        <PropertyRef Name="MaNhanVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -257,7 +275,19 @@
         <PropertyRef Name="MaKhachHang" />
       </Principal>
       <Dependent Role="tblHoaDonBan">
-        <PropertyRef Name="MaNhanVien" />
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblHoaDon__MaPho__787EE5A0">
+    <End Role="tblPhongDat" Type="Self.tblPhongDat" Multiplicity="1" />
+    <End Role="tblHoaDonBan" Type="Self.tblHoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhongDat">
+        <PropertyRef Name="MaPhongDat" />
+      </Principal>
+      <Dependent Role="tblHoaDonBan">
+        <PropertyRef Name="MaPhongDat" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -331,7 +361,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DoAn1_QuanLyQuanHatKaraokeEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DatabaseKaraoke" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="tblDichVus" EntityType="Self.tblDichVu" />
     <EntitySet Name="tblGoiDichVus" EntityType="Self.tblGoiDichVu" />
     <EntitySet Name="tblGoiMatHangs" EntityType="Self.tblGoiMatHang" />
@@ -381,6 +412,10 @@
       <End Role="tblKhachHang" EntitySet="tblKhachHangs" />
       <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
     </AssociationSet>
+    <AssociationSet Name="FK__tblHoaDon__MaPho__787EE5A0" Association="Self.FK__tblHoaDon__MaPho__787EE5A0">
+      <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+      <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+    </AssociationSet>
     <AssociationSet Name="FK__tblPhongD__MaKha__59063A47" Association="Self.FK__tblPhongD__MaKha__59063A47">
       <End Role="tblKhachHang" EntitySet="tblKhachHangs" />
       <End Role="tblPhongDat" EntitySet="tblPhongDats" />
@@ -401,5 +436,46 @@
       <End Role="tblPhongHat" EntitySet="tblPhongHats" />
       <End Role="tblPhongDat" EntitySet="tblPhongDats" />
     </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DoAn1_QuanLyQuanHatKaraokeModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DoAn1_QuanLyQuanHatKaraokeModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

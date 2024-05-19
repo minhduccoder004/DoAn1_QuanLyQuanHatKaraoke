@@ -10,8 +10,12 @@ namespace DAL.Interface_DAL
     public interface I_DAL_DatPhong
     {
         void Create_DatPhong(tblPhongDat tblPhongDat);
+        void Create_KhachHang(tblKhachHang tblKhachHang);
+        void Create_HoaDonBan(tblHoaDonBan tblHoaDonBan);
+        void Create_GoiDichVu(tblGoiDichVu tblGoiDichVu);
         List<tblLoaiPhong> LayDuLieu_BangLoaiPhong();
         List<tblNhanVien> LayDuLieu_BangNhanVien();
+        List<tblKhachHang> LayDuLieu_BangKhachHang();
         List<tblPhongHat> LayDuLieu_BangPhongHat();
         List<tblLoaiDichVu> LayDuLieu_BangLoaiDichVu();
         List<tblDichVu> LayDuLieu_BangDichVu();

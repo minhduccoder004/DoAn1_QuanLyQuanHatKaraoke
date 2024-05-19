@@ -9,3 +9,6 @@
 - ngày 19-05-2024:
   + (12:09 AM) chỉnh lại phần code quản lý nhân viên (thêm chức vụ nhân viên), làm đặt phòng (đang làm dở)
   + note: làm khách hàng vãng lai (tạo 1 khách hàng có mã nhân viên và tên thuộc dạng vãng lai)...... 
+- ngày 20-05-2024:
+  + (2:39 AM) đã xong chức năng đặt phòng, làm 1 chút phần quản lý quán hát(trang chủ), fix 1 số lỗi, ...
+  + note: thiết kế form order, form thanh toán, form thống kê.

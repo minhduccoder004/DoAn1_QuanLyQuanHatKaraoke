@@ -51,6 +51,10 @@
     <NavigationProperty Name="tblGoiMatHangs" Relationship="Self.FK__tblGoiMat__MaHoa__619B8048" FromRole="tblHoaDonBan" ToRole="tblGoiMatHang" />
     <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblHoaDon__MaKha__5CD6CB2B" FromRole="tblHoaDonBan" ToRole="tblNhanVien" />
     <NavigationProperty Name="tblKhachHang" Relationship="Self.FK__tblHoaDon__MaNha__5DCAEF64" FromRole="tblHoaDonBan" ToRole="tblKhachHang" />
+    <Property Name="MaPhongDat" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblPhongDat" Relationship="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaPho__787EE5A0" FromRole="tblHoaDonBan" ToRole="tblPhongDat" />
+    <Property Name="TTrangThaiHoaDon" Type="Int32" />
+    <Property Name="TrangThaiHoaDon" Type="Int32" />
   </EntityType>
   <EntityType Name="tblKhachHang">
     <Key>
@@ -141,6 +145,9 @@
     <NavigationProperty Name="tblNhanVien" Relationship="Self.FK__tblPhongD__MaNha__5812160E" FromRole="tblPhongDat" ToRole="tblNhanVien" />
     <NavigationProperty Name="tblPhongHat" Relationship="Self.FK__tblPhongD__MaPho__571DF1D5" FromRole="tblPhongDat" ToRole="tblPhongHat" />
     <Property Name="ThoiGianPhongHoatDong" Type="DateTime" Precision="3" />
+    <Property Name="ThoiGianPhongDung" Type="DateTime" Precision="3" />
+    <Property Name="TrangThaiPhongDat" Type="Int32" />
+    <NavigationProperty Name="tblHoaDonBans" Relationship="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaPho__787EE5A0" FromRole="tblPhongDat" ToRole="tblHoaDonBan" />
   </EntityType>
   <EntityType Name="tblPhongHat">
     <Key>
@@ -403,5 +410,21 @@
       <End Role="tblPhongHat" EntitySet="tblPhongHats" />
       <End Role="tblPhongDat" EntitySet="tblPhongDats" />
     </AssociationSet>
+    <AssociationSet Name="FK__tblHoaDon__MaPho__787EE5A0" Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaPho__787EE5A0">
+      <End Role="tblPhongDat" EntitySet="tblPhongDats" />
+      <End Role="tblHoaDonBan" EntitySet="tblHoaDonBans" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__tblHoaDon__MaPho__787EE5A0">
+    <End Type="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongDat" Role="tblPhongDat" Multiplicity="1" />
+    <End Type="DoAn1_QuanLyQuanHatKaraokeModel.tblHoaDonBan" Role="tblHoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhongDat">
+        <PropertyRef Name="MaPhongDat" />
+      </Principal>
+      <Dependent Role="tblHoaDonBan">
+        <PropertyRef Name="MaPhongDat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

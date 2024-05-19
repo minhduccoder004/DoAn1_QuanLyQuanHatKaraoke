@@ -19,6 +19,24 @@ namespace DAL.Implement_DAL
             DB.SaveChanges();
         }
 
+        public void Create_GoiDichVu(tblGoiDichVu tblGoiDichVu)
+        {
+            DB.tblGoiDichVus.Add(tblGoiDichVu);
+            DB.SaveChanges();
+        }
+
+        public void Create_HoaDonBan(tblHoaDonBan tblHoaDonBan)
+        {
+            DB.tblHoaDonBans.Add(tblHoaDonBan);
+            DB.SaveChanges();
+        }
+
+        public void Create_KhachHang(tblKhachHang tblKhachHang)
+        {
+            DB.tblKhachHangs.Add(tblKhachHang);
+            DB.SaveChanges();
+        }
+
         public List<tblPhongDat> DanhSachDoiTuong()
         {
             return DB.tblPhongDats.ToList();
@@ -27,6 +45,11 @@ namespace DAL.Implement_DAL
         public List<tblDichVu> LayDuLieu_BangDichVu()
         {
             return DB.tblDichVus.ToList();
+        }
+
+        public List<tblKhachHang> LayDuLieu_BangKhachHang()
+        {
+            return DB.tblKhachHangs.ToList() ;
         }
 
         public List<tblLoaiDichVu> LayDuLieu_BangLoaiDichVu()

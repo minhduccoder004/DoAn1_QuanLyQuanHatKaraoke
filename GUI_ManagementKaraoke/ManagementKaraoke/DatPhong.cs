@@ -1,4 +1,5 @@
 ﻿using BLL.Implement_BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         // Khởi tạo lớp BLL
         BLL_DatPhong BLL = new BLL_DatPhong();
 
-        public DatPhong()
+        // Khởi tạo thuộc tính
+        QuanLyQuanHat QuanLys;
+
+        public DatPhong(QuanLyQuanHat QuanLys)
         {
             InitializeComponent();
+            this.QuanLys = QuanLys;
         }
 
         private void DatPhong_Load(object sender, EventArgs e)
@@ -60,6 +65,97 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 cbb_DichVu.ValueMember = "MaDichVu";
                 cbb_DichVu.SelectedIndex = -1;
             }
+        }
+
+        private void cb_KhachHangVangLai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_KhachHangVangLai.Checked)
+            {
+                txt_SoDienThoai.Enabled = false;
+                txt_TenKhachHang.Enabled = false;
+            }
+            else
+            {
+                txt_SoDienThoai.Enabled = true;
+                txt_TenKhachHang.Enabled = true;
+            }
+        }
+
+        private void cb_SuDungDichVu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_SuDungDichVu.Checked)
+            {
+                cbb_LoaiDichVu.Enabled = true;
+                cbb_DichVu.Enabled= true;
+            }
+            else
+            {
+                cbb_LoaiDichVu.Enabled = false;
+                cbb_DichVu.Enabled = false;
+            }
+        }
+
+        private void bt_Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void bt_DatPhong_Click(object sender, EventArgs e)
+        {
+            tblPhongDat PD = new tblPhongDat();
+
+            PD.MaPhongDat = BLL.TaoMaPhongDat();
+            if (cb_KhachHangVangLai.Checked)
+            {
+                PD.MaKhachHang = "KH000               ";
+            }
+            else
+            {
+                var TonTai = BLL.TimKiemKhachHangTheoSoDienThoai(txt_SoDienThoai.Text);
+                if (TonTai != null)
+                {
+                    PD.MaKhachHang = TonTai.MaKhachHang;
+                }
+                else
+                {
+                    tblKhachHang KH = new tblKhachHang();
+                    KH.MaKhachHang = BLL.TaoMaKhachHang();
+                    PD.MaKhachHang = KH.MaKhachHang;
+                    KH.TenKhachHang = txt_TenKhachHang.Text;
+                    KH.SoDienThoai = txt_SoDienThoai.Text;
+                    BLL.Them_KhachHang(KH);
+                }
+            }
+            PD.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString();
+            PD.MaPhong = cbb_Phong.SelectedValue.ToString();
+
+            PD.ThoiGianPhongDat = BLL.ThoiGianDatPhong(dtp_NgayDatPhong.Value, Convert.ToInt32(nud_Gio.Value), Convert.ToInt32(nud_Phut.Value));
+            PD.TrangThaiPhongDat = 0;
+            
+            BLL.Them_PhongDat(PD);
+            QuanLys.LamMoi();
+
+            tblHoaDonBan HDB = new tblHoaDonBan();
+            HDB.MaHoaDonBan = BLL.TaoMaHoaDonBan();
+            HDB.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString().Trim();
+            HDB.MaKhachHang = PD.MaKhachHang;
+            HDB.MaPhongDat = PD.MaPhongDat;
+            HDB.TrangThaiHoaDon = 0;
+
+            BLL.TaoHoaDon(HDB);
+
+            tblGoiDichVu GDV = new tblGoiDichVu();
+
+            GDV.MaPhongDat = PD.MaPhongDat;
+            GDV.MaDichVu = cbb_DichVu.SelectedValue.ToString().Trim();
+            GDV.MaHoaDonBan = HDB.MaHoaDonBan;
+
+            BLL.Them_GoiDichVu(GDV);
+
+
+            MessageBox.Show("Đặt phòng thành công !!");
+            
+            Close();
         }
     }
 }

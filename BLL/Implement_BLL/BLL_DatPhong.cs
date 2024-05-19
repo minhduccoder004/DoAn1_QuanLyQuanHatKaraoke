@@ -49,9 +49,62 @@ namespace BLL.Implement_BLL
             return DAL.LayDuLieu_BangNhanVien().FindAll(x => x.ChucVu == 2);
         }
 
+        public void TaoHoaDon(tblHoaDonBan tblHoaDonBan)
+        {
+            DAL.Create_HoaDonBan(tblHoaDonBan);
+        }
+
+        public string TaoMaHoaDonBan()
+        {
+            string MaHoaDonBan = "HDB";
+
+            MaHoaDonBan += DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
+            MaHoaDonBan += DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
+
+            return MaHoaDonBan;
+        }
+
+        public string TaoMaKhachHang()
+        {
+            string MaKhachHang = "KH";
+            MaKhachHang += DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
+            MaKhachHang += DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
+            return MaKhachHang;
+        }
+
+        public string TaoMaPhongDat()
+        {
+            string MaPhongDat = "PD";
+
+            MaPhongDat += DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
+            MaPhongDat += DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
+
+            return MaPhongDat;
+        }
+
+        public void Them_GoiDichVu(tblGoiDichVu tblGoiDichVu)
+        {
+            DAL.Create_GoiDichVu(tblGoiDichVu);
+        }
+
+        public void Them_KhachHang(tblKhachHang tblKhachHang)
+        {
+            DAL.Create_KhachHang(tblKhachHang);
+        }
+
         public void Them_PhongDat(tblPhongDat tblPhongDat)
         {
             DAL.Create_DatPhong(tblPhongDat);
+        }
+
+        public DateTime ThoiGianDatPhong(DateTime NgayThangNam, int Gio, int Phut)
+        {
+            return new DateTime(NgayThangNam.Year, NgayThangNam.Month, NgayThangNam.Day, Gio, Phut, 0);
+        }
+
+        public tblKhachHang TimKiemKhachHangTheoSoDienThoai(string SoDienThoai)
+        {
+            return DAL.LayDuLieu_BangKhachHang().Find(x => Equals(x.SoDienThoai.Trim(), SoDienThoai.Trim()));
         }
     }
 }
