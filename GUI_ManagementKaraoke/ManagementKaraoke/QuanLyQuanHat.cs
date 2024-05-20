@@ -132,32 +132,36 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void dgv_DanhSach_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (cbb_DanhSach.SelectedIndex == 0)
             {
-                try
+                if (e.ColumnIndex == 0)
                 {
-                    e.Value = e.Value.ToString().Trim();
+                    if (e.Value != null)
+                    {
+                        e.Value = e.Value.ToString().Trim();
+                    }
                 }
-                catch(Exception)
+                if (e.ColumnIndex == 1)
                 {
-
+                    if (e.Value != null)
+                    {
+                        e.Value = BLL.LayTenPhong(e.Value.ToString());
+                    }
                 }
-            }
-            if (e.ColumnIndex == 1)
-            {
-                try
+                if (e.ColumnIndex == 2)
                 {
-                    e.Value = BLL.LayTenPhong(e.Value.ToString());
+                    if (e.Value != null)
+                    {
+                        e.Value = BLL.LayTenNhanVien(e.Value.ToString());
+                    }
                 }
-                catch (Exception) { }
-            }
-            if (e.ColumnIndex == 2)
-            {
-                try { e.Value = BLL.LayTenNhanVien(e.Value.ToString()); } catch (Exception) { }
-            }
-            if (e.ColumnIndex == 3)
-            {
-                try { e.Value = BLL.LayTenKhachHang(e.Value.ToString()); } catch(Exception) { }
+                if (e.ColumnIndex == 3)
+                {
+                    if (e.Value != null)
+                    {
+                        e.Value = BLL.LayTenKhachHang(e.Value.ToString());
+                    }
+                }
             }
         }
 

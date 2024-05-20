@@ -86,7 +86,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             if (cb_SuDungDichVu.Checked)
             {
                 cbb_LoaiDichVu.Enabled = true;
-                cbb_DichVu.Enabled= true;
+                cbb_DichVu.Enabled = true;
             }
             else
             {
@@ -131,7 +131,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             PD.ThoiGianPhongDat = BLL.ThoiGianDatPhong(dtp_NgayDatPhong.Value, Convert.ToInt32(nud_Gio.Value), Convert.ToInt32(nud_Phut.Value));
             PD.TrangThaiPhongDat = 0;
-            
+
             BLL.Them_PhongDat(PD);
             QuanLys.LamMoi();
 
@@ -144,17 +144,20 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             BLL.TaoHoaDon(HDB);
 
-            tblGoiDichVu GDV = new tblGoiDichVu();
+            if (cb_SuDungDichVu.Checked)
+            {
+                tblGoiDichVu GDV = new tblGoiDichVu();
 
-            GDV.MaPhongDat = PD.MaPhongDat;
-            GDV.MaDichVu = cbb_DichVu.SelectedValue.ToString().Trim();
-            GDV.MaHoaDonBan = HDB.MaHoaDonBan;
+                GDV.MaPhongDat = PD.MaPhongDat;
+                GDV.MaDichVu = cbb_DichVu.SelectedValue.ToString().Trim();
+                GDV.MaHoaDonBan = HDB.MaHoaDonBan;
 
-            BLL.Them_GoiDichVu(GDV);
+                BLL.Them_GoiDichVu(GDV);
+            }
 
 
             MessageBox.Show("Đặt phòng thành công !!");
-            
+
             Close();
         }
     }

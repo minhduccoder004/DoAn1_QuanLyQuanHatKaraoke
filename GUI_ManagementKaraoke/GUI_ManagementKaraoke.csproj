@@ -71,6 +71,12 @@
     <Compile Include="ManagementKaraoke\InfoForm.Designer.cs">
       <DependentUpon>InfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagementKaraoke\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagementKaraoke\QuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,18 @@
     </Compile>
     <Compile Include="ManagementKaraoke\QuanLyQuanHat.Designer.cs">
       <DependentUpon>QuanLyQuanHat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagementKaraoke\ThemKhachHang.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,12 @@
     </Compile>
     <Compile Include="ManagementKaraoke\ThemPhong.Designer.cs">
       <DependentUpon>ThemPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementKaraoke\ThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="Management_Karaoke.cs">
       <SubType>Form</SubType>
@@ -197,6 +221,9 @@
     <EmbeddedResource Include="ManagementKaraoke\MenuQuanLy.resx">
       <DependentUpon>MenuQuanLy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagementKaraoke\QuanLyDoanhThu.resx">
       <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +242,9 @@
     <EmbeddedResource Include="ManagementKaraoke\QuanLyQuanHat.resx">
       <DependentUpon>QuanLyQuanHat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagementKaraoke\ThemKhachHang.resx">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementKaraoke\ThemPhong.resx">
       <DependentUpon>ThemPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management_Karaoke.resx">
       <DependentUpon>Management_Karaoke.cs</DependentUpon>
@@ -272,7 +305,7 @@
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{1347eb6c-22ab-433f-8e3e-69f742661d65}</Project>
+      <Project>{46887fbd-32da-449d-8d1a-84bdc862f2a7}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
@@ -356,6 +389,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\expand-arrow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\pencil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
