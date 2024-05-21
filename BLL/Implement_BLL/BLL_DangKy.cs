@@ -10,17 +10,16 @@ namespace BLL.Implement_BLL
 {
     public class BLL_DangKy
     {
-        DAL_DangKy DAL = new DAL_DangKy();
         List<tblNguoiDung> DanhSachTaiKhoan;
 
         public BLL_DangKy()
         {
-            DanhSachTaiKhoan = DAL.DanhSachDoiTuong();
+            DanhSachTaiKhoan = new DAL_DangKy().DanhSachDoiTuong();
         }
 
         public void ThemNguoiDung(tblNguoiDung NguoiDung)
         {
-            DAL.Them(NguoiDung);
+            new DAL_DangKy().Them(NguoiDung);
         }
 
         public bool Check_HopLe(string TenTaiKhoan) => (DanhSachTaiKhoan.Find(x => x.TenTaiKhoan.Trim() == TenTaiKhoan) == null);

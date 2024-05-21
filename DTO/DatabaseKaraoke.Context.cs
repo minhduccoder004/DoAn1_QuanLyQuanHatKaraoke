@@ -17,6 +17,7 @@ namespace DTO
     
     public partial class DatabaseKaraoke : DbContext
     {
+
         System.Data.Entity.SqlServer.SqlProviderServices instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         public DatabaseKaraoke()
             : base("name=DatabaseKaraoke")
@@ -139,6 +140,23 @@ namespace DTO
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_UpdateOrderItemQuantity(string maPhongDat, string maMatHang, Nullable<int> soLuongMoi)
+        {
+            var maPhongDatParameter = maPhongDat != null ?
+                new ObjectParameter("MaPhongDat", maPhongDat) :
+                new ObjectParameter("MaPhongDat", typeof(string));
+    
+            var maMatHangParameter = maMatHang != null ?
+                new ObjectParameter("MaMatHang", maMatHang) :
+                new ObjectParameter("MaMatHang", typeof(string));
+    
+            var soLuongMoiParameter = soLuongMoi.HasValue ?
+                new ObjectParameter("SoLuongMoi", soLuongMoi) :
+                new ObjectParameter("SoLuongMoi", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateOrderItemQuantity", maPhongDatParameter, maMatHangParameter, soLuongMoiParameter);
         }
     
         public virtual int sp_upgraddiagrams()

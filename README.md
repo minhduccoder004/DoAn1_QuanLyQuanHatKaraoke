@@ -14,3 +14,6 @@
   + note: thiết kế form order, form thanh toán, form thống kê.
   + (5:19 PM) thiết kế thêm vài form,.....
   + note: thiết kế xong giao diện và code thêm 1 xíu.
+- ngày 22-05-2024:
+ + (2:57 AM) Hoàn thiện gần xong order.
+ + note: làm thêm bài, sửa code, sửa giao diện,....

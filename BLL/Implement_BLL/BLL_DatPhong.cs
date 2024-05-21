@@ -11,12 +11,9 @@ namespace BLL.Implement_BLL
 {
     public class BLL_DatPhong : I_BLL_Karaoke<tblPhongDat>, I_BLL_DatPhong
     {
-        // Khởi tạo lớp DAL
-        DAL_DatPhong DAL = new DAL_DatPhong();
-
         public List<tblPhongDat> DanhSachDoiTuong()
         {
-            return DAL.DanhSachDoiTuong();
+            return new DAL_DatPhong().DanhSachDoiTuong();
         }
 
         public tblPhongDat GetByID(string ID)
@@ -26,32 +23,32 @@ namespace BLL.Implement_BLL
 
         public List<tblDichVu> LayDichVuTheoLoai(string MaDichVu)
         {
-            return DAL.LayDuLieu_BangDichVu().FindAll(x => Equals(x.tblLoaiDichVu.MaLoaiDichVu.Trim(), MaDichVu.Trim()));
+            return new DAL_DatPhong().LayDuLieu_BangDichVu().FindAll(x => Equals(x.tblLoaiDichVu.MaLoaiDichVu.Trim(), MaDichVu.Trim()));
         }
 
         public List<tblPhongHat> LayPhongHatTheoLoai(string MaPhong)
         {
-            return DAL.LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaPhong.Trim()) && x.TrangThaiPhong == 0);
+            return new DAL_DatPhong().LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaPhong.Trim()) && x.TrangThaiPhong == 0);
         }
 
         public List<tblLoaiDichVu> LoaiDichVus()
         {
-            return DAL.LayDuLieu_BangLoaiDichVu();
+            return new DAL_DatPhong().LayDuLieu_BangLoaiDichVu();
         }
 
         public List<tblLoaiPhong> LoaiPhongs()
         {
-            return DAL.LayDuLieu_BangLoaiPhong();
+            return new DAL_DatPhong().LayDuLieu_BangLoaiPhong();
         }
 
         public List<tblNhanVien> NV_PhucVus()
         {
-            return DAL.LayDuLieu_BangNhanVien().FindAll(x => x.ChucVu == 2);
+            return new DAL_DatPhong().LayDuLieu_BangNhanVien().FindAll(x => x.ChucVu == 2);
         }
 
         public void TaoHoaDon(tblHoaDonBan tblHoaDonBan)
         {
-            DAL.Create_HoaDonBan(tblHoaDonBan);
+            new DAL_DatPhong().Create_HoaDonBan(tblHoaDonBan);
         }
 
         public string TaoMaHoaDonBan()
@@ -84,17 +81,17 @@ namespace BLL.Implement_BLL
 
         public void Them_GoiDichVu(tblGoiDichVu tblGoiDichVu)
         {
-            DAL.Create_GoiDichVu(tblGoiDichVu);
+            new DAL_DatPhong().Create_GoiDichVu(tblGoiDichVu);
         }
 
         public void Them_KhachHang(tblKhachHang tblKhachHang)
         {
-            DAL.Create_KhachHang(tblKhachHang);
+            new DAL_DatPhong().Create_KhachHang(tblKhachHang);
         }
 
         public void Them_PhongDat(tblPhongDat tblPhongDat)
         {
-            DAL.Create_DatPhong(tblPhongDat);
+            new DAL_DatPhong().Create_DatPhong(tblPhongDat);
         }
 
         public DateTime ThoiGianDatPhong(DateTime NgayThangNam, int Gio, int Phut)
@@ -104,7 +101,7 @@ namespace BLL.Implement_BLL
 
         public tblKhachHang TimKiemKhachHangTheoSoDienThoai(string SoDienThoai)
         {
-            return DAL.LayDuLieu_BangKhachHang().Find(x => Equals(x.SoDienThoai.Trim(), SoDienThoai.Trim()));
+            return new DAL_DatPhong().LayDuLieu_BangKhachHang().Find(x => Equals(x.SoDienThoai.Trim(), SoDienThoai.Trim()));
         }
     }
 }

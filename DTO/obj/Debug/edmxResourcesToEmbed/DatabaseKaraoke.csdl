@@ -106,7 +106,6 @@
     </Key>
     <Property Name="MaMatHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="TenMatHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" Nullable="false" />
     <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DonGiaMatHang" Type="Double" Nullable="false" />
     <Property Name="MaLoaiHang" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
@@ -464,6 +463,11 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateOrderItemQuantity">
+      <Parameter Name="MaPhongDat" Mode="In" Type="String" />
+      <Parameter Name="MaMatHang" Mode="In" Type="String" />
+      <Parameter Name="SoLuongMoi" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>

@@ -11,17 +11,14 @@ namespace BLL.Implement_BLL
 {
     public class BLL_QuanLyPhongHat : ImplementBLL<tblPhongHat>, I_BLL_Karaoke<tblPhongHat>, I_BLL_QuanLyPhongHat
     {
-        // Khai báo lớp DAL
-        DAL_QuanLyPhongHat DAL = new DAL_QuanLyPhongHat();
-
         public List<tblLoaiPhong> BangLoaiPhong()
         {
-            return DAL.LayDuLieu_BangLoaiPhong();
+            return new DAL_QuanLyPhongHat().LayDuLieu_BangLoaiPhong();
         }
 
         public List<tblPhongHat> DanhSachDoiTuong()
         {
-            return DAL.DanhSachDoiTuong();
+            return new DAL_QuanLyPhongHat().DanhSachDoiTuong();
         }
 
         public tblPhongHat GetByID(string ID)
@@ -86,7 +83,7 @@ namespace BLL.Implement_BLL
 
         public override void Sua(tblPhongHat _DTO)
         {
-            DAL.Sua(_DTO);
+            new DAL_QuanLyPhongHat().Sua(_DTO);
         }
 
         public string TaoMaPhong()
@@ -99,7 +96,7 @@ namespace BLL.Implement_BLL
 
         public override void Them(tblPhongHat _DTO)
         {
-            DAL.Them(_DTO);
+            new DAL_QuanLyPhongHat().Them(_DTO);
         }
 
         public string TrangThaiPhong(int TrangThai)
@@ -130,7 +127,7 @@ namespace BLL.Implement_BLL
 
         public override void Xoa(tblPhongHat _DTO)
         {
-            DAL.Xoa(_DTO);
+            new DAL_QuanLyPhongHat().Xoa(_DTO);
         }
     }
 }

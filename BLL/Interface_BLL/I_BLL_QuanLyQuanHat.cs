@@ -5,15 +5,16 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace BLL.Interface_BLL
 {
     public interface I_BLL_QuanLyQuanHat
     {
         List<tblPhongDat> DanhSachPhongDat_ChuaHoatDong();
-        List<tblPhongHat> DanhSachPhongHat();
-        List<tblKhachHang> DanhSachKhachHang();
-        List<tblNhanVien> DanhSachNhanVien();
+        List<tblPhongDat> DanhSachPhongDat_DangHoatDong();
+        List<tblGoiMatHang> DanhSachMatHang_KhachGoi(string ID_PhongDat);
+        List<tblGoiDichVu> DanhSachDichVu_KhachGoi(string ID_PhongDat);
 
         void CapNhat_PhongHat(tblPhongHat tblPhongHat);
         void CapNhat_PhongDat(tblPhongDat tblPhongDat);
@@ -27,11 +28,14 @@ namespace BLL.Interface_BLL
         string LaySoDienThoai(string IDKhachHang);
         string LayTenLoaiPhong(string ID);
         string LayIDLoaiPhong(string IDPhongHat);
+        string LayTenDichVu(string IDDichVu);
+        string LayGiaTienDichVu(string IDDichVu);
+        string LayTenMatHang(string IDMatHang);
+        string LayGiaTienMatHang(string IDMatHang);
+        string LayIDHoaDonBan(string IDPhongDat);
+
         tblGoiDichVu GetGoiDichVuByID(string IDPhongDat);
         tblHoaDonBan GetHoaDonBanByID(string IDPhongDat);
-
         tblPhongDat GetPhongDatByID(string ID);
-
-        List<tblPhongDat> DanhSachPhongDat_DangHoatDong();
     }
 }

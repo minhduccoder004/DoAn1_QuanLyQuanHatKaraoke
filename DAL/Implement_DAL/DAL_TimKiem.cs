@@ -10,20 +10,19 @@ namespace DAL.Implement_DAL
 {
     public class DAL_TimKiem : I_DAL_TimKiem
     {
-        DatabaseKaraoke Database = new DatabaseKaraoke();
 
         public List<tblKhachHang> DuLieuBangKhachHang()
         {
-            return Database.tblKhachHangs.ToList();
+            return new DatabaseKaraoke().tblKhachHangs.ToList();
         }
         public List<tblNhanVien> DuLieuBangNhanVien()
         {
-            return Database.tblNhanViens.ToList();
+            return new DatabaseKaraoke().tblNhanViens.ToList();
         }
 
         public List<tblPhongHat> DuLieuBangPhongHat()
         {
-            return Database.tblPhongHats.ToList();
+            return new DatabaseKaraoke().tblPhongHats.ToList();
         }
     }
 }

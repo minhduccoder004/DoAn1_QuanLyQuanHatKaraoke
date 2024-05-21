@@ -17,6 +17,9 @@ namespace DAL.Interface_DAL
         List<tblLoaiPhong> LayDuLieu_BangLoaiPhong();
         List<tblGoiDichVu> LayDuLieu_BangGoiDichVu();
         List<tblHoaDonBan> LayDuLieu_BangHoaDonBan();
+        List<tblGoiMatHang> LayDuLieu_BangGoiMatHang();
+        List<tblMatHang> LayDuLieu_BangMatHang();
+        List<tblDichVu> LayDuLieu_BangDichVu();
 
         void Update_PhongDat(tblPhongDat tblPhongDat);
         void Update_PhongHat(tblPhongHat tblPhongHat);

@@ -12,9 +12,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 {
     public partial class ThanhToan : Form
     {
-        public ThanhToan()
+        // Khởi tạo thuộc tính
+        Form Quanlys;
+
+        public ThanhToan(Form form)
         {
             InitializeComponent();
+            Quanlys = form;
         }
     }
 }

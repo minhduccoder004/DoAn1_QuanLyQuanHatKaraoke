@@ -10,80 +10,116 @@ namespace DAL.Implement_DAL
 {
     public class DAL_QuanLyQuanHat : I_DAL_QuanLyQuanHat
     {
-        DatabaseKaraoke DB = new DatabaseKaraoke();
-
         public void Delete_GoiDichVu(tblGoiDichVu tblGoiDichVu)
         {
-            DB.tblGoiDichVus.Remove(tblGoiDichVu);
-            DB.SaveChanges();
+            using (DatabaseKaraoke DB = new DatabaseKaraoke())
+            {
+                DB.tblGoiDichVus.Remove(tblGoiDichVu);
+                DB.SaveChanges();
+            }
+
         }
 
         public void Delete_HoaDonBan(tblHoaDonBan tblHoaDonBan)
         {
-            DB.tblHoaDonBans.Remove(tblHoaDonBan);
-            DB.SaveChanges();
+            using (DatabaseKaraoke DB = new DatabaseKaraoke())
+            {
+                DB.tblHoaDonBans.Remove(tblHoaDonBan);
+                DB.SaveChanges();
+            }
+
         }
 
         public void Delete_PhongDat(tblPhongDat tblPhongDat)
         {
-            DB.tblPhongDats.Remove(tblPhongDat);
-            DB.SaveChanges();
+            using (DatabaseKaraoke DB = new DatabaseKaraoke())
+            {
+                DB.tblPhongDats.Remove(tblPhongDat);
+                DB.SaveChanges();
+            }
+
+        }
+
+        public List<tblDichVu> LayDuLieu_BangDichVu()
+        {
+            return new DatabaseKaraoke().tblDichVus.ToList();
         }
 
         public List<tblGoiDichVu> LayDuLieu_BangGoiDichVu()
         {
-            return DB.tblGoiDichVus.ToList();
+            return new DatabaseKaraoke().tblGoiDichVus.ToList();
+        }
+
+        public List<tblGoiMatHang> LayDuLieu_BangGoiMatHang()
+        {
+            return new DatabaseKaraoke().tblGoiMatHangs.ToList();
         }
 
         public List<tblHoaDonBan> LayDuLieu_BangHoaDonBan()
         {
-            return DB.tblHoaDonBans.ToList();
+            return new DatabaseKaraoke().tblHoaDonBans.ToList();
         }
 
         public List<tblKhachHang> LayDuLieu_BangKhachHang()
         {
-            return DB.tblKhachHangs.ToList();
+            return new DatabaseKaraoke().tblKhachHangs.ToList();
         }
 
         public List<tblLoaiPhong> LayDuLieu_BangLoaiPhong()
         {
-            return DB.tblLoaiPhongs.ToList();
+            return new DatabaseKaraoke().tblLoaiPhongs.ToList();
+        }
+
+        public List<tblMatHang> LayDuLieu_BangMatHang()
+        {
+            return new DatabaseKaraoke().tblMatHangs.ToList();
         }
 
         public List<tblNhanVien> LayDuLieu_BangNhanVien()
         {
-            return DB.tblNhanViens.ToList();
+            return new DatabaseKaraoke().tblNhanViens.ToList();
         }
 
         public List<tblPhongDat> LayDuLieu_BangPhongDat()
         {
-            return DB.tblPhongDats.ToList();
+            return new DatabaseKaraoke().tblPhongDats.ToList();
         }
 
         public List<tblPhongHat> LayDuLieu_BangPhongHat()
         {
-            return DB.tblPhongHats.ToList();
+            return new DatabaseKaraoke().tblPhongHats.ToList();
         }
 
         public void Update_PhongDat(tblPhongDat tblPhongDat)
         {
-            var PhongDat = DB.tblPhongDats.Find(tblPhongDat.MaPhongDat);
-            if (PhongDat != null)
+            using (DatabaseKaraoke DB = new DatabaseKaraoke())
             {
-                PhongDat.ThoiGianPhongHoatDong = tblPhongDat.ThoiGianPhongHoatDong;
-                PhongDat.ThoiGianPhongDung = tblPhongDat.ThoiGianPhongDung;
+                var PhongDat = DB.tblPhongDats.Find(tblPhongDat.MaPhongDat);
+                if (PhongDat != null)
+                {
+                    PhongDat.ThoiGianPhongHoatDong = tblPhongDat.ThoiGianPhongHoatDong;
+                    PhongDat.ThoiGianPhongDung = tblPhongDat.ThoiGianPhongDung;
+                    PhongDat.TrangThaiPhongDat = tblPhongDat.TrangThaiPhongDat;
+                }
+                DB.SaveChanges();
             }
-            DB.SaveChanges();
+
+
         }
 
         public void Update_PhongHat(tblPhongHat tblPhongHat)
         {
-            var PhongHat = DB.tblPhongHats.Find(tblPhongHat.MaPhongHat);
-            if (PhongHat != null)
+            using (DatabaseKaraoke DB = new DatabaseKaraoke())
             {
-                PhongHat.TrangThaiPhong = tblPhongHat.TrangThaiPhong;
+                var PhongHat = DB.tblPhongHats.Find(tblPhongHat.MaPhongHat);
+                if (PhongHat != null)
+                {
+                    PhongHat.TrangThaiPhong = tblPhongHat.TrangThaiPhong;
+                }
+                DB.SaveChanges();
             }
-            DB.SaveChanges();
+
+
         }
     }
 }

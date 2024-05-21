@@ -88,7 +88,6 @@
     </Key>
     <Property Name="MaMatHang" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="TenMatHang" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
     <Property Name="DonGiaMatHang" Type="float" Nullable="false" />
     <Property Name="MaLoaiHang" Type="char" MaxLength="20" />
@@ -360,6 +359,11 @@
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateOrderItemQuantity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaPhongDat" Type="char" Mode="In" />
+    <Parameter Name="MaMatHang" Type="char" Mode="In" />
+    <Parameter Name="SoLuongMoi" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="DoAn1_QuanLyQuanHatKaraokeModelStoreContainer">

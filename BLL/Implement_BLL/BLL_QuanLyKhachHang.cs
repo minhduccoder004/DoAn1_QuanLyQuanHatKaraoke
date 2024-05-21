@@ -12,11 +12,6 @@ namespace BLL.Implement_BLL
 {
     public class BLL_QuanLyKhachHang : ImplementBLL<tblKhachHang>, I_BLL_Karaoke<tblKhachHang>, I_BLL_QuanLyKhachHang
     {
-
-        // Khởi tạo lớp DAL
-
-        DAL_QuanLyKhachHang DAL = new DAL_QuanLyKhachHang();
-
         public string TaoMaKhachHang()
         {
             string MaKhachHang = "KH";
@@ -25,13 +20,13 @@ namespace BLL.Implement_BLL
             return MaKhachHang;
         }
 
-        public override void Them(tblKhachHang _DTO) => DAL.Them(_DTO);
+        public override void Them(tblKhachHang _DTO) => new DAL_QuanLyKhachHang().Them(_DTO);
 
-        public override void Sua(tblKhachHang _DTO) => DAL.Sua(_DTO);
+        public override void Sua(tblKhachHang _DTO) => new DAL_QuanLyKhachHang().Sua(_DTO);
 
-        public override void Xoa(tblKhachHang _DTO) => DAL.Xoa(_DTO);
+        public override void Xoa(tblKhachHang _DTO) => new DAL_QuanLyKhachHang().Xoa(_DTO);
 
-        public List<tblKhachHang> DanhSachDoiTuong() => DAL.DanhSachDoiTuong();
+        public List<tblKhachHang> DanhSachDoiTuong() => new DAL_QuanLyKhachHang().DanhSachDoiTuong();
 
         public tblKhachHang GetByID(string ID) => DanhSachDoiTuong().Find(x => Equals(x.MaKhachHang.Trim(), ID));
 

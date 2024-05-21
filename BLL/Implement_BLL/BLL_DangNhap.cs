@@ -10,10 +10,9 @@ namespace BLL.Implement_BLL
 {
     public class BLL_DangNhap
     {
-        DAL_DangNhap DAL = new DAL_DangNhap();
         public List<tblNguoiDung> DanhSachNguoiDung()
         {
-            return DAL.LayDanhSachNguoiDung() ;
+            return new DAL_DangNhap().LayDanhSachNguoiDung() ;
         }
 
         public int KiemTraTaiKhoan(string TenTaiKhoan, string MatKhau, int _QuyenHan)

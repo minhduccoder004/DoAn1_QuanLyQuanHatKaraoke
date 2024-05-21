@@ -242,6 +242,9 @@
     <EmbeddedResource Include="ManagementKaraoke\QuanLyQuanHat.resx">
       <DependentUpon>QuanLyQuanHat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagementKaraoke\QuanLyTaiKhoan.resx">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagementKaraoke\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,7 +308,7 @@
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{46887fbd-32da-449d-8d1a-84bdc862f2a7}</Project>
+      <Project>{09fa4d03-a431-4c82-a480-18195a07b134}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>

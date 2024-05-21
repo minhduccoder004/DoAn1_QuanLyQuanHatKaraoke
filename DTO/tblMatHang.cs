@@ -22,7 +22,6 @@ namespace DTO
     
         public string MaMatHang { get; set; }
         public string TenMatHang { get; set; }
-        public int SoLuong { get; set; }
         public string DonViTinh { get; set; }
         public double DonGiaMatHang { get; set; }
         public string MaLoaiHang { get; set; }

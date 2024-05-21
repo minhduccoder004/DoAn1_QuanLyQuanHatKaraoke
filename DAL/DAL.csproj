@@ -60,6 +60,7 @@
     <Compile Include="Implement_DAL\DAL_DangKy.cs" />
     <Compile Include="Implement_DAL\DAL_DangNhap.cs" />
     <Compile Include="Implement_DAL\DAL_DoiMatKhau.cs" />
+    <Compile Include="Implement_DAL\DAL_Order.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyDoanhThu.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyKhachHang.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyNhanVien.cs" />
@@ -71,20 +72,21 @@
     <Compile Include="Interface_DAL\I_DAL_DatPhong.cs" />
     <Compile Include="Interface_DAL\I_DAL_Karaoke.cs" />
     <Compile Include="Interface_DAL\I_DAL_NhanVien.cs" />
+    <Compile Include="Interface_DAL\I_DAL_Order.cs" />
     <Compile Include="Interface_DAL\I_DAL_PhongHat.cs" />
     <Compile Include="Interface_DAL\I_DAL_QuanLyQuanHat.cs" />
     <Compile Include="Interface_DAL\I_DAL_TimKiem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{46887fbd-32da-449d-8d1a-84bdc862f2a7}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{09fa4d03-a431-4c82-a480-18195a07b134}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
