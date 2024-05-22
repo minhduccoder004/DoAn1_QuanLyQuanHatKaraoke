@@ -11,14 +11,17 @@ namespace BLL.Implement_BLL
 {
     public class BLL_QuanLyPhongHat : ImplementBLL<tblPhongHat>, I_BLL_Karaoke<tblPhongHat>, I_BLL_QuanLyPhongHat
     {
+        // Khai báo lớp DAL
+        DAL_QuanLyPhongHat DAL = new DAL_QuanLyPhongHat();
+
         public List<tblLoaiPhong> BangLoaiPhong()
         {
-            return new DAL_QuanLyPhongHat().LayDuLieu_BangLoaiPhong();
+            return DAL.LayDuLieu_BangLoaiPhong();
         }
 
         public List<tblPhongHat> DanhSachDoiTuong()
         {
-            return new DAL_QuanLyPhongHat().DanhSachDoiTuong();
+            return DAL.DanhSachDoiTuong();
         }
 
         public tblPhongHat GetByID(string ID)
@@ -46,11 +49,6 @@ namespace BLL.Implement_BLL
             }
         }
 
-        public List<tblPhongHat> LayPhongTheoTrangThai(List<tblPhongHat> PhongHats, int LoaiTrangThai)
-        {
-            throw new NotImplementedException();
-        }
-
         public string LayTenLoaiPhong(string ID)
         {
             return BangLoaiPhong().Find(x => Equals(x.MaLoaiPhong.Trim(), ID.Trim())).TenLoaiPhong;
@@ -68,9 +66,9 @@ namespace BLL.Implement_BLL
             return arr_LoaiPhong;
         }
 
-        public  List<tblPhongHat> SapXep(List<tblPhongHat> PhongHats, string LoaiSapXep)
+        public List<tblPhongHat> SapXep(List<tblPhongHat> PhongHats, string LoaiSapXep)
         {
-            switch(LoaiSapXep.ToLower().Trim())
+            switch (LoaiSapXep.ToLower().Trim())
             {
                 case "tên phòng":
                     return PhongHats.OrderBy(x => x.TenPhongHat).ToList();
@@ -83,7 +81,7 @@ namespace BLL.Implement_BLL
 
         public override void Sua(tblPhongHat _DTO)
         {
-            new DAL_QuanLyPhongHat().Sua(_DTO);
+            DAL.Sua(_DTO);
         }
 
         public string TaoMaPhong()
@@ -96,7 +94,7 @@ namespace BLL.Implement_BLL
 
         public override void Them(tblPhongHat _DTO)
         {
-            new DAL_QuanLyPhongHat().Them(_DTO);
+            DAL.Them(_DTO);
         }
 
         public string TrangThaiPhong(int TrangThai)
@@ -127,7 +125,7 @@ namespace BLL.Implement_BLL
 
         public override void Xoa(tblPhongHat _DTO)
         {
-            new DAL_QuanLyPhongHat().Xoa(_DTO);
+            DAL.Xoa(_DTO);
         }
     }
 }

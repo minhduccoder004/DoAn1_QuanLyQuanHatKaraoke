@@ -37,5 +37,8 @@ namespace BLL.Interface_BLL
         tblGoiDichVu GetGoiDichVuByID(string IDPhongDat);
         tblHoaDonBan GetHoaDonBanByID(string IDPhongDat);
         tblPhongDat GetPhongDatByID(string ID);
+
+        string Format_ThoiGian(TimeSpan Time);
+        TimeSpan TinhThoiGian(DateTime currentTime, DateTime ThoiGianBatDau);
     }
 }

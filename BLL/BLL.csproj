@@ -57,6 +57,7 @@
     <Compile Include="Implement_BLL\BLL_QuanLyPhongHat.cs" />
     <Compile Include="Implement_BLL\BLL_QuanLyQuanHat.cs" />
     <Compile Include="Implement_BLL\BLL_QuenMatKhau.cs" />
+    <Compile Include="Implement_BLL\BLL_ThanhToan.cs" />
     <Compile Include="Implement_BLL\BLL_TimKiem.cs" />
     <Compile Include="Implement_BLL\ImplementBLL.cs" />
     <Compile Include="Interface_BLL\I_BLL_DatPhong.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Interface_BLL\I_BLL_QuanLyNhanVien.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyPhongHat.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyQuanHat.cs" />
+    <Compile Include="Interface_BLL\I_BLL_ThanhToan.cs" />
     <Compile Include="Interface_BLL\I_BLL_TimKiem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

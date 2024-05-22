@@ -10,84 +10,76 @@ namespace DAL.Implement_DAL
 {
     public class DAL_QuanLyQuanHat : I_DAL_QuanLyQuanHat
     {
+        DatabaseKaraoke DB = new DatabaseKaraoke();
         public void Delete_GoiDichVu(tblGoiDichVu tblGoiDichVu)
         {
-            using (DatabaseKaraoke DB = new DatabaseKaraoke())
-            {
-                DB.tblGoiDichVus.Remove(tblGoiDichVu);
-                DB.SaveChanges();
-            }
+            DB.tblGoiDichVus.Remove(tblGoiDichVu);
+            DB.SaveChanges();
 
         }
 
         public void Delete_HoaDonBan(tblHoaDonBan tblHoaDonBan)
         {
-            using (DatabaseKaraoke DB = new DatabaseKaraoke())
-            {
-                DB.tblHoaDonBans.Remove(tblHoaDonBan);
-                DB.SaveChanges();
-            }
+            DB.tblHoaDonBans.Remove(tblHoaDonBan);
+            DB.SaveChanges();
 
         }
 
         public void Delete_PhongDat(tblPhongDat tblPhongDat)
         {
-            using (DatabaseKaraoke DB = new DatabaseKaraoke())
-            {
-                DB.tblPhongDats.Remove(tblPhongDat);
-                DB.SaveChanges();
-            }
+            DB.tblPhongDats.Remove(tblPhongDat);
+            DB.SaveChanges();
 
         }
 
         public List<tblDichVu> LayDuLieu_BangDichVu()
         {
-            return new DatabaseKaraoke().tblDichVus.ToList();
+            return DB.tblDichVus.ToList();
         }
 
         public List<tblGoiDichVu> LayDuLieu_BangGoiDichVu()
         {
-            return new DatabaseKaraoke().tblGoiDichVus.ToList();
+            return DB.tblGoiDichVus.ToList();
         }
 
         public List<tblGoiMatHang> LayDuLieu_BangGoiMatHang()
         {
-            return new DatabaseKaraoke().tblGoiMatHangs.ToList();
+            return DB.tblGoiMatHangs.ToList();
         }
 
         public List<tblHoaDonBan> LayDuLieu_BangHoaDonBan()
         {
-            return new DatabaseKaraoke().tblHoaDonBans.ToList();
+            return DB.tblHoaDonBans.ToList();
         }
 
         public List<tblKhachHang> LayDuLieu_BangKhachHang()
         {
-            return new DatabaseKaraoke().tblKhachHangs.ToList();
+            return DB.tblKhachHangs.ToList();
         }
 
         public List<tblLoaiPhong> LayDuLieu_BangLoaiPhong()
         {
-            return new DatabaseKaraoke().tblLoaiPhongs.ToList();
+            return DB.tblLoaiPhongs.ToList();
         }
 
         public List<tblMatHang> LayDuLieu_BangMatHang()
         {
-            return new DatabaseKaraoke().tblMatHangs.ToList();
+            return DB.tblMatHangs.ToList();
         }
 
         public List<tblNhanVien> LayDuLieu_BangNhanVien()
         {
-            return new DatabaseKaraoke().tblNhanViens.ToList();
+            return DB.tblNhanViens.ToList();
         }
 
         public List<tblPhongDat> LayDuLieu_BangPhongDat()
         {
-            return new DatabaseKaraoke().tblPhongDats.ToList();
+            return DB.tblPhongDats.ToList();
         }
 
         public List<tblPhongHat> LayDuLieu_BangPhongHat()
         {
-            return new DatabaseKaraoke().tblPhongHats.ToList();
+            return DB.tblPhongHats.ToList();
         }
 
         public void Update_PhongDat(tblPhongDat tblPhongDat)

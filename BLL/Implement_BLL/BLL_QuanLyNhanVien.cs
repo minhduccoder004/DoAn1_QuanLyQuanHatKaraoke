@@ -11,10 +11,13 @@ namespace BLL.Implement_BLL
 {
     public class BLL_QuanLyNhanVien : ImplementBLL<tblNhanVien>, I_BLL_Karaoke<tblNhanVien>, I_BLL_QuanLyNhanVien
     {
-        public override void Them(tblNhanVien _DTO) => new DAL_QuanLyNhanVien().Them(_DTO);
-        public override void Sua(tblNhanVien _DTO) => new DAL_QuanLyNhanVien().Sua(_DTO);
-        public override void Xoa(tblNhanVien _DTO) => new DAL_QuanLyNhanVien().Xoa(_DTO);
-        public List<tblNhanVien> DanhSachDoiTuong() => new DAL_QuanLyNhanVien().DanhSachDoiTuong();
+
+        // Khai báo lớp DAL
+        DAL_QuanLyNhanVien DAL = new DAL_QuanLyNhanVien();
+        public override void Them(tblNhanVien _DTO) => DAL.Them(_DTO);
+        public override void Sua(tblNhanVien _DTO) => DAL.Sua(_DTO);
+        public override void Xoa(tblNhanVien _DTO) => DAL.Xoa(_DTO);
+        public List<tblNhanVien> DanhSachDoiTuong() => DAL.DanhSachDoiTuong();
         public tblNhanVien GetByID(string ID) => DanhSachDoiTuong().Find(x => Equals(x.MaNhanVien.Trim(), ID));
 
         public string TaoMaNhanVien()

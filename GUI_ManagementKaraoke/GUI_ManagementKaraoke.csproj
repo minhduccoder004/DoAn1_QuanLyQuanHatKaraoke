@@ -396,5 +396,11 @@
   <ItemGroup>
     <None Include="Picture\pencil.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\clock1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

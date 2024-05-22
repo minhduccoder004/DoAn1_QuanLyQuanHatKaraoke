@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pn_Child1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.bt_LamMoi = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_BatDau = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_DanhSach = new Guna.UI2.WinForms.Guna2DataGridView();
             this.lb_DanhSach = new System.Windows.Forms.Label();
             this.cbb_DanhSach = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtp_NgayDatPhong = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lb_NgayDatPhong = new System.Windows.Forms.Label();
             this.pn_Child2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.txt_ThoiGianHoatDong = new System.Windows.Forms.Label();
+            this.lb_ThoiGianHoatDong = new System.Windows.Forms.Label();
             this.txt_PhongDat = new System.Windows.Forms.Label();
             this.txt_ThoiGianDatPhong = new System.Windows.Forms.Label();
             this.txt_SoDienThoai = new System.Windows.Forms.Label();
@@ -62,8 +62,6 @@
             this.dgv_DichVuSuDung = new Guna.UI2.WinForms.Guna2DataGridView();
             this.lb_MatHangSuDung = new System.Windows.Forms.Label();
             this.lb_DichVuSuDung = new System.Windows.Forms.Label();
-            this.bt_ThanhToan = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Order = new Guna.UI2.WinForms.Guna2Button();
             this.lb_PhongDat = new System.Windows.Forms.Label();
             this.title_ThongTinPhongDat = new System.Windows.Forms.Label();
             this.lb_ThoiGianDatPhong = new System.Windows.Forms.Label();
@@ -71,6 +69,13 @@
             this.lb_SoDienThoai = new System.Windows.Forms.Label();
             this.pn_Container1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Container2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pic_Clock = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.bt_ThanhToan = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Order = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_LamMoi = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_BatDau = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.ThoiGian = new System.Windows.Forms.Timer(this.components);
             this.pn_Child1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSach)).BeginInit();
             this.pn_Child2.SuspendLayout();
@@ -78,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DichVuSuDung)).BeginInit();
             this.pn_Container1.SuspendLayout();
             this.pn_Container2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Clock)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_Child1
@@ -97,117 +103,48 @@
             this.pn_Child1.Size = new System.Drawing.Size(689, 656);
             this.pn_Child1.TabIndex = 0;
             // 
-            // bt_LamMoi
-            // 
-            this.bt_LamMoi.Animated = true;
-            this.bt_LamMoi.BorderRadius = 20;
-            this.bt_LamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_LamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_LamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_LamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_LamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_LamMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_LamMoi.ForeColor = System.Drawing.Color.White;
-            this.bt_LamMoi.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
-            this.bt_LamMoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_LamMoi.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_LamMoi.Location = new System.Drawing.Point(23, 599);
-            this.bt_LamMoi.Name = "bt_LamMoi";
-            this.bt_LamMoi.Size = new System.Drawing.Size(190, 45);
-            this.bt_LamMoi.TabIndex = 6;
-            this.bt_LamMoi.Text = "Làm mới";
-            this.bt_LamMoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_LamMoi.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_LamMoi.Click += new System.EventHandler(this.bt_LamMoi_Click);
-            // 
-            // bt_BatDau
-            // 
-            this.bt_BatDau.Animated = true;
-            this.bt_BatDau.BorderRadius = 20;
-            this.bt_BatDau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_BatDau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_BatDau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_BatDau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_BatDau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_BatDau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_BatDau.ForeColor = System.Drawing.Color.White;
-            this.bt_BatDau.Image = global::GUI_ManagementKaraoke.Properties.Resources.start;
-            this.bt_BatDau.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_BatDau.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_BatDau.Location = new System.Drawing.Point(475, 599);
-            this.bt_BatDau.Name = "bt_BatDau";
-            this.bt_BatDau.Size = new System.Drawing.Size(190, 45);
-            this.bt_BatDau.TabIndex = 0;
-            this.bt_BatDau.Text = "Bắt đầu hoạt động";
-            this.bt_BatDau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_BatDau.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_BatDau.Click += new System.EventHandler(this.bt_BatDau_Click);
-            // 
-            // bt_Delete
-            // 
-            this.bt_Delete.Animated = true;
-            this.bt_Delete.BorderRadius = 20;
-            this.bt_Delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_Delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_Delete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.ForeColor = System.Drawing.Color.White;
-            this.bt_Delete.Image = global::GUI_ManagementKaraoke.Properties.Resources.recycle_bin;
-            this.bt_Delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Delete.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_Delete.Location = new System.Drawing.Point(249, 599);
-            this.bt_Delete.Name = "bt_Delete";
-            this.bt_Delete.Size = new System.Drawing.Size(190, 45);
-            this.bt_Delete.TabIndex = 3;
-            this.bt_Delete.Text = "Xoá phòng đặt";
-            this.bt_Delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Delete.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
-            // 
             // dgv_DanhSach
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgv_DanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgv_DanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgv_DanhSach.ColumnHeadersHeight = 65;
             this.dgv_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DanhSach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DanhSach.DefaultCellStyle = dataGridViewCellStyle33;
             this.dgv_DanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.dgv_DanhSach.Location = new System.Drawing.Point(13, 51);
             this.dgv_DanhSach.Name = "dgv_DanhSach";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dgv_DanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DanhSach.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DanhSach.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dgv_DanhSach.RowTemplate.Height = 55;
             this.dgv_DanhSach.RowTemplate.ReadOnly = true;
             this.dgv_DanhSach.Size = new System.Drawing.Size(663, 534);
@@ -295,6 +232,9 @@
             // 
             // pn_Child2
             // 
+            this.pn_Child2.Controls.Add(this.txt_ThoiGianHoatDong);
+            this.pn_Child2.Controls.Add(this.lb_ThoiGianHoatDong);
+            this.pn_Child2.Controls.Add(this.pic_Clock);
             this.pn_Child2.Controls.Add(this.txt_PhongDat);
             this.pn_Child2.Controls.Add(this.txt_ThoiGianDatPhong);
             this.pn_Child2.Controls.Add(this.txt_SoDienThoai);
@@ -316,6 +256,28 @@
             this.pn_Child2.Name = "pn_Child2";
             this.pn_Child2.Size = new System.Drawing.Size(456, 656);
             this.pn_Child2.TabIndex = 2;
+            // 
+            // txt_ThoiGianHoatDong
+            // 
+            this.txt_ThoiGianHoatDong.AutoSize = true;
+            this.txt_ThoiGianHoatDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ThoiGianHoatDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.txt_ThoiGianHoatDong.Location = new System.Drawing.Point(294, 564);
+            this.txt_ThoiGianHoatDong.Name = "txt_ThoiGianHoatDong";
+            this.txt_ThoiGianHoatDong.Size = new System.Drawing.Size(101, 19);
+            this.txt_ThoiGianHoatDong.TabIndex = 22;
+            this.txt_ThoiGianHoatDong.Text = ".......................";
+            // 
+            // lb_ThoiGianHoatDong
+            // 
+            this.lb_ThoiGianHoatDong.AutoSize = true;
+            this.lb_ThoiGianHoatDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ThoiGianHoatDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.lb_ThoiGianHoatDong.Location = new System.Drawing.Point(138, 564);
+            this.lb_ThoiGianHoatDong.Name = "lb_ThoiGianHoatDong";
+            this.lb_ThoiGianHoatDong.Size = new System.Drawing.Size(150, 19);
+            this.lb_ThoiGianHoatDong.TabIndex = 21;
+            this.lb_ThoiGianHoatDong.Text = "Thời gian hoạt động :";
             // 
             // txt_PhongDat
             // 
@@ -376,44 +338,44 @@
             this.dgv_MatHangSuDung.AllowUserToDeleteRows = false;
             this.dgv_MatHangSuDung.AllowUserToResizeColumns = false;
             this.dgv_MatHangSuDung.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.dgv_MatHangSuDung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.dgv_MatHangSuDung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dgv_MatHangSuDung.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_MatHangSuDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_MatHangSuDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dgv_MatHangSuDung.ColumnHeadersHeight = 40;
             this.dgv_MatHangSuDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_MatHangSuDung.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_MatHangSuDung.DefaultCellStyle = dataGridViewCellStyle38;
             this.dgv_MatHangSuDung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.dgv_MatHangSuDung.Location = new System.Drawing.Point(12, 366);
             this.dgv_MatHangSuDung.Name = "dgv_MatHangSuDung";
             this.dgv_MatHangSuDung.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_MatHangSuDung.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_MatHangSuDung.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dgv_MatHangSuDung.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_MatHangSuDung.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_MatHangSuDung.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgv_MatHangSuDung.RowTemplate.Height = 30;
-            this.dgv_MatHangSuDung.Size = new System.Drawing.Size(433, 203);
+            this.dgv_MatHangSuDung.Size = new System.Drawing.Size(433, 183);
             this.dgv_MatHangSuDung.TabIndex = 10;
             this.dgv_MatHangSuDung.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.dgv_MatHangSuDung.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -445,42 +407,42 @@
             this.dgv_DichVuSuDung.AllowUserToDeleteRows = false;
             this.dgv_DichVuSuDung.AllowUserToResizeColumns = false;
             this.dgv_DichVuSuDung.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.dgv_DichVuSuDung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.dgv_DichVuSuDung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.dgv_DichVuSuDung.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DichVuSuDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DichVuSuDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgv_DichVuSuDung.ColumnHeadersHeight = 40;
             this.dgv_DichVuSuDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DichVuSuDung.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DichVuSuDung.DefaultCellStyle = dataGridViewCellStyle43;
             this.dgv_DichVuSuDung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.dgv_DichVuSuDung.Location = new System.Drawing.Point(12, 211);
             this.dgv_DichVuSuDung.Name = "dgv_DichVuSuDung";
             this.dgv_DichVuSuDung.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DichVuSuDung.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DichVuSuDung.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgv_DichVuSuDung.RowHeadersVisible = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_DichVuSuDung.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_DichVuSuDung.RowsDefaultCellStyle = dataGridViewCellStyle45;
             this.dgv_DichVuSuDung.RowTemplate.Height = 30;
             this.dgv_DichVuSuDung.Size = new System.Drawing.Size(433, 123);
             this.dgv_DichVuSuDung.TabIndex = 9;
@@ -529,52 +491,6 @@
             this.lb_DichVuSuDung.Size = new System.Drawing.Size(114, 17);
             this.lb_DichVuSuDung.TabIndex = 7;
             this.lb_DichVuSuDung.Text = "Dịch vụ sử dụng";
-            // 
-            // bt_ThanhToan
-            // 
-            this.bt_ThanhToan.Animated = true;
-            this.bt_ThanhToan.BorderRadius = 20;
-            this.bt_ThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_ThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_ThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_ThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_ThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_ThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ThanhToan.ForeColor = System.Drawing.Color.White;
-            this.bt_ThanhToan.Image = global::GUI_ManagementKaraoke.Properties.Resources.pay;
-            this.bt_ThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_ThanhToan.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_ThanhToan.Location = new System.Drawing.Point(249, 599);
-            this.bt_ThanhToan.Name = "bt_ThanhToan";
-            this.bt_ThanhToan.Size = new System.Drawing.Size(180, 45);
-            this.bt_ThanhToan.TabIndex = 6;
-            this.bt_ThanhToan.Text = "Thanh toán";
-            this.bt_ThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_ThanhToan.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_ThanhToan.Click += new System.EventHandler(this.bt_ThanhToan_Click);
-            // 
-            // bt_Order
-            // 
-            this.bt_Order.Animated = true;
-            this.bt_Order.BorderRadius = 20;
-            this.bt_Order.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Order.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Order.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_Order.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_Order.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_Order.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Order.ForeColor = System.Drawing.Color.White;
-            this.bt_Order.Image = global::GUI_ManagementKaraoke.Properties.Resources.order;
-            this.bt_Order.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Order.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_Order.Location = new System.Drawing.Point(27, 599);
-            this.bt_Order.Name = "bt_Order";
-            this.bt_Order.Size = new System.Drawing.Size(180, 45);
-            this.bt_Order.TabIndex = 0;
-            this.bt_Order.Text = "Order";
-            this.bt_Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Order.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_Order.Click += new System.EventHandler(this.bt_Order_Click);
             // 
             // lb_PhongDat
             // 
@@ -658,6 +574,136 @@
             this.pn_Container2.Size = new System.Drawing.Size(456, 656);
             this.pn_Container2.TabIndex = 6;
             // 
+            // pic_Clock
+            // 
+            this.pic_Clock.Image = global::GUI_ManagementKaraoke.Properties.Resources.clock1;
+            this.pic_Clock.ImageRotate = 0F;
+            this.pic_Clock.Location = new System.Drawing.Point(107, 561);
+            this.pic_Clock.Name = "pic_Clock";
+            this.pic_Clock.Size = new System.Drawing.Size(25, 25);
+            this.pic_Clock.TabIndex = 20;
+            this.pic_Clock.TabStop = false;
+            // 
+            // bt_ThanhToan
+            // 
+            this.bt_ThanhToan.Animated = true;
+            this.bt_ThanhToan.BorderRadius = 20;
+            this.bt_ThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_ThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_ThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_ThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ThanhToan.ForeColor = System.Drawing.Color.White;
+            this.bt_ThanhToan.Image = global::GUI_ManagementKaraoke.Properties.Resources.pay;
+            this.bt_ThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_ThanhToan.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_ThanhToan.Location = new System.Drawing.Point(249, 599);
+            this.bt_ThanhToan.Name = "bt_ThanhToan";
+            this.bt_ThanhToan.Size = new System.Drawing.Size(180, 45);
+            this.bt_ThanhToan.TabIndex = 6;
+            this.bt_ThanhToan.Text = "Thanh toán";
+            this.bt_ThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_ThanhToan.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_ThanhToan.Click += new System.EventHandler(this.bt_ThanhToan_Click);
+            // 
+            // bt_Order
+            // 
+            this.bt_Order.Animated = true;
+            this.bt_Order.BorderRadius = 20;
+            this.bt_Order.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Order.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Order.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_Order.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_Order.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_Order.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Order.ForeColor = System.Drawing.Color.White;
+            this.bt_Order.Image = global::GUI_ManagementKaraoke.Properties.Resources.order;
+            this.bt_Order.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Order.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_Order.Location = new System.Drawing.Point(27, 599);
+            this.bt_Order.Name = "bt_Order";
+            this.bt_Order.Size = new System.Drawing.Size(180, 45);
+            this.bt_Order.TabIndex = 0;
+            this.bt_Order.Text = "Order";
+            this.bt_Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Order.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_Order.Click += new System.EventHandler(this.bt_Order_Click);
+            // 
+            // bt_LamMoi
+            // 
+            this.bt_LamMoi.Animated = true;
+            this.bt_LamMoi.BorderRadius = 20;
+            this.bt_LamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_LamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_LamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_LamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_LamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_LamMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_LamMoi.ForeColor = System.Drawing.Color.White;
+            this.bt_LamMoi.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
+            this.bt_LamMoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_LamMoi.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_LamMoi.Location = new System.Drawing.Point(23, 599);
+            this.bt_LamMoi.Name = "bt_LamMoi";
+            this.bt_LamMoi.Size = new System.Drawing.Size(190, 45);
+            this.bt_LamMoi.TabIndex = 6;
+            this.bt_LamMoi.Text = "Làm mới";
+            this.bt_LamMoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_LamMoi.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_LamMoi.Click += new System.EventHandler(this.bt_LamMoi_Click);
+            // 
+            // bt_BatDau
+            // 
+            this.bt_BatDau.Animated = true;
+            this.bt_BatDau.BorderRadius = 20;
+            this.bt_BatDau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_BatDau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_BatDau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_BatDau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_BatDau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_BatDau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_BatDau.ForeColor = System.Drawing.Color.White;
+            this.bt_BatDau.Image = global::GUI_ManagementKaraoke.Properties.Resources.start;
+            this.bt_BatDau.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_BatDau.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_BatDau.Location = new System.Drawing.Point(475, 599);
+            this.bt_BatDau.Name = "bt_BatDau";
+            this.bt_BatDau.Size = new System.Drawing.Size(190, 45);
+            this.bt_BatDau.TabIndex = 0;
+            this.bt_BatDau.Text = "Bắt đầu hoạt động";
+            this.bt_BatDau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_BatDau.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_BatDau.Click += new System.EventHandler(this.bt_BatDau_Click);
+            // 
+            // bt_Delete
+            // 
+            this.bt_Delete.Animated = true;
+            this.bt_Delete.BorderRadius = 20;
+            this.bt_Delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_Delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_Delete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_Delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Delete.ForeColor = System.Drawing.Color.White;
+            this.bt_Delete.Image = global::GUI_ManagementKaraoke.Properties.Resources.recycle_bin;
+            this.bt_Delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Delete.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_Delete.Location = new System.Drawing.Point(249, 599);
+            this.bt_Delete.Name = "bt_Delete";
+            this.bt_Delete.Size = new System.Drawing.Size(190, 45);
+            this.bt_Delete.TabIndex = 3;
+            this.bt_Delete.Text = "Xoá phòng đặt";
+            this.bt_Delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Delete.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_Delete.Click += new System.EventHandler(this.bt_Delete_Click);
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.Interval = 1000;
+            this.ThoiGian.Tick += new System.EventHandler(this.ThoiGian_Tick);
+            // 
             // QuanLyQuanHat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,6 +725,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DichVuSuDung)).EndInit();
             this.pn_Container1.ResumeLayout(false);
             this.pn_Container2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Clock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -713,5 +760,9 @@
         private System.Windows.Forms.Label txt_SoDienThoai;
         private System.Windows.Forms.Label txt_TenKhachHang;
         private Guna.UI2.WinForms.Guna2Button bt_LamMoi;
+        private System.Windows.Forms.Label lb_ThoiGianHoatDong;
+        private Guna.UI2.WinForms.Guna2PictureBox pic_Clock;
+        private System.Windows.Forms.Label txt_ThoiGianHoatDong;
+        private System.Windows.Forms.Timer ThoiGian;
     }
 }

@@ -59,7 +59,7 @@ namespace DAL.Implement_DAL
 
         public List<tblGoiDichVu> LayDuLieu_BangGoiDichVu()
         {
-            return new DatabaseKaraoke().tblGoiDichVus.ToList();
+            return DB.tblGoiDichVus.ToList();
         }
     }
 }

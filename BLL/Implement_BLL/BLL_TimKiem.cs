@@ -11,14 +11,16 @@ namespace BLL.Implement_BLL
 {
     public class BLL_TimKiem : I_BLL_TimKiem
     {
+        // Khai báo lớp DAL
+        DAL_TimKiem DAL = new DAL_TimKiem();
         public List<tblKhachHang> DuLieuTimKiemKhachHang(string LoaiTimKiem, string ThongTinTimKiem)
         {
             switch (LoaiTimKiem.ToLower())
             {
                 case "tên khách hàng":
-                    return new DAL_TimKiem().DuLieuBangKhachHang().FindAll(x => x.TenKhachHang.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangKhachHang().FindAll(x => x.TenKhachHang.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "số điện thoại":
-                    return new DAL_TimKiem().DuLieuBangKhachHang().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangKhachHang().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 default:
                     return default;
             }
@@ -30,15 +32,15 @@ namespace BLL.Implement_BLL
             switch (LoaiTimKiem.ToLower())
             {
                 case "tên nhân viên":
-                    return new DAL_TimKiem().DuLieuBangNhanVien().FindAll(x => x.TenNhanVien.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x => x.TenNhanVien.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "số điện thoại":
-                    return new DAL_TimKiem().DuLieuBangNhanVien().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "địa chỉ":
-                    return new DAL_TimKiem().DuLieuBangNhanVien().FindAll(x => x.DiaChi.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x => x.DiaChi.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "năm sinh":
-                    return new DAL_TimKiem().DuLieuBangNhanVien().FindAll(x => x.NgaySinh.Value.Year.ToString().Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x => x.NgaySinh.Value.Year.ToString().Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "email":
-                    return new DAL_TimKiem().DuLieuBangNhanVien().FindAll(x => x.Email.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x => x.Email.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 default:
                     return default;
             }

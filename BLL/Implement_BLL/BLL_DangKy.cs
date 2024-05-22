@@ -12,14 +12,16 @@ namespace BLL.Implement_BLL
     {
         List<tblNguoiDung> DanhSachTaiKhoan;
 
+        // Khởi tạo lớp DAL
+        DAL_DangKy DAL = new DAL_DangKy();
         public BLL_DangKy()
         {
-            DanhSachTaiKhoan = new DAL_DangKy().DanhSachDoiTuong();
+            DanhSachTaiKhoan = DAL.DanhSachDoiTuong();
         }
 
         public void ThemNguoiDung(tblNguoiDung NguoiDung)
         {
-            new DAL_DangKy().Them(NguoiDung);
+            DAL.Them(NguoiDung);
         }
 
         public bool Check_HopLe(string TenTaiKhoan) => (DanhSachTaiKhoan.Find(x => x.TenTaiKhoan.Trim() == TenTaiKhoan) == null);

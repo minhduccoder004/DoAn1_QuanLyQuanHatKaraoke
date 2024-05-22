@@ -15,17 +15,23 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 {
     public partial class QuanLyQuanHat : Form
     {
+        BLL_QuanLyQuanHat BLL = new BLL_QuanLyQuanHat();
 
         // Khởi tạo thuộc tính
         string[] arr_DanhSach = { "Phòng lên lịch", "Phòng đang chạy" };
         public bool Flag_Status = false;
+        bool Flag_Time = false;
+        public TimeSpan Time {  get; set; }
         Color DisableButtonColor = Color.FromArgb(128, 179, 255);
         Color EnableButtonColor = Color.FromArgb(104, 126, 255);
         public string MaPhongDat { get; set; }
-        string MaPhongHat { get; set; }
+        public string MaPhongHat { get; set; }
         string MaDichVu {  get; set; }
         string MaMatHang { get; set; }
         public string MaHoaDonBan { get; set; }
+        public DateTime ThoiGianBatDau { get; set; }
+
+
 
         // Tạo các phương thức
         void FormatHeaderTable()
@@ -100,10 +106,19 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_MatHangSuDung.DataSource = new List<tblGoiMatHang>();
             dgv_DichVuSuDung.DataSource = new List<tblGoiDichVu>();
 
+            txt_PhongDat.Text = ".............................";
+            txt_SoDienThoai.Text = ".............................";
+            txt_TenKhachHang.Text = ".............................";
+            txt_ThoiGianDatPhong.Text = ".............................";
+            txt_ThoiGianHoatDong.Text = ".............................";
+
+            Flag_Time = false;
+            ThoiGian.Stop();
+
             switch (cbb_DanhSach.SelectedIndex)
             {
                 case 0:
-                    dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_ChuaHoatDong();
+                    dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_ChuaHoatDong();
                     dgv_DanhSach.Refresh();
                     FormatHeaderTable();
 
@@ -111,7 +126,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     DoiMauButton_Dis();
                     break;
                 case 1:
-                    dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_DangHoatDong();
+                    dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_DangHoatDong();
                     dgv_DanhSach.Refresh();
                     FormatHeaderTable();
 
@@ -175,21 +190,21 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             {
                 if (e.Value != null)
                 {
-                    e.Value = new BLL_QuanLyQuanHat().LayTenPhong(e.Value.ToString());
+                    e.Value = BLL.LayTenPhong(e.Value.ToString());
                 }
             }
             if (e.ColumnIndex == 2)
             {
                 if (e.Value != null)
                 {
-                    e.Value = new BLL_QuanLyQuanHat().LayTenNhanVien(e.Value.ToString());
+                    e.Value = BLL.LayTenNhanVien(e.Value.ToString());
                 }
             }
             if (e.ColumnIndex == 3)
             {
                 if (e.Value != null)
                 {
-                    e.Value = new BLL_QuanLyQuanHat().LayTenKhachHang(e.Value.ToString());
+                    e.Value = BLL.LayTenKhachHang(e.Value.ToString());
                 }
             }
         }
@@ -199,18 +214,18 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             if (cbb_DanhSach.SelectedIndex == 0 && Flag_Status)
             {
                 // Code
-                if (new BLL_QuanLyQuanHat().GetGoiDichVuByID(MaPhongDat) != null)
+                if (BLL.GetGoiDichVuByID(MaPhongDat) != null)
                 {
-                    new BLL_QuanLyQuanHat().Xoa_GoiDichVu(new BLL_QuanLyQuanHat().GetGoiDichVuByID(MaPhongDat));
+                    BLL.Xoa_GoiDichVu(BLL.GetGoiDichVuByID(MaPhongDat));
                 }
-                new BLL_QuanLyQuanHat().Xoa_HoaDonBan(new BLL_QuanLyQuanHat().GetHoaDonBanByID(MaPhongDat));
-                new BLL_QuanLyQuanHat().Xoa_PhongDat(new BLL_QuanLyQuanHat().GetPhongDatByID(MaPhongDat));
+                BLL.Xoa_HoaDonBan(BLL.GetHoaDonBanByID(MaPhongDat));
+                BLL.Xoa_PhongDat(BLL.GetPhongDatByID(MaPhongDat));
 
                 // Đổi trạng thái cờ
                 Flag_Status = false;
 
                 // Làm mới
-                dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_ChuaHoatDong();
+                dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_ChuaHoatDong();
                 dgv_DanhSach.Refresh();
 
                 // Đổi màu button
@@ -246,7 +261,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void cbb_DanhSach_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Đổi trạng thái cờ
             Flag_Status = false;
+            Flag_Time = false;
+            ThoiGian.Stop();
+
             switch (cbb_DanhSach.SelectedIndex)
             {
                 case 0:
@@ -269,16 +288,27 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 
                 // Đổi trạng thái cờ
                 Flag_Status = true;
+                Flag_Time = true;
+
+                switch (cbb_DanhSach.SelectedIndex)
+                {
+                    case 1:
+                        // Chạy time
+                        ThoiGian.Start();
+                        break;
+                }
 
                 // Info current MaPhongDat
                 MaPhongDat = dgv_DanhSach.Rows[e.RowIndex].Cells[0].Value.ToString();
                 MaPhongHat = dgv_DanhSach.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 // Set values 
-                txt_TenKhachHang.Text = new BLL_QuanLyQuanHat().LayTenKhachHang(dgv_DanhSach.Rows[e.RowIndex].Cells[3].Value.ToString());
-                txt_SoDienThoai.Text = new BLL_QuanLyQuanHat().LaySoDienThoai(dgv_DanhSach.Rows[e.RowIndex].Cells[3].Value.ToString());
+                txt_TenKhachHang.Text = BLL.LayTenKhachHang(dgv_DanhSach.Rows[e.RowIndex].Cells[3].Value.ToString());
+                txt_SoDienThoai.Text = BLL.LaySoDienThoai(dgv_DanhSach.Rows[e.RowIndex].Cells[3].Value.ToString());
                 txt_ThoiGianDatPhong.Text = Convert.ToDateTime(dgv_DanhSach.Rows[e.RowIndex].Cells[4].Value).ToString("dd / MM / yyyy");
-                txt_PhongDat.Text = new BLL_QuanLyQuanHat().LayTenPhong(dgv_DanhSach.Rows[e.RowIndex].Cells[1].Value.ToString()) + " - " + new BLL_QuanLyQuanHat().LayTenLoaiPhong(new BLL_QuanLyQuanHat().LayIDLoaiPhong(dgv_DanhSach.Rows[e.RowIndex].Cells[1].Value.ToString()));
+                txt_PhongDat.Text = BLL.LayTenPhong(dgv_DanhSach.Rows[e.RowIndex].Cells[1].Value.ToString()) + " - " + BLL.LayTenLoaiPhong(BLL.LayIDLoaiPhong(dgv_DanhSach.Rows[e.RowIndex].Cells[1].Value.ToString()));
+                Time = BLL.TinhThoiGian(DateTime.Now, Convert.ToDateTime(dgv_DanhSach.Rows[e.RowIndex].Cells[5].Value));
+                ThoiGianBatDau = Convert.ToDateTime(dgv_DanhSach.Rows[e.RowIndex].Cells[5].Value);
 
                 switch (cbb_DanhSach.SelectedIndex)
                 {
@@ -304,7 +334,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 dgv_MatHangSuDung.Refresh();
 
                 // Lấy mã hoá đơn
-                MaHoaDonBan = new BLL_QuanLyQuanHat().LayIDHoaDonBan(MaPhongDat);
+                MaHoaDonBan = BLL.LayIDHoaDonBan(MaPhongDat);
 
             }
             
@@ -364,8 +394,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 PH.TrangThaiPhong = 1;
 
                 // Cập nhật dữ liệu   
-                new BLL_QuanLyQuanHat().CapNhat_PhongHat(PH);
-                new BLL_QuanLyQuanHat().CapNhat_PhongDat(PD);
+                BLL.CapNhat_PhongHat(PH);
+                BLL.CapNhat_PhongDat(PD);
 
                 // Làm mới dữ liệu
                 LamMoi();
@@ -380,14 +410,14 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 if (e.Value != null)
                 {
                     MaDichVu = e.Value.ToString().Trim();
-                    e.Value = new BLL_QuanLyQuanHat().LayTenDichVu(e.Value.ToString().Trim());
+                    e.Value = BLL.LayTenDichVu(e.Value.ToString().Trim());
                 }
             }
             if (e.ColumnIndex == 3)
             {
                 if (e.Value != null)
                 {
-                    e.Value = Convert.ToDouble(new BLL_QuanLyQuanHat().LayGiaTienDichVu(MaDichVu)).ToString("#,###") + "đ";
+                    e.Value = Convert.ToDouble(BLL.LayGiaTienDichVu(MaDichVu)).ToString("#,###") + "đ";
                 }
             }
         }
@@ -400,17 +430,26 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     if (e.Value != null)
                     {
                         MaMatHang = e.Value.ToString().Trim();
-                        e.Value = new BLL_QuanLyQuanHat().LayTenMatHang(e.Value.ToString().Trim()); 
+                        e.Value = BLL.LayTenMatHang(e.Value.ToString().Trim()); 
                     }
                     break;
                 case 5:
                     if (e.Value != null)
                     {
-                        e.Value = Convert.ToDouble(new BLL_QuanLyQuanHat().LayGiaTienMatHang(MaMatHang)).ToString("#,###") + "đ";
+                        e.Value = Convert.ToDouble(BLL.LayGiaTienMatHang(MaMatHang)).ToString("#,###") + "đ";
                     }
                     break;
             }
             
+        }
+
+        private void ThoiGian_Tick(object sender, EventArgs e)
+        {
+            if (Flag_Time)
+            {
+                txt_ThoiGianHoatDong.Text = BLL.Format_ThoiGian(Time) + "  Giờ !";
+                Time += new TimeSpan(0, 0, 1);
+            }
         }
     }
 }
