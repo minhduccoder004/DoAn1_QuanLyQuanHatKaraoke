@@ -402,5 +402,17 @@
   <ItemGroup>
     <None Include="Picture\clock1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\order_bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\bill-stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\bill-stock1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

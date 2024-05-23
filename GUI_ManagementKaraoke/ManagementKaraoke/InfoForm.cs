@@ -26,7 +26,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         readonly string[] arr_formname = { "Trang chủ", "Quản lý hoá đơn", "Thống kê", "Quản lý khách hàng", "Quản lý nhân viên", "Quản lý phòng hát" };
         readonly string[] arr_SearchByTrangChu = { "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên" };
         readonly string[] arr_SearchByQLHoaDon = { "Tên khách hàng", "Tên nhân viên" };
-        readonly string[] arr_SearchByThongKe = { "" };
+        readonly string[] arr_SearchByThongKe = { "Không có !!" };
         readonly string[] arr_SearchByQLKhachHang = { "Tên khách hàng", "Số điện thoại" };
         readonly string[] arr_SearchByQLNhanVien = { "Tên nhân viên", "Số điện thoại", "Địa chỉ", "Năm sinh", "Email" };
         readonly string[] arr_SearchByQLPhongHat = { "Tên phòng", "Loại phòng" };
