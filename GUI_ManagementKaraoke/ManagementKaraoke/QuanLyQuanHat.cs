@@ -118,21 +118,18 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             switch (cbb_DanhSach.SelectedIndex)
             {
                 case 0:
-                    dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_ChuaHoatDong();
+                    dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_ChuaHoatDong();
                     dgv_DanhSach.Refresh();
                     FormatHeaderTable();
-
                     // Đổi màu button
                     DoiMauButton_Dis();
                     break;
                 case 1:
-                    dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_DangHoatDong();
+                    dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_DangHoatDong();
                     dgv_DanhSach.Refresh();
                     FormatHeaderTable();
-
                     // Đổi màu button
                     DoiMauButton_Dis();
-                    
                     break;
             }
         }
@@ -143,6 +140,15 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DichVuSuDung.Refresh();
             dgv_MatHangSuDung.DataSource = new BLL_QuanLyQuanHat().DanhSachMatHang_KhachGoi(MaPhongDat);
             dgv_MatHangSuDung.Refresh();
+        }
+
+        public void LamMoi_KhiThanhToan()
+        {
+            if (cbb_DanhSach.SelectedIndex == 1)
+            {
+                dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_DangHoatDong();
+                dgv_DanhSach.Refresh();
+            }
         }
 
         void DoiMauButton_Dis()
@@ -225,7 +231,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 Flag_Status = false;
 
                 // Làm mới
-                dgv_DanhSach.DataSource = BLL.DanhSachPhongDat_ChuaHoatDong();
+                dgv_DanhSach.DataSource = new BLL_QuanLyQuanHat().DanhSachPhongDat_ChuaHoatDong();
                 dgv_DanhSach.Refresh();
 
                 // Đổi màu button
@@ -372,8 +378,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 Flag_Status = false;
 
                 // Khởi tạo form Thanh toán
-                ThanhToan TT = new ThanhToan(this);
-                TT.ShowDialog();
+                using (ThanhToan TT = new ThanhToan(this))
+                {
+                    TT.ShowDialog();
+                }
             }
         }
 

@@ -53,19 +53,89 @@ namespace BLL.Implement_BLL
             return DAL.LayDuLieu_BangGoiMatHang().FindAll(x => Equals(x.MaHoaDonBan.Trim(), ID_HoaDonBan.Trim()));
         }
 
-        public double TienDichVu_DaSuDung()
+        public double TienDichVu_DaSuDung(string ID_HoaDonBan)
         {
-            throw new NotImplementedException();
+            double TienDichVu = 0;
+            var DanhSachDichVu = DAL.LayDuLieu_BangGoiDichVu().FindAll(x => Equals(x.MaHoaDonBan.Trim(), ID_HoaDonBan.Trim()));
+
+            foreach (var i in DanhSachDichVu)
+            {
+                TienDichVu += Convert.ToDouble(i.tblDichVu.GiaDichVu);
+            }
+
+            return TienDichVu;
         }
 
-        public double TienMatHang_DaSuDung()
+        public double TienMatHang_DaSuDung(string ID_HoaDonBan)
         {
-            throw new NotImplementedException();
+            double TienMatHang = 0;
+            var DanhSachMatHang = DAL.LayDuLieu_BangGoiMatHang().FindAll(x => Equals(x.MaHoaDonBan.Trim(), ID_HoaDonBan.Trim()));
+
+            foreach (var i in DanhSachMatHang)
+            {
+                TienMatHang += Convert.ToDouble(i.tblMatHang.DonGiaMatHang * i.SoLuong);
+            }
+
+            return TienMatHang;
         }
 
-        public double ThanhTien_Tong()
+        public double ThanhTien_Tong(double TienPhong, double TienDichVu, double TienMatHang)
         {
-            throw new NotImplementedException();
+            return TienPhong + TienDichVu + TienMatHang;
+        }
+
+        public double TienPhong_DaSuDung(string ID_HoaDonBan, TimeSpan GioSuDung)
+        {
+            double TienPhong = DAL.LayDuLieu_BangHoaDonBan().Find(x => Equals(x.MaHoaDonBan.Trim(), ID_HoaDonBan.Trim())).tblPhongDat.tblPhongHat.tblLoaiPhong.DonGiaPhong;
+
+            TienPhong += GioSuDung.Hours * 150000;
+
+            if (GioSuDung.Minutes >= 30)
+            {
+                TienPhong += 0.5 * 150000;
+            }
+            else
+            {
+                TienPhong += 0.2 * 150000;
+            }
+
+            return TienPhong;
+
+        }
+
+        public string LayTenDichVu(string IDDichVu)
+        {
+            return DAL.LayDuLieu_BangDichVu().Find(x => Equals(x.MaDichVu.Trim(), IDDichVu.Trim())).TenDichVu.Trim();
+        }
+
+        public string LayGiaTienDichVu(string IDDichVu)
+        {
+            return DAL.LayDuLieu_BangDichVu().Find(x => Equals(x.MaDichVu.Trim(), IDDichVu.Trim())).GiaDichVu.ToString();
+        }
+
+        public string LayTenMatHang(string IDMatHang)
+        {
+            return DAL.LayDuLieu_BangMatHang().Find(x => Equals(x.MaMatHang.Trim(), IDMatHang.Trim())).TenMatHang.Trim();
+        }
+
+        public string LayGiaTienMatHang(string IDMatHang)
+        {
+            return DAL.LayDuLieu_BangMatHang().Find(x => Equals(x.MaMatHang.Trim(), IDMatHang.Trim())).DonGiaMatHang.ToString();
+        }
+
+        public void CapNhat_HoaDonBan(tblHoaDonBan tblHoaDonBan)
+        {
+            DAL.Update_HoaDonBan(tblHoaDonBan);
+        }
+
+        public void CapNhat_PhongDat(tblPhongDat tblPhongDat)
+        {
+            DAL.Update_PhongDat(tblPhongDat);
+        }
+
+        public void CapNhat_PhongHat(tblPhongHat tblPhongHat)
+        {
+            DAL.Update_PhongHat(tblPhongHat);
         }
     }
 }
