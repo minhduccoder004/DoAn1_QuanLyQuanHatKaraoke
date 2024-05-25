@@ -147,6 +147,7 @@
             this.ctx_QuanLy_ThongTinTaiKhoan.Padding = new System.Windows.Forms.Padding(0, 1, 0, 10);
             this.ctx_QuanLy_ThongTinTaiKhoan.Size = new System.Drawing.Size(193, 33);
             this.ctx_QuanLy_ThongTinTaiKhoan.Text = "Thông tin tài khoản";
+            this.ctx_QuanLy_ThongTinTaiKhoan.Click += new System.EventHandler(this.ctx_QuanLy_ThongTinTaiKhoan_Click);
             // 
             // ctx_QuanLyTaiKhoan
             // 
@@ -156,6 +157,7 @@
             this.ctx_QuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(0, 1, 0, 10);
             this.ctx_QuanLyTaiKhoan.Size = new System.Drawing.Size(193, 33);
             this.ctx_QuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.ctx_QuanLyTaiKhoan.Click += new System.EventHandler(this.ctx_QuanLyTaiKhoan_Click);
             // 
             // menuNhanVien_QLTaiKhoan
             // 
@@ -184,6 +186,7 @@
             this.ctx_NhanVien_ThongTinTaiKhoan.Padding = new System.Windows.Forms.Padding(0, 1, 0, 10);
             this.ctx_NhanVien_ThongTinTaiKhoan.Size = new System.Drawing.Size(193, 33);
             this.ctx_NhanVien_ThongTinTaiKhoan.Text = "Thông tin tài khoản";
+            this.ctx_NhanVien_ThongTinTaiKhoan.Click += new System.EventHandler(this.ctx_NhanVien_ThongTinTaiKhoan_Click);
             // 
             // ctx_DoiMatKhau
             // 
@@ -193,6 +196,7 @@
             this.ctx_DoiMatKhau.Padding = new System.Windows.Forms.Padding(0, 1, 0, 10);
             this.ctx_DoiMatKhau.Size = new System.Drawing.Size(193, 33);
             this.ctx_DoiMatKhau.Text = "Đổi mật khẩu";
+            this.ctx_DoiMatKhau.Click += new System.EventHandler(this.ctx_DoiMatKhau_Click);
             // 
             // InfoAccount
             // 

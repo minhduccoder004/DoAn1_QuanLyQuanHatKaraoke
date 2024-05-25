@@ -34,14 +34,6 @@
             this.pn_ChucNang = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.lb_Or = new System.Windows.Forms.Label();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.llb_QuenMK = new System.Windows.Forms.LinkLabel();
-            this.llb_DaCoTK = new System.Windows.Forms.LinkLabel();
-            this.llb_ChuaCoTK = new System.Windows.Forms.LinkLabel();
-            this.lb_QuenMK = new System.Windows.Forms.Label();
-            this.lb_DaCoTK = new System.Windows.Forms.Label();
-            this.lb_ChuaCoTK = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
             this._Container.SuspendLayout();
@@ -96,14 +88,6 @@
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 50;
-            this.guna2CustomGradientPanel1.Controls.Add(this.lb_Or);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2Separator1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.llb_QuenMK);
-            this.guna2CustomGradientPanel1.Controls.Add(this.llb_DaCoTK);
-            this.guna2CustomGradientPanel1.Controls.Add(this.llb_ChuaCoTK);
-            this.guna2CustomGradientPanel1.Controls.Add(this.lb_QuenMK);
-            this.guna2CustomGradientPanel1.Controls.Add(this.lb_DaCoTK);
-            this.guna2CustomGradientPanel1.Controls.Add(this.lb_ChuaCoTK);
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(50)))));
@@ -114,112 +98,12 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(537, 461);
             this.guna2CustomGradientPanel1.TabIndex = 5;
             // 
-            // lb_Or
-            // 
-            this.lb_Or.AutoSize = true;
-            this.lb_Or.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Or.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lb_Or.Location = new System.Drawing.Point(252, 362);
-            this.lb_Or.Name = "lb_Or";
-            this.lb_Or.Size = new System.Drawing.Size(33, 15);
-            this.lb_Or.TabIndex = 13;
-            this.lb_Or.Text = "Hoặc";
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(59, 360);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(419, 22);
-            this.guna2Separator1.TabIndex = 12;
-            // 
-            // llb_QuenMK
-            // 
-            this.llb_QuenMK.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.llb_QuenMK.AutoSize = true;
-            this.llb_QuenMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llb_QuenMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.llb_QuenMK.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_QuenMK.Location = new System.Drawing.Point(299, 385);
-            this.llb_QuenMK.Name = "llb_QuenMK";
-            this.llb_QuenMK.Size = new System.Drawing.Size(121, 19);
-            this.llb_QuenMK.TabIndex = 11;
-            this.llb_QuenMK.TabStop = true;
-            this.llb_QuenMK.Text = "Lấy lại mật khẩu";
-            this.llb_QuenMK.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_QuenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_QuenMK_LinkClicked);
-            // 
-            // llb_DaCoTK
-            // 
-            this.llb_DaCoTK.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.llb_DaCoTK.AutoSize = true;
-            this.llb_DaCoTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llb_DaCoTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.llb_DaCoTK.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_DaCoTK.Location = new System.Drawing.Point(299, 338);
-            this.llb_DaCoTK.Name = "llb_DaCoTK";
-            this.llb_DaCoTK.Size = new System.Drawing.Size(81, 19);
-            this.llb_DaCoTK.TabIndex = 10;
-            this.llb_DaCoTK.TabStop = true;
-            this.llb_DaCoTK.Text = "Đăng nhập";
-            this.llb_DaCoTK.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_DaCoTK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_DaCoTK_LinkClicked);
-            // 
-            // llb_ChuaCoTK
-            // 
-            this.llb_ChuaCoTK.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.llb_ChuaCoTK.AutoSize = true;
-            this.llb_ChuaCoTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llb_ChuaCoTK.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_ChuaCoTK.Location = new System.Drawing.Point(299, 338);
-            this.llb_ChuaCoTK.Name = "llb_ChuaCoTK";
-            this.llb_ChuaCoTK.Size = new System.Drawing.Size(66, 19);
-            this.llb_ChuaCoTK.TabIndex = 9;
-            this.llb_ChuaCoTK.TabStop = true;
-            this.llb_ChuaCoTK.Text = "Đăng ký";
-            this.llb_ChuaCoTK.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.llb_ChuaCoTK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_ChuaCoTK_LinkClicked);
-            // 
-            // lb_QuenMK
-            // 
-            this.lb_QuenMK.AutoSize = true;
-            this.lb_QuenMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_QuenMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lb_QuenMK.Location = new System.Drawing.Point(143, 385);
-            this.lb_QuenMK.Name = "lb_QuenMK";
-            this.lb_QuenMK.Size = new System.Drawing.Size(136, 19);
-            this.lb_QuenMK.TabIndex = 8;
-            this.lb_QuenMK.Text = "Bạn quên mật khẩu ?";
-            // 
-            // lb_DaCoTK
-            // 
-            this.lb_DaCoTK.AutoSize = true;
-            this.lb_DaCoTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DaCoTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lb_DaCoTK.Location = new System.Drawing.Point(143, 338);
-            this.lb_DaCoTK.Name = "lb_DaCoTK";
-            this.lb_DaCoTK.Size = new System.Drawing.Size(130, 19);
-            this.lb_DaCoTK.TabIndex = 6;
-            this.lb_DaCoTK.Text = "Bạn đã có tài khoản";
-            // 
-            // lb_ChuaCoTK
-            // 
-            this.lb_ChuaCoTK.AutoSize = true;
-            this.lb_ChuaCoTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ChuaCoTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lb_ChuaCoTK.Location = new System.Drawing.Point(143, 338);
-            this.lb_ChuaCoTK.Name = "lb_ChuaCoTK";
-            this.lb_ChuaCoTK.Size = new System.Drawing.Size(145, 19);
-            this.lb_ChuaCoTK.TabIndex = 5;
-            this.lb_ChuaCoTK.Text = "Bạn chưa có tài khoản";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI_ManagementKaraoke.Properties.Resources.LogoLoginKaraoke;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(419, 231);
+            this.pictureBox1.Size = new System.Drawing.Size(419, 363);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -243,7 +127,6 @@
             this._Container.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -257,13 +140,5 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel _Container;
         private Guna.UI2.WinForms.Guna2GradientPanel pn_ChucNang;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private System.Windows.Forms.LinkLabel llb_QuenMK;
-        private System.Windows.Forms.LinkLabel llb_DaCoTK;
-        private System.Windows.Forms.LinkLabel llb_ChuaCoTK;
-        private System.Windows.Forms.Label lb_QuenMK;
-        private System.Windows.Forms.Label lb_DaCoTK;
-        private System.Windows.Forms.Label lb_ChuaCoTK;
-        private System.Windows.Forms.Label lb_Or;
     }
 }

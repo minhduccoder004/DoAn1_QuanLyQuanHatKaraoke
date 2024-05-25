@@ -25,3 +25,6 @@
 - ngày 24-05-2024:
   + (6:49 AM) Thiết kế xong giao diện
   + note: hoàn thành các chức năng có trong giao diện.......
+- ngày 25-05-2024:
+  + (5:11 PM) Hoàn thành gần như hoàn thiện
+  + note: bắt lỗi, làm thêm các sự kiện tìm kiếm, hoàn thiện quản lý tài khoản.....

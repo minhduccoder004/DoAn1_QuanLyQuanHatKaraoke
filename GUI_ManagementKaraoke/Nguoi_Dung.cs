@@ -14,31 +14,7 @@ namespace GUI_ManagementKaraoke
 {
     public partial class Nguoi_Dung : Form
     {
-        DangNhap FrmDangNhap;
-        DangKy FrmDangKy = new DangKy() {TopLevel= false };
-        QuenMatKhau FrmQuenMatKhau = new QuenMatKhau() { TopLevel = false };
-
-
-        void AnDaCoTK()
-        {
-            lb_DaCoTK.Hide();
-            llb_DaCoTK.Hide();
-        }
-        void HienDaCoTK()
-        {
-            lb_DaCoTK.Show();
-            llb_DaCoTK.Show();
-        }
-        void AnChuaCoTK()
-        {
-            lb_ChuaCoTK.Hide();
-            llb_ChuaCoTK.Hide();
-        }
-        void HienChuaCoTK()
-        {
-            lb_ChuaCoTK.Show();
-            llb_ChuaCoTK.Show();
-        }
+        readonly DangNhap FrmDangNhap = new DangNhap() { TopLevel = false };
 
         void MoFrm(Form form)
         {
@@ -46,26 +22,13 @@ namespace GUI_ManagementKaraoke
             form.Dock = DockStyle.Fill;
             form.Show();
         }
-
-        void DongFrm()
-        {
-            pn_ChucNang.Controls.Clear();
-        }
         public Nguoi_Dung()
         {
             InitializeComponent();
-            FrmDangNhap = new DangNhap() { TopLevel = false };
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            DongFrm();
-            MoFrm(FrmDangNhap);
         }
 
         private void Nguoi_Dung_Load(object sender, EventArgs e)
         {
-            AnDaCoTK();
             MoFrm(FrmDangNhap);
             FrmDangNhap.DongFormNguoiDung += DangNhapThanhCong;
         }
@@ -77,28 +40,6 @@ namespace GUI_ManagementKaraoke
         void BatSuKien_FormDangNhapDong(object sender, EventArgs e)
         {
             this.Show();
-        }
-
-        private void llb_DaCoTK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DongFrm();
-            AnDaCoTK();
-            HienChuaCoTK();
-            MoFrm(FrmDangNhap);
-        }
-
-        private void llb_ChuaCoTK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DongFrm();
-            HienDaCoTK();
-            AnChuaCoTK();
-            MoFrm(FrmDangKy);
-        }
-
-        private void llb_QuenMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DongFrm();
-            MoFrm(FrmQuenMatKhau);
         }
     }
 }

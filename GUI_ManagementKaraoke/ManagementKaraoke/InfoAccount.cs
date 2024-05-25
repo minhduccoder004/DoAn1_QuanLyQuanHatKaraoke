@@ -1,4 +1,5 @@
 ﻿using BLL.Implement_BLL;
+using GUI_ManagementKaraoke.NguoiDung;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,30 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     bt_Menu.ContextMenuStrip.Show(bt_Menu, new Point(0, 76));
                     break;
             }
+        }
+
+        private void ctx_QuanLy_ThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ThongTinTaiKhoan Info = new ThongTinTaiKhoan();
+            Info.ShowDialog();
+        }
+
+        private void ctx_QuanLyTaiKhoan_Click(object sender, EventArgs e)
+        {
+            QuanLyTaiKhoan Acc = new QuanLyTaiKhoan();
+            Acc.ShowDialog();
+        }
+
+        private void ctx_NhanVien_ThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ThongTinTaiKhoan Info = new ThongTinTaiKhoan();
+            Info.ShowDialog();
+        }
+
+        private void ctx_DoiMatKhau_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau ChangePass = new DoiMatKhau();
+            ChangePass.ShowDialog();
         }
     }
 }
