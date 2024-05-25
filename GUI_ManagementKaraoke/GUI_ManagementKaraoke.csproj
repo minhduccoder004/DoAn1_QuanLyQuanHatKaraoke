@@ -173,17 +173,17 @@
     <Compile Include="ManagementKaraoke\QuanLyPhongHat.Designer.cs">
       <DependentUpon>QuanLyPhongHat.cs</DependentUpon>
     </Compile>
+    <Compile Include="NguoiDung\ThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung\ThemTaiKhoan.Designer.cs">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguoi_Dung.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nguoi_Dung.Designer.cs">
       <DependentUpon>Nguoi_Dung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NguoiDung\DangKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NguoiDung\DangKy.Designer.cs">
-      <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="NguoiDung\DangNhap.cs">
       <SubType>Form</SubType>
@@ -196,12 +196,6 @@
     </Compile>
     <Compile Include="NguoiDung\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NguoiDung\QuenMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NguoiDung\QuenMatKhau.Designer.cs">
-      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Picture\XuLyAnh.cs" />
     <Compile Include="Program.cs" />
@@ -263,17 +257,14 @@
     <EmbeddedResource Include="Management_Karaoke.resx">
       <DependentUpon>Management_Karaoke.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguoiDung\DangKy.resx">
-      <DependentUpon>DangKy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NguoiDung\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguoiDung\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguoiDung\QuenMatKhau.resx">
-      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    <EmbeddedResource Include="NguoiDung\ThemTaiKhoan.resx">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nguoi_Dung.resx">
       <DependentUpon>Nguoi_Dung.cs</DependentUpon>

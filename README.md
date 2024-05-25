@@ -28,3 +28,5 @@
 - ngày 25-05-2024:
   + (5:11 PM) Hoàn thành gần như hoàn thiện
   + note: bắt lỗi, làm thêm các sự kiện tìm kiếm, hoàn thiện quản lý tài khoản.....
+  + (10:17 PM) Hoàn thành sơ quản lý tài khoản
+  + note: làm bắt lỗi, tìm kiếm là bài ok

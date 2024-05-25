@@ -60,7 +60,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void ctx_QuanLy_ThongTinTaiKhoan_Click(object sender, EventArgs e)
         {
-            ThongTinTaiKhoan Info = new ThongTinTaiKhoan();
+            ThongTinTaiKhoan Info = new ThongTinTaiKhoan(this);
             Info.ShowDialog();
         }
 
@@ -72,13 +72,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void ctx_NhanVien_ThongTinTaiKhoan_Click(object sender, EventArgs e)
         {
-            ThongTinTaiKhoan Info = new ThongTinTaiKhoan();
+            ThongTinTaiKhoan Info = new ThongTinTaiKhoan(this);
             Info.ShowDialog();
         }
 
         private void ctx_DoiMatKhau_Click(object sender, EventArgs e)
         {
-            DoiMatKhau ChangePass = new DoiMatKhau();
+            DoiMatKhau ChangePass = new DoiMatKhau(this);
             ChangePass.ShowDialog();
         }
     }

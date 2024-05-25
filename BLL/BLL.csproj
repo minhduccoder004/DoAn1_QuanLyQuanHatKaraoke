@@ -41,14 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implement_BLL\BLL_DangKy.cs" />
     <Compile Include="Implement_BLL\BLL_DangNhap.cs" />
     <Compile Include="Implement_BLL\BLL_DatPhong.cs" />
-    <Compile Include="Implement_BLL\BLL_DoiMatKhau.cs" />
     <Compile Include="Implement_BLL\BLL_InfoAccount.cs" />
-    <Compile Include="Implement_BLL\BLL_ManagementKaraoke.cs" />
     <Compile Include="Implement_BLL\BLL_MenuNhanVien.cs" />
-    <Compile Include="Implement_BLL\BLL_MenuQuanLy.cs" />
     <Compile Include="Implement_BLL\BLL_NguoiDung.cs" />
     <Compile Include="Implement_BLL\BLL_Order.cs" />
     <Compile Include="Implement_BLL\BLL_QuanLyDoanhThu.cs" />
@@ -63,6 +59,7 @@
     <Compile Include="Implement_BLL\ImplementBLL.cs" />
     <Compile Include="Interface_BLL\I_BLL_DatPhong.cs" />
     <Compile Include="Interface_BLL\I_BLL_Karaoke.cs" />
+    <Compile Include="Interface_BLL\I_BLL_NguoiDung.cs" />
     <Compile Include="Interface_BLL\I_BLL_Order.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyDoanhThu.cs" />
     <Compile Include="Interface_BLL\I_BLL_QuanLyHoaDon.cs" />

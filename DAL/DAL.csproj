@@ -52,14 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implement_DAL\DAL_DatPhong.cs" />
-    <Compile Include="Implement_DAL\DAL_InfoAccount.cs" />
-    <Compile Include="Implement_DAL\DAL_ManagementKaraoke.cs" />
-    <Compile Include="Implement_DAL\DAL_MenuNhanVien.cs" />
-    <Compile Include="Implement_DAL\DAL_MenuQuanLy.cs" />
     <Compile Include="Implement_DAL\DAL_NguoiDung.cs" />
     <Compile Include="Implement_DAL\DAL_DangKy.cs" />
     <Compile Include="Implement_DAL\DAL_DangNhap.cs" />
-    <Compile Include="Implement_DAL\DAL_DoiMatKhau.cs" />
     <Compile Include="Implement_DAL\DAL_Order.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyDoanhThu.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyHoaDon.cs" />
@@ -67,7 +62,6 @@
     <Compile Include="Implement_DAL\DAL_QuanLyNhanVien.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyPhongHat.cs" />
     <Compile Include="Implement_DAL\DAL_QuanLyQuanHat.cs" />
-    <Compile Include="Implement_DAL\DAL_QuenMatKhau.cs" />
     <Compile Include="Implement_DAL\DAL_ThanhToan.cs" />
     <Compile Include="Implement_DAL\DAL_TimKiem.cs" />
     <Compile Include="Implement_DAL\ImplementDAL.cs" />

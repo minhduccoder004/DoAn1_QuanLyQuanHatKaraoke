@@ -44,7 +44,7 @@ namespace GUI_ManagementKaraoke.NguoiDung
         private void bt_DangNhap_Click(object sender, EventArgs e)
         {
             var _QuyenHan = BLL.KiemTraQuyenHan(cbb_ChucVu.Text);
-            var KiemTra = BLL.KiemTraTaiKhoan(txt_TaiKhoan.Text, txt_MatKhau.Text, _QuyenHan);
+            var KiemTra = new BLL_DangNhap().KiemTraTaiKhoan(txt_TaiKhoan.Text, txt_MatKhau.Text, _QuyenHan);
 
             switch (KiemTra)
             {
