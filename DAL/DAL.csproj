@@ -64,9 +64,11 @@
     <Compile Include="Implement_DAL\DAL_QuanLyQuanHat.cs" />
     <Compile Include="Implement_DAL\DAL_ThanhToan.cs" />
     <Compile Include="Implement_DAL\DAL_TimKiem.cs" />
+    <Compile Include="Implement_DAL\DAL_XuatHoaDon.cs" />
     <Compile Include="Implement_DAL\ImplementDAL.cs" />
     <Compile Include="Interface_DAL\I_DAL_DatPhong.cs" />
     <Compile Include="Interface_DAL\I_DAL_Karaoke.cs" />
+    <Compile Include="Interface_DAL\I_DAL_KhachHang.cs" />
     <Compile Include="Interface_DAL\I_DAL_NhanVien.cs" />
     <Compile Include="Interface_DAL\I_DAL_Order.cs" />
     <Compile Include="Interface_DAL\I_DAL_PhongHat.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Interface_DAL\I_DAL_QuanLyQuanHat.cs" />
     <Compile Include="Interface_DAL\I_DAL_ThanhToan.cs" />
     <Compile Include="Interface_DAL\I_DAL_TimKiem.cs" />
+    <Compile Include="Interface_DAL\I_DAL_XuatHoaDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

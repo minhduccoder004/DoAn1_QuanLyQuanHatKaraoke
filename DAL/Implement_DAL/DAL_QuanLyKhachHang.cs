@@ -8,12 +8,17 @@ using System.Threading.Tasks;
 
 namespace DAL.Implement_DAL
 {
-    public class DAL_QuanLyKhachHang : ImplementDAL<tblKhachHang>, I_DAL_Karaoke<tblKhachHang>
+    public class DAL_QuanLyKhachHang : ImplementDAL<tblKhachHang>, I_DAL_Karaoke<tblKhachHang>, I_DAL_KhachHang
     {
         DatabaseKaraoke Database = new DatabaseKaraoke();
         public List<tblKhachHang> DanhSachDoiTuong()
         {
             return Database.tblKhachHangs.ToList();
+        }
+
+        public List<tblHoaDonBan> LayDuLieu_BangHoaDonBan()
+        {
+            return Database.tblHoaDonBans.ToList();
         }
 
         public override void Sua(tblKhachHang _DTO)

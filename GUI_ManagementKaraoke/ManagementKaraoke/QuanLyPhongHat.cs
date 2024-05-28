@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI_ManagementKaraoke.Event;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GUI_ManagementKaraoke.ManagementKaraoke
 {
@@ -32,6 +33,41 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DanhSachPhong.DataSource = BLL.DanhSachDoiTuong();
             dgv_DanhSachPhong.Refresh();
         }
+
+        void DoDuLieu_DoThi(string ID_PhongHat)
+        {
+            var DuLieu = BLL.DuLieu_ThongKeHoatDong(ID_PhongHat);
+
+            // thiết lập dữ liệu các cột
+            chart_TanSuat.Series.Clear();
+            chart_TanSuat.Series.Add("Số lần");
+            chart_TanSuat.Series["Số lần"].XValueType = ChartValueType.Int32;
+
+            if (DuLieu.Count > 0)
+            {
+                foreach (var item in DuLieu)
+                {
+                    chart_TanSuat.Series["Số lần"].Points.AddXY(item.Key, item.Value);
+                }
+            }
+            else
+            {
+                chart_TanSuat.Series["Số lần"].Points.AddXY(DateTime.Today.Month, 0);
+            }
+
+
+
+            chart_TanSuat.ChartAreas[0].AxisX.Title = "Tháng";
+            chart_TanSuat.ChartAreas[0].AxisY.Title = "Số lần";
+
+
+        }
+
+        void Reset_Chart()
+        {
+            chart_TanSuat.Series.Clear();
+        }
+
 
         // Hàm khởi tạo
         public QuanLyPhongHat()
@@ -59,6 +95,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             // Đổi trạng thái cờ
             Flag_Status = false;
+
+            // Làm mới đồ thị
+            Reset_Chart();
         }
 
         private void bt_Create_Click(object sender, EventArgs e)
@@ -95,12 +134,16 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             // format các đối tượng trên form
             cbb_TrangThai.SelectedIndex = 2;
+
+            // Làm mới đồ thị
+            Reset_Chart();
         }
 
         private void dgv_DanhSachPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
+
                 cbb_LoaiPhong.Text = BLL.LayTenLoaiPhong(dgv_DanhSachPhong[3, e.RowIndex].Value.ToString());
                 txt_MaPhong.Text = dgv_DanhSachPhong[0, e.RowIndex].Value.ToString();
                 txt_TenPhong.Text = dgv_DanhSachPhong[1, e.RowIndex].Value.ToString();
@@ -114,6 +157,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
                 // Đổi trạng thái cờ
                 Flag_Status = true;
+
+                // Đổ dữ liệu cho chart
+                DoDuLieu_DoThi(dgv_DanhSachPhong[0, e.RowIndex].Value.ToString());
             }
         }
 

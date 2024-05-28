@@ -37,5 +37,22 @@ namespace BLL.Implement_BLL
         public List<tblKhachHang> SapXepTheoSoDienThoai() => DanhSachDoiTuong().OrderBy(x => x.SoDienThoai).ToList();
 
         public List<tblKhachHang> SapXepTheoTenKhachHang() => DanhSachDoiTuong().OrderBy(x => x.TenKhachHang.Split()[x.TenKhachHang.Split().Length - 1]).ToList();
+
+        public List<KeyValuePair<int, int>> SoLan_SuDungDichVu(string MaKhachHang)
+        {
+            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.MaKhachHang.Trim() == MaKhachHang.Trim())
+                             group KiemKe by KiemKe.ThoiGianTaoHoaDon.Value.Month into Gom
+                             select new
+                             {
+                                 Thang = Gom.Key,
+                                 SoLan = Gom.Count()
+                             };
+            var DanhSach = new List<KeyValuePair<int, int>> ();
+            foreach (var i in XuLyDuLieu)
+            {
+                DanhSach.Add(new KeyValuePair<int, int>(i.Thang, i.SoLan));
+            }
+            return DanhSach;
+        }
     }
 }

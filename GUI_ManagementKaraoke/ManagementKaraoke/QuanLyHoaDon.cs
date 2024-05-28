@@ -25,6 +25,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         string MaMatHang {  get; set; }
         string MaDichVu {  get; set; }
 
+        public string MaHoaDonBan { get; set; }
+
+
         public QuanLyHoaDon()
         {
             InitializeComponent();
@@ -84,6 +87,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
                 dgv_DichVuUsed.DataSource = BLL.DichVuUsed(dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString());
                 dgv_MatHangUsed.DataSource = BLL.MatHangUsed(dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                MaHoaDonBan = dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
         }
 
@@ -107,7 +112,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void bt_XuatHoaDon_Click(object sender, EventArgs e)
         {
-
+            using (XuatHoaDon HD = new XuatHoaDon(this))
+            {
+                HD.ShowDialog();
+            }
         }
 
         private void bt_Delete_Click(object sender, EventArgs e)

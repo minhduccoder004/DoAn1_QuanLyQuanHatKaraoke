@@ -18,6 +18,11 @@ namespace DAL.Implement_DAL
             return Database.tblPhongHats.ToList();
         }
 
+        public List<tblHoaDonBan> LayDuLieu_BangHoaDonBan()
+        {
+            return Database.tblHoaDonBans.ToList();
+        }
+
         public List<tblLoaiPhong> LayDuLieu_BangLoaiPhong()
         {
             return Database.tblLoaiPhongs.ToList();

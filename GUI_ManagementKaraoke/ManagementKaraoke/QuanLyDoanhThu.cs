@@ -100,19 +100,19 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             // thiết lập dữ liệu các cột
             chr_DoThi.Series.Clear();
-            chr_DoThi.Series.Add("DoanhThu");
-            chr_DoThi.Series["DoanhThu"].XValueType = ChartValueType.Date;
+            chr_DoThi.Series.Add("Doanh Thu");
+            chr_DoThi.Series["Doanh Thu"].XValueType = ChartValueType.Date;
 
             if (DuLieu.Count > 0)
             {
                 foreach (var item in DuLieu)
                 {
-                    chr_DoThi.Series["DoanhThu"].Points.AddXY(item.Key, item.Value);
+                    chr_DoThi.Series["Doanh Thu"].Points.AddXY(item.Key, item.Value);
                 }
             }
             else
             {
-                chr_DoThi.Series["DoanhThu"].Points.AddXY(DateTime.Today, 0);
+                chr_DoThi.Series["Doanh Thu"].Points.AddXY(DateTime.Today, 0);
             }
 
             

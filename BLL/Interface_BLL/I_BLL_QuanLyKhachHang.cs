@@ -12,5 +12,7 @@ namespace BLL.Interface_BLL
         string TaoMaKhachHang();
         List<tblKhachHang> SapXepTheoSoDienThoai();
         List<tblKhachHang> SapXepTheoTenKhachHang();
+
+        List<KeyValuePair<int, int>> SoLan_SuDungDichVu(string MaKhachHang);
     }
 }

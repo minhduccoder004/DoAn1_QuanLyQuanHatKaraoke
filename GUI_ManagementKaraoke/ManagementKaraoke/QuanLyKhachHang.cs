@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI_ManagementKaraoke.Event;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GUI_ManagementKaraoke.ManagementKaraoke
 {
@@ -31,6 +32,42 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DSKhachHang.DataSource = BLL.DanhSachDoiTuong();
             dgv_DSKhachHang.Refresh();
         }
+
+        void DoDuLieu_DoThi(string ID_KhachHang)
+        {
+            var DuLieu = BLL.SoLan_SuDungDichVu(ID_KhachHang);
+
+            // thiết lập dữ liệu các cột
+            chart_TanSuat.Series.Clear();
+            chart_TanSuat.Series.Add("Số lần");
+            chart_TanSuat.Series["Số lần"].XValueType = ChartValueType.Int32;
+
+            if (DuLieu.Count > 0)
+            {
+                foreach (var item in DuLieu)
+                {
+                    chart_TanSuat.Series["Số lần"].Points.AddXY(item.Key, item.Value);
+                }
+            }
+            else
+            {
+                chart_TanSuat.Series["Số lần"].Points.AddXY(DateTime.Today.Month, 0);
+            }
+
+
+
+            chart_TanSuat.ChartAreas[0].AxisX.Title = "Tháng";
+            chart_TanSuat.ChartAreas[0].AxisY.Title = "Số lần";
+
+
+        }
+
+        void Reset_Chart()
+        {
+            chart_TanSuat.Series.Clear();
+        }
+
+
 
         // Disable txt
 
@@ -56,6 +93,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             // Đổi màu button (disable)
             bt_Update.FillColor = DisableButtonColor;
             bt_Delete.FillColor = DisableButtonColor;
+
+            // Reset chart
+            Reset_Chart();
         }
 
         private void bt_Create_Click(object sender, EventArgs e)
@@ -88,6 +128,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             // làm mới cbb_TimKiemTheo
             cbb_SapXepTheo.SelectedIndex = -1;
+
+            // Reset chart
+            Reset_Chart();
+
+            //txt_DoiTrangThai_ReadOnly
+            txt_MaKH.ReadOnly = false;
         }
 
         private void dgv_DSKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,12 +143,20 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             bt_Delete.FillColor = EnableButtonColor;
             // Đổi màu button (Disable)
             bt_Create.FillColor = DisableButtonColor;
+
+            //txt_DoiTrangThai_ReadOnly
+            txt_MaKH.ReadOnly = true;
+
             // Gán dữ liệu cho txt
             if (e.RowIndex != -1)
             {
                 txt_MaKH.Text = dgv_DSKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
                 txt_TenKhachHang.Text = dgv_DSKhachHang.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
                 txt_SoDienThoai.Text = dgv_DSKhachHang.Rows[e.RowIndex].Cells[2].Value.ToString().Trim();
+
+                // Đổ dữ liệu đồ thị
+                DoDuLieu_DoThi(dgv_DSKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
+
             }
             // Thay đổi trạng thái cờ
             Flag_Status = true;
@@ -124,8 +178,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         bt_Create.FillColor = EnableButtonColor;
                         // Thay đổi trạng thái cờ.
                         Flag_Status = false;
-                        // code sửa dữ liệu đã chọn khỏi table
 
+                        //txt_DoiTrangThai_ReadOnly
+                        txt_MaKH.ReadOnly = true;
+
+                        // code sửa dữ liệu đã chọn khỏi table
                         tblKhachHang KH = new tblKhachHang();
                         KH.MaKhachHang = txt_MaKH.Text;
                         KH.TenKhachHang = txt_TenKhachHang.Text;
@@ -162,6 +219,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
                         // Làm mới bảng
                         LamMoi();
+
+                        //txt_DoiTrangThai_ReadOnly
+                        txt_MaKH.ReadOnly = true;
                         break;
                 }
 

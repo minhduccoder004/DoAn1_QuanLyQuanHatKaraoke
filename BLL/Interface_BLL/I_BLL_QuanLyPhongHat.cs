@@ -21,5 +21,7 @@ namespace BLL.Interface_BLL
         List<tblPhongHat> SapXep(List<tblPhongHat> PhongHats, string LoaiSapXep);
 
         List<tblPhongHat> LayPhongTheoTrangThai(string LoaiTrangThai);
+
+        List<KeyValuePair<int, int>> DuLieu_ThongKeHoatDong(string ID_PhongHat);
     }
 }

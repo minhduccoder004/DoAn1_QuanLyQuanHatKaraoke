@@ -24,6 +24,23 @@ namespace BLL.Implement_BLL
             return DAL.DanhSachDoiTuong();
         }
 
+        public List<KeyValuePair<int, int>> DuLieu_ThongKeHoatDong(string ID_PhongHat)
+        {
+            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.tblPhongDat.MaPhong.Trim() == ID_PhongHat.Trim())
+                             group KiemKe by KiemKe.ThoiGianTaoHoaDon.Value.Month into Gom
+                             select new
+                             {
+                                 Thang = Gom.Key,
+                                 SoLan = Gom.Count()
+                             };
+            var DanhSach = new List<KeyValuePair<int, int>>();
+            foreach (var i in XuLyDuLieu)
+            {
+                DanhSach.Add(new KeyValuePair<int, int>(i.Thang, i.SoLan));
+            }
+            return DanhSach;
+        }
+
         public tblPhongHat GetByID(string ID)
         {
             return DanhSachDoiTuong().Find(x => Equals(x.MaPhongHat.Trim(), ID.Trim()));

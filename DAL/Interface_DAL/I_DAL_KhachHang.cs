@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Interface_DAL
 {
-    public interface I_DAL_PhongHat
+    public interface I_DAL_KhachHang
     {
-        List<tblLoaiPhong> LayDuLieu_BangLoaiPhong();
         List<tblHoaDonBan> LayDuLieu_BangHoaDonBan();
+
+
 
     }
 }

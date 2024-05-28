@@ -30,3 +30,6 @@
   + note: bắt lỗi, làm thêm các sự kiện tìm kiếm, hoàn thiện quản lý tài khoản.....
   + (10:17 PM) Hoàn thành sơ quản lý tài khoản
   + note: làm bắt lỗi, tìm kiếm là bài ok
+- ngày 28-05-2024:
+  + (10:46) Hoàn thiện một số chức năng
+  + note: làm test case, làm chức năng tìm kiếm, xuất hoá đơn ra word
