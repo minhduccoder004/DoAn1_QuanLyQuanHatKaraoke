@@ -12,6 +12,7 @@ namespace BLL.Interface_BLL
         List<tblHoaDonBan> DanhSach_HoaDonBan();
         List<tblGoiDichVu> DichVuUsed(string ID_HoaDonBan);
         List<tblGoiMatHang> MatHangUsed(string ID_HoaDonBan);
+        List<tblHoaDonBan> TimKiem_HoaDons_TheoMocThoiGian(DateTime BatDau, DateTime KetThuc);
 
         string LayTenKhachHang(string ID_KhachHang);
         string LayTenNhanVien(string ID_NhanVien);
@@ -24,5 +25,14 @@ namespace BLL.Interface_BLL
         string LayGiaTienDichVu(string IDDichVu);
         string LayTenMatHang(string IDMatHang);
         string LayGiaTienMatHang(string IDMatHang);
+
+        void Xoa_HoaDon(tblHoaDonBan tblHoaDonBan);
+
+        string DuongDan_LogoHoaDon();
+
+        double TongTien_MatHang(string ID_HoaDon);
+        double TongTien_DichVu(string ID_HoaDon);
+        double TongTien_Phong(string ID_HoaDon, TimeSpan GioSuDung);
+        double ThanhTien_HoaDon(params double[] CacLoaiTiens);
     }
 }

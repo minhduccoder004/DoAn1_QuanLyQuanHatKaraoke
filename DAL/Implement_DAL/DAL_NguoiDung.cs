@@ -9,12 +9,22 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_NguoiDung : ImplementDAL<tblNguoiDung>, I_DAL_Karaoke<tblNguoiDung>
+    public class DAL_NguoiDung : ImplementDAL<tblNguoiDung>, I_DAL_Karaoke<tblNguoiDung>, I_DAL_NguoiDung
     {
         DatabaseKaraoke DB = new DatabaseKaraoke();
         public List<tblNguoiDung> DanhSachDoiTuong()
         {
             return DB.tblNguoiDungs.ToList();
+        }
+
+        public void DoiMatKhau(tblNguoiDung ND)
+        {
+            var NguoiDung = DB.tblNguoiDungs.Find(ND.TenTaiKhoan);
+            if (NguoiDung != null)
+            {
+                NguoiDung.MatKhau = ND.MatKhau;
+            }
+            DB.SaveChanges();
         }
 
         public override void Sua(tblNguoiDung _DTO)

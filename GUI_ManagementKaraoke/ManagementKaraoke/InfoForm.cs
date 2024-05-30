@@ -20,10 +20,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         public event EventHandler<Event_LayDSKhachHang> Event_KhachHangs;
         public event EventHandler<Event_LayDSNhanVien> Event_NhanViens;
         public event EventHandler<Event_LayDSPhongHat> Event_PhongHats;
+        public event EventHandler<Event_LayDSPhongDat> Event_PhongDats;
+        public event EventHandler<Event_LayDSHoaDon> Event_HoaDons;
         // Khởi tạo lớp BLL
         BLL_TimKiem BLL = new BLL_TimKiem();
-        // Mảng tên các form 
-        readonly string[] arr_formname = { "Trang chủ", "Quản lý hoá đơn", "Thống kê", "Quản lý khách hàng", "Quản lý nhân viên", "Quản lý phòng hát" };
+        // Mảng tìm kiếm các form 
         readonly string[] arr_SearchByTrangChu = { "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên" };
         readonly string[] arr_SearchByQLHoaDon = { "Tên khách hàng", "Tên nhân viên" };
         readonly string[] arr_SearchByThongKe = { "Không có !!" };
@@ -32,10 +33,14 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         readonly string[] arr_SearchByQLPhongHat = { "Tên phòng", "Loại phòng" };
         // Khởi tạo thuộc tính
         List<tblPhongHat> DanhSachPhongHat;
+        List<tblPhongDat> DanhSachPhongDat;
+        List<tblHoaDonBan> DanhSachHoaDon;
         public InfoForm()
         {
             InitializeComponent();
             DanhSachPhongHat = new List<tblPhongHat>();
+            DanhSachPhongDat = new List<tblPhongDat>();
+            DanhSachHoaDon = new List<tblHoaDonBan>();
         }
 
         public void DoiTenForm(string TenForm)
@@ -73,8 +78,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             switch (lb_infoFrm.Text.Trim().ToLower())
             {
                 case "trang chủ":
+                    SuKien_PhongDats(BLL.DuLieuTimKiemPhongDat(DanhSachPhongDat, cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text));
                     break;
                 case "quản lý hoá đơn":
+                    SuKien_HoaDons(BLL.DuLieuBangHoaDonBan(DanhSachHoaDon, cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text));
                     break;
                 case "thống kê":
                     break;
@@ -109,17 +116,44 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             e.DanhSachNhanVien = tblNhanViens;
             Event_NhanViens?.Invoke(this, e);
         }
-
-        void SuKien_PhongHats(List<tblPhongHat> tblPhongHat)
+        // Phòng hát
+        void SuKien_PhongHats(List<tblPhongHat> tblPhongHats)
         {
             Event_LayDSPhongHat e = new Event_LayDSPhongHat();
-            e.DanhSachPhongHat = tblPhongHat;
+            e.DanhSachPhongHat = tblPhongHats;
             Event_PhongHats?.Invoke(this, e);
         }
 
         public void BatSuKien_LayDanhSach(object sender, Event_LayDSPhongHat e)
         {
             DanhSachPhongHat = e.DanhSachPhongHat;
+        }
+        // Phòng đặt
+
+        void SuKien_PhongDats(List<tblPhongDat> tblPhongDats)
+        {
+            Event_LayDSPhongDat e = new Event_LayDSPhongDat();
+            e.DanhSachPhongDat = tblPhongDats;
+            Event_PhongDats?.Invoke(this, e);
+        }
+         
+        public void BatSuKien_LayDanhSach_PhongDat(object sender, Event_LayDSPhongDat e)
+        {
+            DanhSachPhongDat = e.DanhSachPhongDat;
+        }
+
+        // Hoá đơn bán
+
+        void SuKien_HoaDons(List<tblHoaDonBan> tblHoaDonBans)
+        {
+            Event_LayDSHoaDon e = new Event_LayDSHoaDon();
+            e.DanhSachHoaDonBan = tblHoaDonBans;
+            Event_HoaDons?.Invoke(this, e);
+        }
+
+        public void BatSuKien_LayDanhSach_HoaDon(object sender, Event_LayDSHoaDon e)
+        {
+            DanhSachHoaDon = e.DanhSachHoaDonBan;
         }
     }
 }

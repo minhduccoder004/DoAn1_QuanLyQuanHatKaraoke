@@ -13,6 +13,21 @@ namespace BLL.Implement_BLL
     {
         // Khai báo lớp DAL
         DAL_TimKiem DAL = new DAL_TimKiem();
+
+        public List<tblHoaDonBan> DuLieuBangHoaDonBan(List<tblHoaDonBan> DanhSachHoaDonBan, string LoaiTimKiem, string ThongTinTimKiem)
+        {
+         
+            switch (LoaiTimKiem.ToLower())
+            {
+                case "tên khách hàng":
+                    return DanhSachHoaDonBan.FindAll(x => x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.Trim().ToLower()));
+                case "tên nhân viên":
+                    return DanhSachHoaDonBan.FindAll(x => x.tblNhanVien.TenNhanVien.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
+                default:
+                    return default;
+            }
+        }
+
         public List<tblKhachHang> DuLieuTimKiemKhachHang(string LoaiTimKiem, string ThongTinTimKiem)
         {
             switch (LoaiTimKiem.ToLower())
@@ -41,6 +56,24 @@ namespace BLL.Implement_BLL
                     return DAL.DuLieuBangNhanVien().FindAll(x => x.NgaySinh.Value.Year.ToString().Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "email":
                     return DAL.DuLieuBangNhanVien().FindAll(x => x.Email.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                default:
+                    return default;
+            }
+        }
+
+        public List<tblPhongDat> DuLieuTimKiemPhongDat(List<tblPhongDat> DanhSachPhongDat, string LoaiTimKiem, string ThongTinTimKiem)
+        {
+            // "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên"
+            switch (LoaiTimKiem.ToLower())
+            {
+                case "tên khách hàng":
+                    return DanhSachPhongDat.FindAll(x => x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
+                case "số điện thoại":
+                    return DanhSachPhongDat.FindAll(x => x.tblKhachHang.SoDienThoai.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
+                case "tên phòng":
+                    return DanhSachPhongDat.FindAll(x => x.tblPhongHat.TenPhongHat.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
+                case "tên nhân viên":
+                    return DanhSachPhongDat.FindAll(x => x.tblNhanVien.TenNhanVien.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
                 default:
                     return default;
             }

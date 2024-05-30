@@ -11,6 +11,7 @@ namespace DAL.Implement_DAL
     public class DAL_TimKiem : I_DAL_TimKiem
     {
         DatabaseKaraoke DB = new DatabaseKaraoke();
+
         public List<tblKhachHang> DuLieuBangKhachHang()
         {
             return DB.tblKhachHangs.ToList();
@@ -18,11 +19,7 @@ namespace DAL.Implement_DAL
         public List<tblNhanVien> DuLieuBangNhanVien()
         {
             return DB.tblNhanViens.ToList();
-        }
-
-        public List<tblPhongHat> DuLieuBangPhongHat()
-        {
-            return DB.tblPhongHats.ToList();
+        
         }
     }
 }

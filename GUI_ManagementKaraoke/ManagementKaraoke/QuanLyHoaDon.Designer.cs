@@ -39,6 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pn_Content1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.bt_XuatHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.sp_Line1 = new Guna.UI2.WinForms.Guna2Separator();
             this.bt_LamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.title_TimKiemTheoMocThoiGian = new System.Windows.Forms.Label();
@@ -67,7 +68,7 @@
             this.title_ThongTinHoaDon = new System.Windows.Forms.Label();
             this.pn_Child1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.bt_XuatHoaDon = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_DongY_MocThoiGian = new Guna.UI2.WinForms.Guna2Button();
             this.pn_Content1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDonBan)).BeginInit();
             this.pn_Content2.SuspendLayout();
@@ -80,6 +81,7 @@
             // pn_Content1
             // 
             this.pn_Content1.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Content1.Controls.Add(this.bt_DongY_MocThoiGian);
             this.pn_Content1.Controls.Add(this.bt_XuatHoaDon);
             this.pn_Content1.Controls.Add(this.sp_Line1);
             this.pn_Content1.Controls.Add(this.bt_LamMoi);
@@ -95,6 +97,29 @@
             this.pn_Content1.Name = "pn_Content1";
             this.pn_Content1.Size = new System.Drawing.Size(659, 656);
             this.pn_Content1.TabIndex = 0;
+            // 
+            // bt_XuatHoaDon
+            // 
+            this.bt_XuatHoaDon.Animated = true;
+            this.bt_XuatHoaDon.BorderRadius = 20;
+            this.bt_XuatHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_XuatHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_XuatHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_XuatHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_XuatHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_XuatHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_XuatHoaDon.ForeColor = System.Drawing.Color.White;
+            this.bt_XuatHoaDon.Image = global::GUI_ManagementKaraoke.Properties.Resources.issua_invoice;
+            this.bt_XuatHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_XuatHoaDon.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_XuatHoaDon.Location = new System.Drawing.Point(251, 599);
+            this.bt_XuatHoaDon.Name = "bt_XuatHoaDon";
+            this.bt_XuatHoaDon.Size = new System.Drawing.Size(157, 45);
+            this.bt_XuatHoaDon.TabIndex = 17;
+            this.bt_XuatHoaDon.Text = "Xuất hoá đơn";
+            this.bt_XuatHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_XuatHoaDon.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_XuatHoaDon.Click += new System.EventHandler(this.bt_XuatHoaDon_Click);
             // 
             // sp_Line1
             // 
@@ -166,7 +191,7 @@
             this.lb_KetThuc.AutoSize = true;
             this.lb_KetThuc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_KetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_KetThuc.Location = new System.Drawing.Point(334, 61);
+            this.lb_KetThuc.Location = new System.Drawing.Point(307, 61);
             this.lb_KetThuc.Name = "lb_KetThuc";
             this.lb_KetThuc.Size = new System.Drawing.Size(68, 19);
             this.lb_KetThuc.TabIndex = 4;
@@ -177,7 +202,7 @@
             this.lb_BatDau.AutoSize = true;
             this.lb_BatDau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_BatDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_BatDau.Location = new System.Drawing.Point(53, 61);
+            this.lb_BatDau.Location = new System.Drawing.Point(26, 61);
             this.lb_BatDau.Name = "lb_BatDau";
             this.lb_BatDau.Size = new System.Drawing.Size(63, 19);
             this.lb_BatDau.TabIndex = 3;
@@ -251,7 +276,7 @@
             this.dtp_KetThuc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_KetThuc.ForeColor = System.Drawing.Color.White;
             this.dtp_KetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_KetThuc.Location = new System.Drawing.Point(405, 54);
+            this.dtp_KetThuc.Location = new System.Drawing.Point(378, 54);
             this.dtp_KetThuc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_KetThuc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_KetThuc.Name = "dtp_KetThuc";
@@ -268,7 +293,7 @@
             this.dtp_BatDau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_BatDau.ForeColor = System.Drawing.Color.White;
             this.dtp_BatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_BatDau.Location = new System.Drawing.Point(119, 54);
+            this.dtp_BatDau.Location = new System.Drawing.Point(92, 54);
             this.dtp_BatDau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_BatDau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_BatDau.Name = "dtp_BatDau";
@@ -607,28 +632,22 @@
             this.pn_Child2.Size = new System.Drawing.Size(486, 656);
             this.pn_Child2.TabIndex = 3;
             // 
-            // bt_XuatHoaDon
+            // bt_DongY_MocThoiGian
             // 
-            this.bt_XuatHoaDon.Animated = true;
-            this.bt_XuatHoaDon.BorderRadius = 20;
-            this.bt_XuatHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_XuatHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_XuatHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_XuatHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_XuatHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_XuatHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_XuatHoaDon.ForeColor = System.Drawing.Color.White;
-            this.bt_XuatHoaDon.Image = global::GUI_ManagementKaraoke.Properties.Resources.issua_invoice;
-            this.bt_XuatHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_XuatHoaDon.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_XuatHoaDon.Location = new System.Drawing.Point(251, 599);
-            this.bt_XuatHoaDon.Name = "bt_XuatHoaDon";
-            this.bt_XuatHoaDon.Size = new System.Drawing.Size(157, 45);
-            this.bt_XuatHoaDon.TabIndex = 17;
-            this.bt_XuatHoaDon.Text = "Xuất hoá đơn";
-            this.bt_XuatHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_XuatHoaDon.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_XuatHoaDon.Click += new System.EventHandler(this.bt_XuatHoaDon_Click);
+            this.bt_DongY_MocThoiGian.BorderRadius = 10;
+            this.bt_DongY_MocThoiGian.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_DongY_MocThoiGian.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_DongY_MocThoiGian.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_DongY_MocThoiGian.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_DongY_MocThoiGian.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_DongY_MocThoiGian.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_DongY_MocThoiGian.ForeColor = System.Drawing.Color.White;
+            this.bt_DongY_MocThoiGian.Image = global::GUI_ManagementKaraoke.Properties.Resources.done;
+            this.bt_DongY_MocThoiGian.Location = new System.Drawing.Point(584, 54);
+            this.bt_DongY_MocThoiGian.Name = "bt_DongY_MocThoiGian";
+            this.bt_DongY_MocThoiGian.Size = new System.Drawing.Size(48, 36);
+            this.bt_DongY_MocThoiGian.TabIndex = 18;
+            this.bt_DongY_MocThoiGian.Click += new System.EventHandler(this.bt_DongY_MocThoiGian_Click);
             // 
             // QuanLyHoaDon
             // 
@@ -687,5 +706,6 @@
         private Guna.UI2.WinForms.Guna2Separator sp_Line2;
         private Guna.UI2.WinForms.Guna2Separator sp_Line1;
         private Guna.UI2.WinForms.Guna2Button bt_XuatHoaDon;
+        private Guna.UI2.WinForms.Guna2Button bt_DongY_MocThoiGian;
     }
 }

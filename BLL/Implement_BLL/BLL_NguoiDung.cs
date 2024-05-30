@@ -18,6 +18,11 @@ namespace BLL.Implement_BLL
             return DAL.DanhSachDoiTuong();
         }
 
+        public void DoiMatKhau(tblNguoiDung ND)
+        {
+            DAL.DoiMatKhau(ND);
+        }
+
         public tblNguoiDung GetByID(string ID)
         {
             return DanhSachDoiTuong().Find(x => Equals(x.TenTaiKhoan.Trim(), ID.Trim()));

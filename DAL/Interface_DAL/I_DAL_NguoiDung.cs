@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Interface_DAL
 {
-    public interface I_DAL_TimKiem
+    public interface I_DAL_NguoiDung
     {
-        List<tblKhachHang> DuLieuBangKhachHang();
-        List<tblNhanVien> DuLieuBangNhanVien();
-
+        void DoiMatKhau(tblNguoiDung ND);
     }
 }

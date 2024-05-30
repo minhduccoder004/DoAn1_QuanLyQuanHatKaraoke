@@ -33,3 +33,5 @@
 - ngày 28-05-2024:
   + (10:46) Hoàn thiện một số chức năng
   + note: làm test case, làm chức năng tìm kiếm, xuất hoá đơn ra word
+- ngày 31-05-2024:
+  + (12:01 AM) Hoàn thiện sơ bộ, thiếu test case

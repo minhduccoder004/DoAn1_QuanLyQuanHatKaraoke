@@ -33,7 +33,7 @@ namespace BLL.Implement_BLL
 
         public List<tblHoaDonBan> BangHoaDonBan()
         {
-            return DAL.LayDuLieu_BangHoaDonBan();
+            return DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.TrangThaiHoaDon == 1);
         }
 
         public int KieuXem(string KieuXem)
@@ -151,7 +151,7 @@ namespace BLL.Implement_BLL
 
         public List<KeyValuePair<string, int>> Top5NhanVien()
         {
-            var XuLyDuLieu = from NhanVien in DAL.LayDuLieu_BangHoaDonBan()
+            var XuLyDuLieu = from NhanVien in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.TrangThaiHoaDon == 1)
                              group NhanVien by NhanVien.MaNhanVien into Gom
                              select new
                              {
@@ -168,7 +168,7 @@ namespace BLL.Implement_BLL
 
         public List<KeyValuePair<string, int>> Top5PhongHat()
         {
-            var XuLyDuLieu = from PhongHat in DAL.LayDuLieu_BangHoaDonBan()
+            var XuLyDuLieu = from PhongHat in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.TrangThaiHoaDon == 1)
                              group PhongHat by PhongHat.tblPhongDat.MaPhong into Gom
                              select new
                              {

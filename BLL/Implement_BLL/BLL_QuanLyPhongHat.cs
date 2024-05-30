@@ -26,7 +26,7 @@ namespace BLL.Implement_BLL
 
         public List<KeyValuePair<int, int>> DuLieu_ThongKeHoatDong(string ID_PhongHat)
         {
-            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.tblPhongDat.MaPhong.Trim() == ID_PhongHat.Trim())
+            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.tblPhongDat.MaPhong.Trim() == ID_PhongHat.Trim() && x.TrangThaiHoaDon == 1)
                              group KiemKe by KiemKe.ThoiGianTaoHoaDon.Value.Month into Gom
                              select new
                              {

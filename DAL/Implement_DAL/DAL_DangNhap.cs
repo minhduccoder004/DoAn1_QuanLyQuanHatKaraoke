@@ -9,11 +9,10 @@ namespace DAL.Implement_DAL
 {
     public class DAL_DangNhap
     {
-
         public List<tblNguoiDung> LayDanhSachNguoiDung()
         {
             return new DatabaseKaraoke().tblNguoiDungs.ToList();
         }
-        
+
     }
 }

@@ -18,6 +18,6 @@ namespace DAL.Interface_DAL
         List<tblDichVu> LayDuLieu_BangDichVu();
         List<tblMatHang> LayDuLieu_BangMatHang();
 
-
+        void Xoa_HoaDon(tblHoaDonBan HoaDon);
     }
 }

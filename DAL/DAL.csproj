@@ -69,6 +69,7 @@
     <Compile Include="Interface_DAL\I_DAL_DatPhong.cs" />
     <Compile Include="Interface_DAL\I_DAL_Karaoke.cs" />
     <Compile Include="Interface_DAL\I_DAL_KhachHang.cs" />
+    <Compile Include="Interface_DAL\I_DAL_NguoiDung.cs" />
     <Compile Include="Interface_DAL\I_DAL_NhanVien.cs" />
     <Compile Include="Interface_DAL\I_DAL_Order.cs" />
     <Compile Include="Interface_DAL\I_DAL_PhongHat.cs" />

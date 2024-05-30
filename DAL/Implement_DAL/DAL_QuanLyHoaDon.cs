@@ -46,5 +46,11 @@ namespace DAL.Implement_DAL
         {
             return DB.tblNhanViens.ToList();
         }
+
+        public void Xoa_HoaDon(tblHoaDonBan HoaDon)
+        {
+            DB.tblHoaDonBans.Remove(HoaDon);
+            DB.SaveChanges();
+        }
     }
 }

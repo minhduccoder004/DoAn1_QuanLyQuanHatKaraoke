@@ -29,7 +29,7 @@ namespace GUI_ManagementKaraoke.NguoiDung
             ND.TenTaiKhoan = QuanLys.TaiKhoan;
             ND.MatKhau = txt_MatKhauMoi.Text;
 
-            BLL.Sua(ND);
+            BLL.DoiMatKhau(ND);
 
             MessageBox.Show("Đã đổi mật khẩu !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

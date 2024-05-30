@@ -32,6 +32,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             txt_SoDienThoai.Text = BLL.GetByID_HoaDon(QuanLys.MaHoaDonBan).tblKhachHang.SoDienThoai;
             txt_NhanVienPhucVu.Text = BLL.LayTenNhanVien(BLL.GetByID_HoaDon(QuanLys.MaHoaDonBan).MaNhanVien);
             txt_PhongUsed.Text = BLL.LayTenPhongHat(BLL.GetByID_HoaDon(QuanLys.MaHoaDonBan).tblPhongDat.MaPhong);
+            txt_NgayTaoHoaDon.Text = BLL.GetByID_HoaDon(QuanLys.MaHoaDonBan).ThoiGianTaoHoaDon.Value.ToString();
 
             // Đổ dữ liệu vào dgv
 

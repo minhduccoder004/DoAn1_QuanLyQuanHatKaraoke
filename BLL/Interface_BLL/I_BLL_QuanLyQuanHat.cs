@@ -15,6 +15,7 @@ namespace BLL.Interface_BLL
         List<tblPhongDat> DanhSachPhongDat_DangHoatDong();
         List<tblGoiMatHang> DanhSachMatHang_KhachGoi(string ID_PhongDat);
         List<tblGoiDichVu> DanhSachDichVu_KhachGoi(string ID_PhongDat);
+        List<tblPhongDat> TimKiemTheoNgay_DanhSachPhongDat_ChuaHoatDong(DateTime NgayDatPhong);
 
         void CapNhat_PhongHat(tblPhongHat tblPhongHat);
         void CapNhat_PhongDat(tblPhongDat tblPhongDat);

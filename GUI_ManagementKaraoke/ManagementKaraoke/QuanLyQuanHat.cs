@@ -1,5 +1,6 @@
 ﻿using BLL.Implement_BLL;
 using DTO;
+using GUI_ManagementKaraoke.Event;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         string MaMatHang { get; set; }
         public string MaHoaDonBan { get; set; }
         public DateTime ThoiGianBatDau { get; set; }
+
+        public event EventHandler<Event_LayDSPhongDat> Event_PhongDats;
 
 
 
@@ -180,7 +183,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             bt_ThanhToan.FillColor = DisableButtonColor;
             bt_BatDau.FillColor = DisableButtonColor;
 
-            // 
+            // trạng thái dtp
+            dtp_NgayDatPhong.Enabled = false;
+            dtp_NgayDatPhong.Value = DateTime.Today;
+
+            // Khởi chạy sự kiện tìm kiếm
+            SuKien_LayDS((List<tblPhongDat>)dgv_DanhSach.DataSource);
         }
 
         private void dgv_DanhSach_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -278,11 +286,15 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     LamMoi();
                     // Đổi màu button
                     DoiMauButton_Dis();
+                    dtp_NgayDatPhong.Enabled = true;
+                    SuKien_LayDS((List<tblPhongDat>)dgv_DanhSach.DataSource);
                     break;
                 case 1:
                     LamMoi();
                     // Đổi màu button
                     DoiMauButton_Dis();
+                    dtp_NgayDatPhong.Enabled = false;
+                    SuKien_LayDS((List<tblPhongDat>)dgv_DanhSach.DataSource);
                     break;
             }
         }
@@ -458,6 +470,26 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 txt_ThoiGianHoatDong.Text = BLL.Format_ThoiGian(Time) + "  Giờ !";
                 Time += new TimeSpan(0, 0, 1);
             }
+        }
+
+        void SuKien_LayDS(List<tblPhongDat> DanhSachPhongDat)
+        {
+            Event_LayDSPhongDat e = new Event_LayDSPhongDat();
+            e.DanhSachPhongDat = DanhSachPhongDat;
+            Event_PhongDats?.Invoke(this, e);
+        }
+        public void BatSuKien_LayDanhSach(object sender, Event_LayDSPhongDat e)
+        {
+            dgv_DanhSach.DataSource = e.DanhSachPhongDat;
+            dgv_DanhSach.Refresh();
+        }
+
+        private void bt_NgayDatPhong_Click(object sender, EventArgs e)
+        {
+            dgv_DanhSach.DataSource = BLL.TimKiemTheoNgay_DanhSachPhongDat_ChuaHoatDong(dtp_NgayDatPhong.Value);
+            dgv_DanhSach.Refresh();
+
+            SuKien_LayDS((List<tblPhongDat>)dgv_DanhSach.DataSource);
         }
     }
 }

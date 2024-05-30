@@ -146,5 +146,10 @@ namespace BLL.Implement_BLL
         {
             return currentTime - ThoiGianBatDau;
         }
+
+        public List<tblPhongDat> TimKiemTheoNgay_DanhSachPhongDat_ChuaHoatDong(DateTime NgayDatPhong)
+        {
+            return DanhSachPhongDat_ChuaHoatDong().FindAll(x => x.ThoiGianPhongDat.Value.Day == NgayDatPhong.Day);
+        }
     }
 }

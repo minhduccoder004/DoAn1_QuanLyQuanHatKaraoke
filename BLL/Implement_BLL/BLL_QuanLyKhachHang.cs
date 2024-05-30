@@ -40,7 +40,7 @@ namespace BLL.Implement_BLL
 
         public List<KeyValuePair<int, int>> SoLan_SuDungDichVu(string MaKhachHang)
         {
-            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.MaKhachHang.Trim() == MaKhachHang.Trim())
+            var XuLyDuLieu = from KiemKe in DAL.LayDuLieu_BangHoaDonBan().FindAll(x => x.MaKhachHang.Trim() == MaKhachHang.Trim() && x.TrangThaiHoaDon == 1)
                              group KiemKe by KiemKe.ThoiGianTaoHoaDon.Value.Month into Gom
                              select new
                              {

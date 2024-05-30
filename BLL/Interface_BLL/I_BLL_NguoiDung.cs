@@ -14,5 +14,7 @@ namespace BLL.Interface_BLL
 
         List<tblNguoiDung> TimKiemNguoiDung(string ThongTinTimKiem);
 
+        void DoiMatKhau(tblNguoiDung ND);
+
     }
 }

@@ -91,6 +91,13 @@ namespace GUI_ManagementKaraoke
             QL_PhongHat.Event_PhongHats += infoForm.BatSuKien_LayDanhSach;
             infoForm.Event_PhongHats += QL_PhongHat.BatSuKien_LayDanhSach;
 
+            // Sự kiện tìm kiếm của đặt phòng
+            TrangChu.Event_PhongDats += infoForm.BatSuKien_LayDanhSach_PhongDat;
+            infoForm.Event_PhongDats += TrangChu.BatSuKien_LayDanhSach;
+            // Sự kiện tìm kiếm hoá đơn
+            QL_HoaDon.Event_HoaDons += infoForm.BatSuKien_LayDanhSach_HoaDon;
+            infoForm.Event_HoaDons += QL_HoaDon.BatSuKien_LayDanhSach;
+
         }
         // sự kiện đăng xuất
         public void DangXuat(object sender, EventArgs e)
