@@ -52,11 +52,6 @@ namespace GUI_ManagementKaraoke.NguoiDung
             Close();
         }
 
-        private void ThemTaiKhoan_Load(object sender, EventArgs e)
-        {
-            // 
-        }
-
         private void err_TenTaiKhoan_MouseHover(object sender, EventArgs e)
         {
             

@@ -45,6 +45,8 @@
             this.title_DanhSachNhanVien = new System.Windows.Forms.Label();
             this.pn_Container_Info = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child_Info = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lb_ChucVu = new System.Windows.Forms.Label();
             this.bt_ThemAnh = new Guna.UI2.WinForms.Guna2Button();
             this.rbt_Nu = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbt_Nam = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -67,8 +69,6 @@
             this.title_MaNhanVien = new System.Windows.Forms.Label();
             this.lb_TenNhanVien = new System.Windows.Forms.Label();
             this.title_ThongTinNhanVien = new System.Windows.Forms.Label();
-            this.lb_ChucVu = new System.Windows.Forms.Label();
-            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pn_ContainerDanhSach.SuspendLayout();
             this.pn_Child_DanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSNhanVien)).BeginInit();
@@ -332,6 +332,33 @@
             this.pn_Child_Info.Size = new System.Drawing.Size(437, 656);
             this.pn_Child_Info.TabIndex = 0;
             // 
+            // cbb_ChucVu
+            // 
+            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_ChucVu.BorderRadius = 15;
+            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.ItemHeight = 30;
+            this.cbb_ChucVu.Location = new System.Drawing.Point(205, 275);
+            this.cbb_ChucVu.Name = "cbb_ChucVu";
+            this.cbb_ChucVu.Size = new System.Drawing.Size(177, 36);
+            this.cbb_ChucVu.TabIndex = 38;
+            // 
+            // lb_ChucVu
+            // 
+            this.lb_ChucVu.AutoSize = true;
+            this.lb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.lb_ChucVu.Location = new System.Drawing.Point(201, 248);
+            this.lb_ChucVu.Name = "lb_ChucVu";
+            this.lb_ChucVu.Size = new System.Drawing.Size(72, 17);
+            this.lb_ChucVu.TabIndex = 37;
+            this.lb_ChucVu.Text = "Chức vụ :";
+            // 
             // bt_ThemAnh
             // 
             this.bt_ThemAnh.Animated = true;
@@ -525,6 +552,7 @@
             this.txt_MaNhanVien.PasswordChar = '\0';
             this.txt_MaNhanVien.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_MaNhanVien.PlaceholderText = "......................";
+            this.txt_MaNhanVien.ReadOnly = true;
             this.txt_MaNhanVien.SelectedText = "";
             this.txt_MaNhanVien.Size = new System.Drawing.Size(223, 36);
             this.txt_MaNhanVien.TabIndex = 13;
@@ -687,33 +715,6 @@
             this.title_ThongTinNhanVien.Size = new System.Drawing.Size(216, 26);
             this.title_ThongTinNhanVien.TabIndex = 0;
             this.title_ThongTinNhanVien.Text = "Thông tin nhân viên";
-            // 
-            // lb_ChucVu
-            // 
-            this.lb_ChucVu.AutoSize = true;
-            this.lb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_ChucVu.Location = new System.Drawing.Point(201, 248);
-            this.lb_ChucVu.Name = "lb_ChucVu";
-            this.lb_ChucVu.Size = new System.Drawing.Size(72, 17);
-            this.lb_ChucVu.TabIndex = 37;
-            this.lb_ChucVu.Text = "Chức vụ :";
-            // 
-            // cbb_ChucVu
-            // 
-            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_ChucVu.BorderRadius = 15;
-            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.ItemHeight = 30;
-            this.cbb_ChucVu.Location = new System.Drawing.Point(205, 275);
-            this.cbb_ChucVu.Name = "cbb_ChucVu";
-            this.cbb_ChucVu.Size = new System.Drawing.Size(177, 36);
-            this.cbb_ChucVu.TabIndex = 38;
             // 
             // QuanLyNhanVien
             // 

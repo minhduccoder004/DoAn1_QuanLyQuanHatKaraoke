@@ -31,6 +31,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         {
             dgv_DSKhachHang.DataSource = BLL.DanhSachDoiTuong();
             dgv_DSKhachHang.Refresh();
+
+            txt_MaKH.Text = string.Empty;
+            txt_SoDienThoai.Text = string.Empty;
+            txt_TenKhachHang.Text = string.Empty;
         }
 
         void DoDuLieu_DoThi(string ID_KhachHang)
@@ -189,6 +193,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         KH.SoDienThoai = txt_SoDienThoai.Text;
 
                         BLL.Sua(KH);
+                        MessageBox.Show("Sửa thông tin thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Làm mới bảng
                         LamMoi();
@@ -216,6 +221,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         // Code xoá dữ liệu đã chọn khỏi table
 
                         BLL.Xoa(BLL.GetByID(txt_MaKH.Text));
+                        MessageBox.Show("Xoá khách hàng thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Làm mới bảng
                         LamMoi();

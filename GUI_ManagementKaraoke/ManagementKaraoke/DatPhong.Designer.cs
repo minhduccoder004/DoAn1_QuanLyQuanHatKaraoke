@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatPhong));
             this.pn_ThongTinKhachHang = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.cb_KhachHangVangLai = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbb_NhanVienPhucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lb_NhanVienPhucVu = new System.Windows.Forms.Label();
             this.sp_Line1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -47,6 +48,7 @@
             this.title_ThongTinKhachHang = new System.Windows.Forms.Label();
             this.bt_DatPhong = new Guna.UI2.WinForms.Guna2Button();
             this.pn_DanhMucDichVu = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.cb_SuDungDichVu = new Guna.UI2.WinForms.Guna2CheckBox();
             this.sp_Line3 = new Guna.UI2.WinForms.Guna2Separator();
             this.cbb_DichVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lb_DichVu = new System.Windows.Forms.Label();
@@ -66,8 +68,7 @@
             this.pn_Child_DanhMucDichVu = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child_btChucNang = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_btChucNang = new Guna.UI2.WinForms.Guna2Panel();
-            this.cb_KhachHangVangLai = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.cb_SuDungDichVu = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.err_SoDienThoai = new System.Windows.Forms.Label();
             this.pn_ThongTinKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Phut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Gio)).BeginInit();
@@ -83,6 +84,7 @@
             // pn_ThongTinKhachHang
             // 
             this.pn_ThongTinKhachHang.BackColor = System.Drawing.Color.Transparent;
+            this.pn_ThongTinKhachHang.Controls.Add(this.err_SoDienThoai);
             this.pn_ThongTinKhachHang.Controls.Add(this.cb_KhachHangVangLai);
             this.pn_ThongTinKhachHang.Controls.Add(this.cbb_NhanVienPhucVu);
             this.pn_ThongTinKhachHang.Controls.Add(this.lb_NhanVienPhucVu);
@@ -104,6 +106,26 @@
             this.pn_ThongTinKhachHang.Name = "pn_ThongTinKhachHang";
             this.pn_ThongTinKhachHang.Size = new System.Drawing.Size(474, 436);
             this.pn_ThongTinKhachHang.TabIndex = 0;
+            // 
+            // cb_KhachHangVangLai
+            // 
+            this.cb_KhachHangVangLai.AutoSize = true;
+            this.cb_KhachHangVangLai.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.CheckedState.BorderRadius = 2;
+            this.cb_KhachHangVangLai.CheckedState.BorderThickness = 0;
+            this.cb_KhachHangVangLai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_KhachHangVangLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cb_KhachHangVangLai.Location = new System.Drawing.Point(156, 95);
+            this.cb_KhachHangVangLai.Name = "cb_KhachHangVangLai";
+            this.cb_KhachHangVangLai.Size = new System.Drawing.Size(163, 23);
+            this.cb_KhachHangVangLai.TabIndex = 19;
+            this.cb_KhachHangVangLai.Text = "Khách hàng vãng lai";
+            this.cb_KhachHangVangLai.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_KhachHangVangLai.UncheckedState.BorderRadius = 2;
+            this.cb_KhachHangVangLai.UncheckedState.BorderThickness = 0;
+            this.cb_KhachHangVangLai.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_KhachHangVangLai.CheckedChanged += new System.EventHandler(this.cb_KhachHangVangLai_CheckedChanged);
             // 
             // cbb_NhanVienPhucVu
             // 
@@ -276,6 +298,7 @@
             this.txt_SoDienThoai.SelectedText = "";
             this.txt_SoDienThoai.Size = new System.Drawing.Size(260, 46);
             this.txt_SoDienThoai.TabIndex = 3;
+            this.txt_SoDienThoai.TextChanged += new System.EventHandler(this.txt_SoDienThoai_TextChanged);
             // 
             // lb_TenKhachHang
             // 
@@ -348,6 +371,26 @@
             this.pn_DanhMucDichVu.Name = "pn_DanhMucDichVu";
             this.pn_DanhMucDichVu.Size = new System.Drawing.Size(361, 227);
             this.pn_DanhMucDichVu.TabIndex = 1;
+            // 
+            // cb_SuDungDichVu
+            // 
+            this.cb_SuDungDichVu.AutoSize = true;
+            this.cb_SuDungDichVu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.CheckedState.BorderRadius = 2;
+            this.cb_SuDungDichVu.CheckedState.BorderThickness = 0;
+            this.cb_SuDungDichVu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_SuDungDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cb_SuDungDichVu.Location = new System.Drawing.Point(113, 80);
+            this.cb_SuDungDichVu.Name = "cb_SuDungDichVu";
+            this.cb_SuDungDichVu.Size = new System.Drawing.Size(134, 23);
+            this.cb_SuDungDichVu.TabIndex = 8;
+            this.cb_SuDungDichVu.Text = "Sử dụng dịch vụ";
+            this.cb_SuDungDichVu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungDichVu.UncheckedState.BorderRadius = 2;
+            this.cb_SuDungDichVu.UncheckedState.BorderThickness = 0;
+            this.cb_SuDungDichVu.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungDichVu.CheckedChanged += new System.EventHandler(this.cb_SuDungDichVu_CheckedChanged);
             // 
             // sp_Line3
             // 
@@ -600,45 +643,18 @@
             this.pn_btChucNang.Size = new System.Drawing.Size(841, 102);
             this.pn_btChucNang.TabIndex = 18;
             // 
-            // cb_KhachHangVangLai
+            // err_SoDienThoai
             // 
-            this.cb_KhachHangVangLai.AutoSize = true;
-            this.cb_KhachHangVangLai.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_KhachHangVangLai.CheckedState.BorderRadius = 2;
-            this.cb_KhachHangVangLai.CheckedState.BorderThickness = 0;
-            this.cb_KhachHangVangLai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_KhachHangVangLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_KhachHangVangLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.cb_KhachHangVangLai.Location = new System.Drawing.Point(156, 95);
-            this.cb_KhachHangVangLai.Name = "cb_KhachHangVangLai";
-            this.cb_KhachHangVangLai.Size = new System.Drawing.Size(163, 23);
-            this.cb_KhachHangVangLai.TabIndex = 19;
-            this.cb_KhachHangVangLai.Text = "Khách hàng vãng lai";
-            this.cb_KhachHangVangLai.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cb_KhachHangVangLai.UncheckedState.BorderRadius = 2;
-            this.cb_KhachHangVangLai.UncheckedState.BorderThickness = 0;
-            this.cb_KhachHangVangLai.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cb_KhachHangVangLai.CheckedChanged += new System.EventHandler(this.cb_KhachHangVangLai_CheckedChanged);
-            // 
-            // cb_SuDungDichVu
-            // 
-            this.cb_SuDungDichVu.AutoSize = true;
-            this.cb_SuDungDichVu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_SuDungDichVu.CheckedState.BorderRadius = 2;
-            this.cb_SuDungDichVu.CheckedState.BorderThickness = 0;
-            this.cb_SuDungDichVu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_SuDungDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_SuDungDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.cb_SuDungDichVu.Location = new System.Drawing.Point(113, 80);
-            this.cb_SuDungDichVu.Name = "cb_SuDungDichVu";
-            this.cb_SuDungDichVu.Size = new System.Drawing.Size(134, 23);
-            this.cb_SuDungDichVu.TabIndex = 8;
-            this.cb_SuDungDichVu.Text = "Sử dụng dịch vụ";
-            this.cb_SuDungDichVu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cb_SuDungDichVu.UncheckedState.BorderRadius = 2;
-            this.cb_SuDungDichVu.UncheckedState.BorderThickness = 0;
-            this.cb_SuDungDichVu.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cb_SuDungDichVu.CheckedChanged += new System.EventHandler(this.cb_SuDungDichVu_CheckedChanged);
+            this.err_SoDienThoai.AutoSize = true;
+            this.err_SoDienThoai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.err_SoDienThoai.ForeColor = System.Drawing.Color.Red;
+            this.err_SoDienThoai.Location = new System.Drawing.Point(438, 149);
+            this.err_SoDienThoai.Name = "err_SoDienThoai";
+            this.err_SoDienThoai.Size = new System.Drawing.Size(20, 22);
+            this.err_SoDienThoai.TabIndex = 20;
+            this.err_SoDienThoai.Text = "*";
+            this.err_SoDienThoai.Visible = false;
+            this.err_SoDienThoai.MouseHover += new System.EventHandler(this.err_SoDienThoai_MouseHover);
             // 
             // DatPhong
             // 
@@ -713,5 +729,6 @@
         private Guna.UI2.WinForms.Guna2Panel pn_btChucNang;
         private Guna.UI2.WinForms.Guna2CheckBox cb_KhachHangVangLai;
         private Guna.UI2.WinForms.Guna2CheckBox cb_SuDungDichVu;
+        private System.Windows.Forms.Label err_SoDienThoai;
     }
 }

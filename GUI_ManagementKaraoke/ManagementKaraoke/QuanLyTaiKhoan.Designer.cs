@@ -36,13 +36,19 @@
             this.pn_Content1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child_Content = new Guna.UI2.WinForms.Guna2Panel();
             this.sp_Line2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.bt_Create = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_TaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.bt_Refresh_dgv = new Guna.UI2.WinForms.Guna2Button();
             this.txt_TimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.sp_Line1 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_DanhSachTaiKhoan = new System.Windows.Forms.Label();
             this.pn_Content2 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child_Content2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_MatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.sp_Line4 = new Guna.UI2.WinForms.Guna2Separator();
             this.cbb_QuyenHan = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -54,13 +60,10 @@
             this.lb_Email = new System.Windows.Forms.Label();
             this.lb_MatKhau = new System.Windows.Forms.Label();
             this.lb_TaiKhoan = new System.Windows.Forms.Label();
-            this.sp_Line3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.title_ThongTinTaiKhoan = new System.Windows.Forms.Label();
             this.bt_XoaTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.bt_Update = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Create = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Refresh = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_Refresh_dgv = new Guna.UI2.WinForms.Guna2Button();
+            this.sp_Line3 = new Guna.UI2.WinForms.Guna2Separator();
+            this.title_ThongTinTaiKhoan = new System.Windows.Forms.Label();
             this.pn_Content1.SuspendLayout();
             this.pn_Child_Content.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
@@ -105,6 +108,50 @@
             this.sp_Line2.Name = "sp_Line2";
             this.sp_Line2.Size = new System.Drawing.Size(325, 10);
             this.sp_Line2.TabIndex = 8;
+            // 
+            // bt_Create
+            // 
+            this.bt_Create.BorderRadius = 20;
+            this.bt_Create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Create.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_Create.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_Create.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_Create.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Create.ForeColor = System.Drawing.Color.White;
+            this.bt_Create.Image = global::GUI_ManagementKaraoke.Properties.Resources.create;
+            this.bt_Create.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Create.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_Create.Location = new System.Drawing.Point(295, 407);
+            this.bt_Create.Name = "bt_Create";
+            this.bt_Create.Size = new System.Drawing.Size(181, 56);
+            this.bt_Create.TabIndex = 7;
+            this.bt_Create.Text = "Thêm tài khoản";
+            this.bt_Create.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Create.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_Create.Click += new System.EventHandler(this.bt_Create_Click);
+            // 
+            // bt_Refresh
+            // 
+            this.bt_Refresh.BorderRadius = 20;
+            this.bt_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.bt_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Refresh.ForeColor = System.Drawing.Color.White;
+            this.bt_Refresh.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
+            this.bt_Refresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Refresh.ImageOffset = new System.Drawing.Point(10, 0);
+            this.bt_Refresh.Location = new System.Drawing.Point(42, 407);
+            this.bt_Refresh.Name = "bt_Refresh";
+            this.bt_Refresh.Size = new System.Drawing.Size(181, 56);
+            this.bt_Refresh.TabIndex = 6;
+            this.bt_Refresh.Text = "Làm mới";
+            this.bt_Refresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_Refresh.TextOffset = new System.Drawing.Point(15, 0);
+            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
             // 
             // dgv_TaiKhoan
             // 
@@ -176,6 +223,23 @@
             this.dgv_TaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TaiKhoan_CellClick);
             this.dgv_TaiKhoan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_TaiKhoan_CellFormatting);
             // 
+            // bt_Refresh_dgv
+            // 
+            this.bt_Refresh_dgv.BorderRadius = 10;
+            this.bt_Refresh_dgv.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Refresh_dgv.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_Refresh_dgv.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_Refresh_dgv.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_Refresh_dgv.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_Refresh_dgv.ForeColor = System.Drawing.Color.White;
+            this.bt_Refresh_dgv.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
+            this.bt_Refresh_dgv.ImageOffset = new System.Drawing.Point(1, 0);
+            this.bt_Refresh_dgv.Location = new System.Drawing.Point(418, 76);
+            this.bt_Refresh_dgv.Name = "bt_Refresh_dgv";
+            this.bt_Refresh_dgv.Size = new System.Drawing.Size(45, 45);
+            this.bt_Refresh_dgv.TabIndex = 4;
+            this.bt_Refresh_dgv.Click += new System.EventHandler(this.bt_Refresh_dgv_Click);
+            // 
             // txt_TimKiem
             // 
             this.txt_TimKiem.BorderRadius = 15;
@@ -245,6 +309,9 @@
             // pn_Child_Content2
             // 
             this.pn_Child_Content2.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Child_Content2.Controls.Add(this.label3);
+            this.pn_Child_Content2.Controls.Add(this.label2);
+            this.pn_Child_Content2.Controls.Add(this.label1);
             this.pn_Child_Content2.Controls.Add(this.txt_MatKhau);
             this.pn_Child_Content2.Controls.Add(this.sp_Line4);
             this.pn_Child_Content2.Controls.Add(this.cbb_QuyenHan);
@@ -266,6 +333,42 @@
             this.pn_Child_Content2.Size = new System.Drawing.Size(386, 479);
             this.pn_Child_Content2.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(346, 285);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 22);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "*";
+            this.label3.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(346, 209);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 22);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "*";
+            this.label2.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(346, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 22);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "*";
+            this.label1.Visible = false;
+            // 
             // txt_MatKhau
             // 
             this.txt_MatKhau.BorderRadius = 15;
@@ -279,7 +382,7 @@
             this.txt_MatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_MatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_MatKhau.Location = new System.Drawing.Point(148, 125);
+            this.txt_MatKhau.Location = new System.Drawing.Point(123, 125);
             this.txt_MatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_MatKhau.Name = "txt_MatKhau";
             this.txt_MatKhau.PasswordChar = '\0';
@@ -333,7 +436,7 @@
             this.txt_SoDienThoai.PasswordChar = '\0';
             this.txt_SoDienThoai.PlaceholderText = "";
             this.txt_SoDienThoai.SelectedText = "";
-            this.txt_SoDienThoai.Size = new System.Drawing.Size(330, 40);
+            this.txt_SoDienThoai.Size = new System.Drawing.Size(305, 40);
             this.txt_SoDienThoai.TabIndex = 13;
             this.txt_SoDienThoai.Click += new System.EventHandler(this.txt_SoDienThoai_Click);
             // 
@@ -356,7 +459,7 @@
             this.txt_Email.PasswordChar = '\0';
             this.txt_Email.PlaceholderText = "";
             this.txt_Email.SelectedText = "";
-            this.txt_Email.Size = new System.Drawing.Size(330, 40);
+            this.txt_Email.Size = new System.Drawing.Size(305, 40);
             this.txt_Email.TabIndex = 12;
             this.txt_Email.Click += new System.EventHandler(this.txt_Email_Click);
             // 
@@ -365,7 +468,7 @@
             this.txt_TaiKhoan.AutoSize = true;
             this.txt_TaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.txt_TaiKhoan.Location = new System.Drawing.Point(145, 96);
+            this.txt_TaiKhoan.Location = new System.Drawing.Point(120, 96);
             this.txt_TaiKhoan.Name = "txt_TaiKhoan";
             this.txt_TaiKhoan.Size = new System.Drawing.Size(133, 19);
             this.txt_TaiKhoan.TabIndex = 10;
@@ -409,7 +512,7 @@
             this.lb_MatKhau.AutoSize = true;
             this.lb_MatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_MatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_MatKhau.Location = new System.Drawing.Point(57, 137);
+            this.lb_MatKhau.Location = new System.Drawing.Point(32, 137);
             this.lb_MatKhau.Name = "lb_MatKhau";
             this.lb_MatKhau.Size = new System.Drawing.Size(84, 19);
             this.lb_MatKhau.TabIndex = 6;
@@ -420,30 +523,11 @@
             this.lb_TaiKhoan.AutoSize = true;
             this.lb_TaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.lb_TaiKhoan.Location = new System.Drawing.Point(56, 96);
+            this.lb_TaiKhoan.Location = new System.Drawing.Point(31, 96);
             this.lb_TaiKhoan.Name = "lb_TaiKhoan";
             this.lb_TaiKhoan.Size = new System.Drawing.Size(85, 19);
             this.lb_TaiKhoan.TabIndex = 5;
             this.lb_TaiKhoan.Text = "Tài khoản :";
-            // 
-            // sp_Line3
-            // 
-            this.sp_Line3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.sp_Line3.Location = new System.Drawing.Point(34, 58);
-            this.sp_Line3.Name = "sp_Line3";
-            this.sp_Line3.Size = new System.Drawing.Size(318, 10);
-            this.sp_Line3.TabIndex = 2;
-            // 
-            // title_ThongTinTaiKhoan
-            // 
-            this.title_ThongTinTaiKhoan.AutoSize = true;
-            this.title_ThongTinTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_ThongTinTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.title_ThongTinTaiKhoan.Location = new System.Drawing.Point(70, 23);
-            this.title_ThongTinTaiKhoan.Name = "title_ThongTinTaiKhoan";
-            this.title_ThongTinTaiKhoan.Size = new System.Drawing.Size(246, 31);
-            this.title_ThongTinTaiKhoan.TabIndex = 0;
-            this.title_ThongTinTaiKhoan.Text = "Thông tin tài khoản";
             // 
             // bt_XoaTaiKhoan
             // 
@@ -489,66 +573,24 @@
             this.bt_Update.TextOffset = new System.Drawing.Point(15, 0);
             this.bt_Update.Click += new System.EventHandler(this.bt_Update_Click);
             // 
-            // bt_Create
+            // sp_Line3
             // 
-            this.bt_Create.BorderRadius = 20;
-            this.bt_Create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Create.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_Create.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_Create.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_Create.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Create.ForeColor = System.Drawing.Color.White;
-            this.bt_Create.Image = global::GUI_ManagementKaraoke.Properties.Resources.create;
-            this.bt_Create.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Create.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_Create.Location = new System.Drawing.Point(295, 407);
-            this.bt_Create.Name = "bt_Create";
-            this.bt_Create.Size = new System.Drawing.Size(181, 56);
-            this.bt_Create.TabIndex = 7;
-            this.bt_Create.Text = "Thêm tài khoản";
-            this.bt_Create.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Create.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_Create.Click += new System.EventHandler(this.bt_Create_Click);
+            this.sp_Line3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.sp_Line3.Location = new System.Drawing.Point(34, 58);
+            this.sp_Line3.Name = "sp_Line3";
+            this.sp_Line3.Size = new System.Drawing.Size(318, 10);
+            this.sp_Line3.TabIndex = 2;
             // 
-            // bt_Refresh
+            // title_ThongTinTaiKhoan
             // 
-            this.bt_Refresh.BorderRadius = 20;
-            this.bt_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.bt_Refresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Refresh.ForeColor = System.Drawing.Color.White;
-            this.bt_Refresh.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
-            this.bt_Refresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Refresh.ImageOffset = new System.Drawing.Point(10, 0);
-            this.bt_Refresh.Location = new System.Drawing.Point(42, 407);
-            this.bt_Refresh.Name = "bt_Refresh";
-            this.bt_Refresh.Size = new System.Drawing.Size(181, 56);
-            this.bt_Refresh.TabIndex = 6;
-            this.bt_Refresh.Text = "Làm mới";
-            this.bt_Refresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_Refresh.TextOffset = new System.Drawing.Point(15, 0);
-            this.bt_Refresh.Click += new System.EventHandler(this.bt_Refresh_Click);
-            // 
-            // bt_Refresh_dgv
-            // 
-            this.bt_Refresh_dgv.BorderRadius = 10;
-            this.bt_Refresh_dgv.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Refresh_dgv.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_Refresh_dgv.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_Refresh_dgv.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_Refresh_dgv.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bt_Refresh_dgv.ForeColor = System.Drawing.Color.White;
-            this.bt_Refresh_dgv.Image = global::GUI_ManagementKaraoke.Properties.Resources.refresh;
-            this.bt_Refresh_dgv.ImageOffset = new System.Drawing.Point(1, 0);
-            this.bt_Refresh_dgv.Location = new System.Drawing.Point(418, 76);
-            this.bt_Refresh_dgv.Name = "bt_Refresh_dgv";
-            this.bt_Refresh_dgv.Size = new System.Drawing.Size(45, 45);
-            this.bt_Refresh_dgv.TabIndex = 4;
-            this.bt_Refresh_dgv.Click += new System.EventHandler(this.bt_Refresh_dgv_Click);
+            this.title_ThongTinTaiKhoan.AutoSize = true;
+            this.title_ThongTinTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_ThongTinTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.title_ThongTinTaiKhoan.Location = new System.Drawing.Point(70, 23);
+            this.title_ThongTinTaiKhoan.Name = "title_ThongTinTaiKhoan";
+            this.title_ThongTinTaiKhoan.Size = new System.Drawing.Size(246, 31);
+            this.title_ThongTinTaiKhoan.TabIndex = 0;
+            this.title_ThongTinTaiKhoan.Text = "Thông tin tài khoản";
             // 
             // QuanLyTaiKhoan
             // 
@@ -604,5 +646,8 @@
         private Guna.UI2.WinForms.Guna2Separator sp_Line3;
         private Guna.UI2.WinForms.Guna2TextBox txt_MatKhau;
         private System.Windows.Forms.Label txt_TaiKhoan;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

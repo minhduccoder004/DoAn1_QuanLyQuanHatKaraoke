@@ -160,5 +160,15 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
             Close();
         }
+
+        private void err_SoDienThoai_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_SoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

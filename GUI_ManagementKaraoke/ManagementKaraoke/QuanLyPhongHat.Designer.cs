@@ -51,6 +51,7 @@
             this.pn_Container2 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Parents3 = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_Child2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.chart_TanSuat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.sp_Line4 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_TanSuat = new System.Windows.Forms.Label();
             this.pn_Parents2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,16 +68,15 @@
             this.lb_LoaiPhong = new System.Windows.Forms.Label();
             this.sp_Line3 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_ThongTinPhong = new System.Windows.Forms.Label();
-            this.chart_TanSuat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pn_Container1.SuspendLayout();
             this.pn_Parents1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachPhong)).BeginInit();
             this.pn_Container2.SuspendLayout();
             this.pn_Parents3.SuspendLayout();
             this.pn_Child2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_TanSuat)).BeginInit();
             this.pn_Parents2.SuspendLayout();
             this.pn_Child1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_TanSuat)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_Container1
@@ -360,6 +360,55 @@
             this.pn_Child2.Size = new System.Drawing.Size(512, 345);
             this.pn_Child2.TabIndex = 0;
             // 
+            // chart_TanSuat
+            // 
+            this.chart_TanSuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.AxisX.MajorTickMark.LineWidth = 0;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.AxisX.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.MinorGrid.LineWidth = 0;
+            chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.AxisY.MinorTickMark.LineWidth = 0;
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            chartArea1.Name = "ChartArea1";
+            this.chart_TanSuat.ChartAreas.Add(chartArea1);
+            this.chart_TanSuat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chart_TanSuat.Legends.Add(legend1);
+            this.chart_TanSuat.Location = new System.Drawing.Point(0, 52);
+            this.chart_TanSuat.Name = "chart_TanSuat";
+            series1.ChartArea = "ChartArea1";
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart_TanSuat.Series.Add(series1);
+            this.chart_TanSuat.Size = new System.Drawing.Size(512, 293);
+            this.chart_TanSuat.TabIndex = 13;
+            this.chart_TanSuat.Text = "chart1";
+            // 
             // sp_Line4
             // 
             this.sp_Line4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
@@ -496,6 +545,7 @@
             this.txt_MaPhong.PasswordChar = '\0';
             this.txt_MaPhong.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_MaPhong.PlaceholderText = ".....................................";
+            this.txt_MaPhong.ReadOnly = true;
             this.txt_MaPhong.SelectedText = "";
             this.txt_MaPhong.Size = new System.Drawing.Size(229, 27);
             this.txt_MaPhong.TabIndex = 11;
@@ -609,55 +659,6 @@
             this.title_ThongTinPhong.TabIndex = 1;
             this.title_ThongTinPhong.Text = "Thông tin phòng";
             // 
-            // chart_TanSuat
-            // 
-            this.chart_TanSuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.MajorGrid.LineWidth = 0;
-            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.MajorTickMark.LineWidth = 0;
-            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.MinorGrid.LineWidth = 0;
-            chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.AxisY.MinorTickMark.LineWidth = 0;
-            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart_TanSuat.ChartAreas.Add(chartArea1);
-            this.chart_TanSuat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.chart_TanSuat.Legends.Add(legend1);
-            this.chart_TanSuat.Location = new System.Drawing.Point(0, 52);
-            this.chart_TanSuat.Name = "chart_TanSuat";
-            series1.ChartArea = "ChartArea1";
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart_TanSuat.Series.Add(series1);
-            this.chart_TanSuat.Size = new System.Drawing.Size(512, 293);
-            this.chart_TanSuat.TabIndex = 13;
-            this.chart_TanSuat.Text = "chart1";
-            // 
             // QuanLyPhongHat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,10 +679,10 @@
             this.pn_Parents3.ResumeLayout(false);
             this.pn_Child2.ResumeLayout(false);
             this.pn_Child2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_TanSuat)).EndInit();
             this.pn_Parents2.ResumeLayout(false);
             this.pn_Child1.ResumeLayout(false);
             this.pn_Child1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_TanSuat)).EndInit();
             this.ResumeLayout(false);
 
         }

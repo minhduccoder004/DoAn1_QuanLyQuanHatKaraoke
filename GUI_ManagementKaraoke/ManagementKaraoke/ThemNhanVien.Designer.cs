@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemNhanVien));
             this.pn_Container = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtp_NgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.rbt_Nu = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbt_Nam = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -51,8 +53,6 @@
             this.sp_Line1 = new Guna.UI2.WinForms.Guna2Separator();
             this.title_ThemNhanVien = new System.Windows.Forms.Label();
             this.pn_InfoNhanVien = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbb_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pn_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhNhanVien)).BeginInit();
             this.pn_InfoNhanVien.SuspendLayout();
@@ -90,20 +90,49 @@
             this.pn_Container.Size = new System.Drawing.Size(654, 513);
             this.pn_Container.TabIndex = 0;
             // 
+            // cbb_ChucVu
+            // 
+            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_ChucVu.BorderRadius = 15;
+            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_ChucVu.ItemHeight = 30;
+            this.cbb_ChucVu.Location = new System.Drawing.Point(392, 339);
+            this.cbb_ChucVu.Name = "cbb_ChucVu";
+            this.cbb_ChucVu.Size = new System.Drawing.Size(220, 36);
+            this.cbb_ChucVu.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(309, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Chức vụ :";
+            // 
             // dtp_NgaySinh
             // 
             this.dtp_NgaySinh.BorderRadius = 15;
             this.dtp_NgaySinh.Checked = true;
+            this.dtp_NgaySinh.CustomFormat = "dd / MM / yyyy";
             this.dtp_NgaySinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.dtp_NgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgaySinh.ForeColor = System.Drawing.Color.White;
-            this.dtp_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtp_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_NgaySinh.Location = new System.Drawing.Point(392, 119);
             this.dtp_NgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_NgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_NgaySinh.Name = "dtp_NgaySinh";
             this.dtp_NgaySinh.Size = new System.Drawing.Size(220, 36);
             this.dtp_NgaySinh.TabIndex = 38;
+            this.dtp_NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dtp_NgaySinh.Value = new System.DateTime(2024, 5, 9, 11, 35, 42, 4);
             // 
             // rbt_Nu
@@ -433,33 +462,6 @@
             this.pn_InfoNhanVien.Name = "pn_InfoNhanVien";
             this.pn_InfoNhanVien.Size = new System.Drawing.Size(654, 513);
             this.pn_InfoNhanVien.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(309, 347);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Chức vụ :";
-            // 
-            // cbb_ChucVu
-            // 
-            this.cbb_ChucVu.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_ChucVu.BorderRadius = 15;
-            this.cbb_ChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_ChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_ChucVu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.cbb_ChucVu.ItemHeight = 30;
-            this.cbb_ChucVu.Location = new System.Drawing.Point(392, 339);
-            this.cbb_ChucVu.Name = "cbb_ChucVu";
-            this.cbb_ChucVu.Size = new System.Drawing.Size(220, 36);
-            this.cbb_ChucVu.TabIndex = 40;
             // 
             // ThemNhanVien
             // 

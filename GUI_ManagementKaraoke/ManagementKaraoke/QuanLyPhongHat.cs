@@ -32,6 +32,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         {
             dgv_DanhSachPhong.DataSource = BLL.DanhSachDoiTuong();
             dgv_DanhSachPhong.Refresh();
+
+            txt_MaPhong.Text = string.Empty;
+            txt_TenPhong.Text= string.Empty;
+            txt_TrangThaiPhong.Text= string.Empty;
         }
 
         void DoDuLieu_DoThi(string ID_PhongHat)
@@ -219,6 +223,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 // Đổi trạng thái cờ
                 Flag_Status = false;
 
+                MessageBox.Show("Sửa thông tin thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 // Làm mới
                 LamMoi();
             }
@@ -237,7 +243,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 Flag_Status = false;
 
                 BLL.Xoa(BLL.GetByID(txt_MaPhong.Text));
-
+                MessageBox.Show("Xoá phòng hát thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Làm mới
                 LamMoi();

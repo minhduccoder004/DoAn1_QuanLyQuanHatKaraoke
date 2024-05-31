@@ -25,15 +25,60 @@ namespace GUI_ManagementKaraoke.NguoiDung
 
         private void bt_XacNhanDoi_Click(object sender, EventArgs e)
         {
-            tblNguoiDung ND = new tblNguoiDung();
-            ND.TenTaiKhoan = QuanLys.TaiKhoan;
-            ND.MatKhau = txt_MatKhauMoi.Text;
 
-            BLL.DoiMatKhau(ND);
+            if (!Equals(BLL.GetByID(QuanLys.TaiKhoan).MatKhau.Trim(), txt_MatKhauCu.Text))
+            {
+                MessageBox.Show("Mật khẩu cũ không trùng khớp !!");
+            }
+            else
+            {
+                if (Equals(txt_MatKhauMoi.Text, txt_XacNhanMatKhau.Text))
+                {
+                    tblNguoiDung ND = new tblNguoiDung();
+                    ND.TenTaiKhoan = QuanLys.TaiKhoan;
+                    ND.MatKhau = txt_MatKhauMoi.Text;
 
-            MessageBox.Show("Đã đổi mật khẩu !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BLL.DoiMatKhau(ND);
 
-            Close();
+                    MessageBox.Show("Đã đổi mật khẩu !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu mới nhập không trùng khớp !!");
+                }
+            }
+        }
+
+        private void txt_MatKhauCu_TextChanged(object sender, EventArgs e)
+        {
+            if (!Equals(BLL.GetByID(QuanLys.TaiKhoan).MatKhau.Trim(), txt_MatKhauCu.Text))
+            {
+                err_MatKhauCu.Visible = true;
+            }
+            else
+            {
+                err_MatKhauCu.Visible = false;
+            }
+        }
+
+        private void txt_MatKhauMoi_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_XacNhanMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void err_MatKhauCu_MouseHover(object sender, EventArgs e)
+        {
+            if (!Equals(BLL.GetByID(QuanLys.TaiKhoan).MatKhau.Trim(), txt_MatKhauCu.Text))
+            {
+                tt_HienThiLoi.SetToolTip(err_MatKhauCu, "<b style=\"color:red;\">Mật khẩu cũ nhập sai !!<b>");
+            }
         }
     }
 }

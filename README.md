@@ -35,3 +35,4 @@
   + note: làm test case, làm chức năng tìm kiếm, xuất hoá đơn ra word
 - ngày 31-05-2024:
   + (12:01 AM) Hoàn thiện sơ bộ, thiếu test case
+  + (5:30 PM) Hoàn thiện toàn bộ.

@@ -22,6 +22,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         Color DisableButtonColor = Color.FromArgb(128, 179, 255);
         Color EnableButtonColor = Color.FromArgb(104, 126, 255);
         bool Flag_Status = false;
+        bool Flag_DoiAnh = false;
         string TenAnh;
         string DuongDanTuyetDoi;
         public string[] arr_ChucVu = { "Quản lý", "Thu ngân", "Phục vụ" };
@@ -151,7 +152,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         Image LayAnhNhanVien(string ID)
         {
             Image Anh;
-            var TenAnh = BLL.DanhSachDoiTuong().Find(x => Equals(x.MaNhanVien.Trim(), ID)).FileAnh.Trim();
+            string TenAnh = "";
+
+            if (BLL.DanhSachDoiTuong().Find(x => Equals(x.MaNhanVien.Trim(), ID)).FileAnh != null)
+            {
+                TenAnh = BLL.DanhSachDoiTuong().Find(x => Equals(x.MaNhanVien.Trim(), ID)).FileAnh.Trim();
+            }
 
             if (TenAnh != "")
             {
@@ -173,6 +179,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         private void bt_ThemAnh_Click(object sender, EventArgs e)
         {
             // Code đổi ảnh
+            Flag_DoiAnh = true;
             var LayAnh = xuLyAnh.ChonAnh(pic_AnhNhanVien);
 
             TenAnh = LayAnh.Item1;
@@ -191,14 +198,20 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
                 // Code đổi thông tin nhân viên
                 tblNhanVien NV = BLL.GetByID(txt_MaNhanVien.Text);
-                xuLyAnh.XoaAnh(NV.FileAnh);
-                NV.FileAnh = TenAnh;
+                if (Flag_DoiAnh)
+                {
+                    xuLyAnh.XoaAnh(NV.FileAnh != null ? NV.FileAnh : "");
+                    NV.FileAnh = TenAnh;
+                    Flag_DoiAnh = false;
+                }
                 BLL.Sua(NV);
                 xuLyAnh.SaoChepAnh_ThuMucPicture(DuongDanTuyetDoi, TenAnh);
                 Flag_Status = false;
+                MessageBox.Show("Đã sửa thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Làm mới
                 LamMoi();
+
             }
         }
 
@@ -214,6 +227,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 // Code xoá nhân viên
                 BLL.Xoa(BLL.GetByID(txt_MaNhanVien.Text));
                 Flag_Status = false;
+                MessageBox.Show("Xoá nhân viên thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Làm mới datagridview
                 LamMoi();
