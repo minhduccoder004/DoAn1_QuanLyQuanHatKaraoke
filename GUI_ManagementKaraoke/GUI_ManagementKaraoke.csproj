@@ -390,9 +390,7 @@
   <ItemGroup>
     <None Include="Picture\done.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Picture\AnhNhanVien\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\expand-arrow.png" />
   </ItemGroup>

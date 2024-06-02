@@ -29,7 +29,6 @@ namespace GUI_ManagementKaraoke
 
         private void Nguoi_Dung_Load(object sender, EventArgs e)
         {
-            MessageBox.Show($"{AppDomain.CurrentDomain.BaseDirectory}");
 
             MoFrm(FrmDangNhap);
             FrmDangNhap.DongFormNguoiDung += DangNhapThanhCong;

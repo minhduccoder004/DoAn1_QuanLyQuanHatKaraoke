@@ -123,6 +123,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             Quanlys.LamMoi_KhiThanhToan();
 
             MessageBox.Show("Đã chốt thanh toán !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Close();
         }
 
         private void ThoiGian_Tick(object sender, EventArgs e)

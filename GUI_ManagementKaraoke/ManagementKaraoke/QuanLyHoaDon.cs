@@ -380,6 +380,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             
             BLL.Xoa_HoaDon(BLL.Lay_HoaDon(txt_MaHoaDon.Text));
 
+            LamMoi();
+
             MessageBox.Show("Đã xoá hoá đơn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

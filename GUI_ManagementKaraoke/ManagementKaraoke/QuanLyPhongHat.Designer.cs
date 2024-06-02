@@ -499,6 +499,7 @@
             this.txt_TrangThaiPhong.PasswordChar = '\0';
             this.txt_TrangThaiPhong.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
             this.txt_TrangThaiPhong.PlaceholderText = ".....................................";
+            this.txt_TrangThaiPhong.ReadOnly = true;
             this.txt_TrangThaiPhong.SelectedText = "";
             this.txt_TrangThaiPhong.Size = new System.Drawing.Size(229, 27);
             this.txt_TrangThaiPhong.TabIndex = 13;

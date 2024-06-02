@@ -67,7 +67,7 @@ namespace BLL.Implement_BLL
 
         public List<tblPhongHat> LayPhongHatTheoLoai(string MaLoaiPhong)
         {
-            return DAL.LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaLoaiPhong.Trim()));
+            return DAL.LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaLoaiPhong.Trim()) && x.TrangThaiXoa == 0);
         }
 
         public List<tblLoaiDichVu> LoaiDichVus()
@@ -82,7 +82,7 @@ namespace BLL.Implement_BLL
 
         public List<tblNhanVien> NV_PhucVus()
         {
-            return DAL.LayDuLieu_BangNhanVien().FindAll(x => x.ChucVu == 2);
+            return DAL.LayDuLieu_BangNhanVien().FindAll(x => x.ChucVu == 2 && x.TrangThaiXoa == 0);
         }
 
         public void TaoHoaDon(tblHoaDonBan tblHoaDonBan)

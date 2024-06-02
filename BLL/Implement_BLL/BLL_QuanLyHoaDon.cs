@@ -81,7 +81,7 @@ namespace BLL.Implement_BLL
         public string DuongDan_LogoHoaDon()
         {
             var DuongDanUngDung = AppDomain.CurrentDomain.BaseDirectory;
-            var DuongDanTuongDoi = Path.Combine("..", "..", "Picture", "LogoLoginKaraoke.png");
+            var DuongDanTuongDoi = Path.Combine("LogoLoginKaraoke.png");
             var DuongDanDayDu = Path.GetFullPath(Path.Combine(DuongDanUngDung, DuongDanTuongDoi));
 
             return DuongDanDayDu;
