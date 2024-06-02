@@ -101,6 +101,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         {
             if (e.RowIndex != -1)
             {
+                // đổi trạng thái cờ
+                Flag_Status = true;
+
+                // Đổi màu button
+                bt_XoaTaiKhoan.FillColor = EnableColorButton;
+                bt_Update.FillColor = EnableColorButton;
+
                 // đổ dữ liệu txt
                 txt_TaiKhoan.Text = dgv_TaiKhoan.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txt_MatKhau.Text = dgv_TaiKhoan.Rows[e.RowIndex].Cells[1].Value.ToString();
