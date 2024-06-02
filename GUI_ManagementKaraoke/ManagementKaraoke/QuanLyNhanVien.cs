@@ -168,7 +168,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             if (TenAnh != "")
             {
                 var basePath = AppDomain.CurrentDomain.BaseDirectory;
-                var relativePath = Path.Combine("..", "..", "Picture", "AnhNhanVien", $"{TenAnh}");
+                var relativePath = Path.Combine("AnhNhanVien", $"{TenAnh}");
                 var fullPath = Path.GetFullPath(Path.Combine(basePath, relativePath));
 
 

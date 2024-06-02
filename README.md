@@ -42,3 +42,4 @@
   + (10: 00 PM) fix cực căng: đổi màu button, thêm sửa xoá tài khoản quản lý ....
 - ngày 03-06-2024:
   + (1:58 AM) Fix các lỗi liên quan đến CRUD
+  + (2:15 AM) Fix lỗi file hình ảnh nhân viên

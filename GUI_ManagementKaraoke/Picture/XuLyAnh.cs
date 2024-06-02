@@ -15,7 +15,7 @@ namespace GUI_ManagementKaraoke.Picture
         public void SaoChepAnh_ThuMucPicture(string DuongDanAnh, string TenAnh)
         {
             var DuongDanUngDung = AppDomain.CurrentDomain.BaseDirectory;
-            var DuongDanTuongDoi = Path.Combine("..", "..", "Picture", "AnhNhanVien", $"{TenAnh}");
+            var DuongDanTuongDoi = Path.Combine("AnhNhanVien", $"{TenAnh}");
             var DuongDanDayDu = Path.GetFullPath(Path.Combine(DuongDanUngDung, DuongDanTuongDoi));
 
             File.Copy(DuongDanAnh, DuongDanDayDu, true);
@@ -50,7 +50,7 @@ namespace GUI_ManagementKaraoke.Picture
             if (!Equals(TenAnh, ""))
             {
                 var DuongDanUngDung = AppDomain.CurrentDomain.BaseDirectory;
-                var DuongDanTuongDoi = Path.Combine("..", "..", "Picture", "AnhNhanVien", $"{TenAnh}");
+                var DuongDanTuongDoi = Path.Combine("AnhNhanVien", $"{TenAnh}");
                 var DuongDanDayDu = Path.GetFullPath(Path.Combine(DuongDanUngDung, DuongDanTuongDoi));
 
                 File.Delete(DuongDanDayDu);
