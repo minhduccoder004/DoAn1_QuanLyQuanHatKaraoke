@@ -4,36 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3fa22892d2c845028a57b27eaf5f14a6" Name="Diagram1">
-        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.sysdiagram" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+      <Diagram DiagramId="400629316b77497192282efec63849e4" Name="Diagram1">
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblDichVu" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblGoiDichVu" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblGoiMatHang" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblHoaDonBan" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblKhachHang" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblKhachHang" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiDichVu" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiHang" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblLoaiPhong" Width="1.5" PointX="1.5" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblMatHang" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblNguoiDung" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblNhanVien" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblNguoiDung" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblNhanVien" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongDat" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongHat" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblDichVu__MaLoa__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaDic__6754599E" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaHoa__66603565" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaPho__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaHoa__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaMat__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaPho__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaKha__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaNha__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaPho__787EE5A0" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaKha__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblMatHan__MaLoa__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongH__MaLoa__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaNha__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaPho__571DF1D5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DoAn1_QuanLyQuanHatKaraokeModel.tblPhongHat" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblDichVu__MaLoa__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaDic__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaHoa__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiDic__MaPho__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaHoa__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaMat__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblGoiMat__MaPho__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaKha__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaNha__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblHoaDon__MaPho__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaKha__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblMatHan__MaLoa__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongH__MaLoa__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaNha__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn1_QuanLyQuanHatKaraokeModel.FK__tblPhongD__MaPho__59FA5E80" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

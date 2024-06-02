@@ -21,7 +21,7 @@ namespace BLL.Implement_BLL
 
         public List<tblPhongHat> DanhSachDoiTuong()
         {
-            return DAL.DanhSachDoiTuong();
+            return DAL.DanhSachDoiTuong().FindAll(x => x.TrangThaiXoa == 0);
         }
 
         public List<KeyValuePair<int, int>> DuLieu_ThongKeHoatDong(string ID_PhongHat)

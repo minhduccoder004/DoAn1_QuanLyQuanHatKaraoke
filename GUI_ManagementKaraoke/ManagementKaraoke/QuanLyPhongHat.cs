@@ -129,6 +129,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DanhSachPhong.Columns[3].HeaderText = "Loại phòng";
             dgv_DanhSachPhong.Columns[4].Visible = false;
             dgv_DanhSachPhong.Columns[5].Visible = false;
+            dgv_DanhSachPhong.Columns[6].Visible = false;
 
             // cbb
             cbb_LoaiPhong.DataSource = BLL.LoaiPhongs();
@@ -241,8 +242,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
                 // Đổi trạng thái cờ
                 Flag_Status = false;
+                var PhongHat = BLL.GetByID(txt_MaPhong.Text);
+                PhongHat.TrangThaiXoa = 1;
 
-                BLL.Xoa(BLL.GetByID(txt_MaPhong.Text));
+                BLL.Xoa(PhongHat);
                 MessageBox.Show("Xoá phòng hát thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Làm mới

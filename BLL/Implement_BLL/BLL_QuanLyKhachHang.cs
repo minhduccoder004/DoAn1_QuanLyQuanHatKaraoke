@@ -30,7 +30,7 @@ namespace BLL.Implement_BLL
 
         public override void Xoa(tblKhachHang _DTO) => DAL.Xoa(_DTO);
 
-        public List<tblKhachHang> DanhSachDoiTuong() => DAL.DanhSachDoiTuong();
+        public List<tblKhachHang> DanhSachDoiTuong() => DAL.DanhSachDoiTuong().FindAll(x => x.TrangThaiXoa == 0);
 
         public tblKhachHang GetByID(string ID) => DanhSachDoiTuong().Find(x => Equals(x.MaKhachHang.Trim(), ID));
 

@@ -92,6 +92,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DSKhachHang.Columns[2].HeaderText = "Số điện thoại";
             dgv_DSKhachHang.Columns[3].Visible = false;
             dgv_DSKhachHang.Columns[4].Visible = false;
+            dgv_DSKhachHang.Columns[5].Visible = false;
             dgv_DSKhachHang.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 12, FontStyle.Bold);
 
             // Đổi màu button (disable)
@@ -206,7 +207,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         {
             if (Flag_Status)
             {
-                var Result = MessageBox.Show("Bạn có muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var Result = MessageBox.Show("Bạn có muốn xoá khách hàng (Không khuyến kích xoá !!!)", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 switch (Result)
                 {
@@ -220,7 +221,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         Flag_Status = false;
                         // Code xoá dữ liệu đã chọn khỏi table
 
-                        BLL.Xoa(BLL.GetByID(txt_MaKH.Text));
+                        var KhachHang = BLL.GetByID(txt_MaKH.Text);
+                        KhachHang.TrangThaiXoa = 1;
+                        BLL.Xoa(KhachHang);
+                        
                         MessageBox.Show("Xoá khách hàng thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Làm mới bảng

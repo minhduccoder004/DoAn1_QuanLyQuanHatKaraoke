@@ -46,7 +46,10 @@ namespace DAL.Implement_DAL
 
         public override void Xoa(tblPhongHat _DTO)
         {
-            Database.tblPhongHats.Remove(_DTO); 
+            var Delete = Database.tblPhongHats.Find(_DTO.MaPhongHat);
+
+            Delete.TrangThaiXoa = _DTO.TrangThaiXoa;
+
             Database.SaveChanges();
         }
     }

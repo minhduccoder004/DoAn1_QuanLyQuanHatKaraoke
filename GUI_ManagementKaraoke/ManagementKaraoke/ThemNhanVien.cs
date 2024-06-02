@@ -62,6 +62,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         NV.SoDienThoai = txt_SoDienThoai.Text;
                         NV.FileAnh = TenAnh_DuongDanTuyetDoi.Item1;
                         NV.ChucVu = BLL.LayChucVu(cbb_ChucVu.Text);
+                        NV.TrangThaiXoa = 0;
 
                         if (TenAnh_DuongDanTuyetDoi.Item1 != "")
                         {

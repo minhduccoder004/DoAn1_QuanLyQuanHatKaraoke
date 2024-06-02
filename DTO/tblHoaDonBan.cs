@@ -22,19 +22,19 @@ namespace DTO
         }
     
         public string MaHoaDonBan { get; set; }
-        public string MaNhanVien { get; set; }
         public string MaKhachHang { get; set; }
+        public string MaNhanVien { get; set; }
+        public string MaPhongDat { get; set; }
         public Nullable<System.DateTime> ThoiGianTaoHoaDon { get; set; }
         public Nullable<double> ThanhTien { get; set; }
-        public string MaPhongDat { get; set; }
         public Nullable<int> TrangThaiHoaDon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblGoiDichVu> tblGoiDichVus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblGoiMatHang> tblGoiMatHangs { get; set; }
-        public virtual tblNhanVien tblNhanVien { get; set; }
         public virtual tblKhachHang tblKhachHang { get; set; }
+        public virtual tblNhanVien tblNhanVien { get; set; }
         public virtual tblPhongDat tblPhongDat { get; set; }
     }
 }

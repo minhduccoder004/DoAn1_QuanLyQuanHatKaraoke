@@ -24,6 +24,7 @@ namespace DTO
         public string TenPhongHat { get; set; }
         public Nullable<int> TrangThaiPhong { get; set; }
         public string MaLoaiPhong { get; set; }
+        public Nullable<int> TrangThaiXoa { get; set; }
     
         public virtual tblLoaiPhong tblLoaiPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

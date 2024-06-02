@@ -40,13 +40,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void bt_XacNhan_Click(object sender, EventArgs e)
         {
-
             // Code thêm khách hàng
             tblKhachHang KH = new tblKhachHang();
 
             KH.MaKhachHang = BLL.TaoMaKhachHang();
             KH.TenKhachHang = txt_TenKhachHang.Text;
             KH.SoDienThoai = txt_SoDienThoai.Text;
+            KH.TrangThaiXoa = 0;
 
             BLL.Them(KH);
             QuanLys.LamMoi();

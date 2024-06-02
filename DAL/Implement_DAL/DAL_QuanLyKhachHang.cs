@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace DAL.Implement_DAL
 {
@@ -26,7 +27,6 @@ namespace DAL.Implement_DAL
             var Update = Database.tblKhachHangs.Find(_DTO.MaKhachHang);
             Update.TenKhachHang = _DTO.TenKhachHang;
             Update.SoDienThoai = _DTO.SoDienThoai;
-
             Database.SaveChanges();
         }
 
@@ -38,7 +38,8 @@ namespace DAL.Implement_DAL
 
         public override void Xoa(tblKhachHang _DTO)
         {
-            Database.tblKhachHangs.Remove(_DTO);
+            var Delete = Database.tblKhachHangs.Find(_DTO.MaKhachHang);
+            Delete.TrangThaiXoa = _DTO.TrangThaiXoa;
             Database.SaveChanges();
         }
     }

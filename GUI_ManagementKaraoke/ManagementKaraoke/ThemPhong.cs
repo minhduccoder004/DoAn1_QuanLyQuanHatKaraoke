@@ -42,7 +42,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 MaPhongHat = BLL.TaoMaPhong(),
                 TenPhongHat = txt_TenPhong.Text,
                 TrangThaiPhong = BLL.TrangThaiPhong(cbb_TrangThaiPhong.Text),
-                MaLoaiPhong = cbb_LoaiPhong.SelectedValue.ToString()
+                MaLoaiPhong = cbb_LoaiPhong.SelectedValue.ToString(),
+                TrangThaiXoa = 0
             };
 
             BLL.Them(PH);

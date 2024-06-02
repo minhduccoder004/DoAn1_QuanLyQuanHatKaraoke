@@ -273,11 +273,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             // Format dgv
             // dgv_HoaDonBan
             dgv_HoaDonBan.Columns[0].HeaderText = "Mã hoá đơn";
-            dgv_HoaDonBan.Columns[1].HeaderText = "Tên nhân viên";
-            dgv_HoaDonBan.Columns[2].HeaderText = "Tên khách hàng";
-            dgv_HoaDonBan.Columns[3].HeaderText = "Thời gian tạo hoá đơn";
-            dgv_HoaDonBan.Columns[4].HeaderText = "Thành tiền";
-            dgv_HoaDonBan.Columns[5].Visible = false;
+            dgv_HoaDonBan.Columns[1].HeaderText = "Tên khách hàng";
+            dgv_HoaDonBan.Columns[2].HeaderText = "Tên nhân viên";
+            dgv_HoaDonBan.Columns[3].Visible = false;
+            dgv_HoaDonBan.Columns[4].HeaderText = "Thời gian tạo hoá đơn";
+            dgv_HoaDonBan.Columns[5].HeaderText = "Thành tiền";
             dgv_HoaDonBan.Columns[6].Visible = false;
             dgv_HoaDonBan.Columns[7].Visible = false;
             dgv_HoaDonBan.Columns[8].Visible = false;
@@ -316,10 +316,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             if (e.RowIndex != -1)
             {
                 txt_MaHoaDon.Text = dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txt_TenKhachHang.Text = BLL.LayTenKhachHang(dgv_HoaDonBan.Rows[e.RowIndex].Cells[2].Value.ToString());
-                txt_NhanVien.Text = BLL.LayTenNhanVien(dgv_HoaDonBan.Rows[e.RowIndex].Cells[1].Value.ToString());
-                txt_ThoiGianTaoHoaDon.Text = Convert.ToDateTime(dgv_HoaDonBan.Rows[e.RowIndex].Cells[3].Value).ToString();
-                txt_ThanhTien.Text = BLL.Format_Tien(Convert.ToDouble(dgv_HoaDonBan.Rows[e.RowIndex].Cells[4].Value));
+                txt_TenKhachHang.Text = BLL.LayTenKhachHang(dgv_HoaDonBan.Rows[e.RowIndex].Cells[1].Value.ToString());
+                txt_NhanVien.Text = BLL.LayTenNhanVien(dgv_HoaDonBan.Rows[e.RowIndex].Cells[2].Value.ToString());
+                txt_ThoiGianTaoHoaDon.Text = Convert.ToDateTime(dgv_HoaDonBan.Rows[e.RowIndex].Cells[4].Value).ToString();
+                txt_ThanhTien.Text = BLL.Format_Tien(Convert.ToDouble(dgv_HoaDonBan.Rows[e.RowIndex].Cells[5].Value));
 
                 dgv_DichVuUsed.DataSource = BLL.DichVuUsed(dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString());
                 dgv_MatHangUsed.DataSource = BLL.MatHangUsed(dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -387,13 +387,13 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         {
             switch (e.ColumnIndex)
             {
-                case 1:
+                case 2:
                     e.Value = BLL.LayTenNhanVien(e.Value.ToString().Trim());
                     break;
-                case 2:
+                case 1:
                     e.Value = BLL.LayTenKhachHang(e.Value.ToString().Trim());
                     break;
-                case 4:
+                case 5:
                     e.Value = BLL.Format_Tien(Convert.ToDouble(e.Value));
                     break;
             }

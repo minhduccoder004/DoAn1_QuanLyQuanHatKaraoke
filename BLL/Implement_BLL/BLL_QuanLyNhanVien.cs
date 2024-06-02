@@ -17,7 +17,7 @@ namespace BLL.Implement_BLL
         public override void Them(tblNhanVien _DTO) => DAL.Them(_DTO);
         public override void Sua(tblNhanVien _DTO) => DAL.Sua(_DTO);
         public override void Xoa(tblNhanVien _DTO) => DAL.Xoa(_DTO);
-        public List<tblNhanVien> DanhSachDoiTuong() => DAL.DanhSachDoiTuong();
+        public List<tblNhanVien> DanhSachDoiTuong() => DAL.DanhSachDoiTuong().FindAll(x => x.TrangThaiXoa == 0);
         public tblNhanVien GetByID(string ID) => DanhSachDoiTuong().Find(x => Equals(x.MaNhanVien.Trim(), ID));
 
         public string TaoMaNhanVien()

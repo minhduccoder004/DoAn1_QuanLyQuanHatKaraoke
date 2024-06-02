@@ -27,6 +27,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         string DuongDanTuyetDoi;
         public string[] arr_ChucVu = { "Quản lý", "Thu ngân", "Phục vụ" };
 
+        string[] arr_SapXepTheo = { "Tên nhân viên", "Địa chỉ", "Số điện thoại", "Email" };
+
         // Khởi tạo lớp xử lý ảnh
 
         XuLyAnh xuLyAnh = new XuLyAnh();
@@ -53,8 +55,6 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void bt_LamMoi_Click(object sender, EventArgs e)
         {
-            // Làm mới datagridview
-            LamMoi();
 
             // Đổi màu button
             bt_Create.FillColor = EnableButtonColor;
@@ -72,7 +72,8 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             txt_DiaChi.Text = string.Empty;
             txt_SoDienThoai.Text = string.Empty;
 
-            // 
+            //  reset sắp xếp
+            cbb_SapXepTheo.SelectedIndex = -1;
         }
 
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -104,10 +105,15 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_DSNhanVien.Columns[8].Width = 100;
             dgv_DSNhanVien.Columns[9].Visible = false;
             dgv_DSNhanVien.Columns[10].Visible = false;
+            dgv_DSNhanVien.Columns[11].Visible = false;
 
             // thêm dữ liệu cho combobox chức vụ
             cbb_ChucVu.DataSource = arr_ChucVu;
             cbb_ChucVu.SelectedIndex = -1;
+
+            // Đổ dữ liệu cbb sắp xếp
+            cbb_SapXepTheo.DataSource = arr_SapXepTheo;
+            cbb_SapXepTheo.SelectedIndex = -1;
         }
 
         private void dgv_DSNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -243,8 +249,11 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 bt_Update.FillColor = DisableButtonColor;
                 bt_Delete.FillColor = DisableButtonColor;
 
+                var NhanVien = BLL.GetByID(txt_MaNhanVien.Text);
+
+                NhanVien.TrangThaiXoa = 1;
                 // Code xoá nhân viên
-                BLL.Xoa(BLL.GetByID(txt_MaNhanVien.Text));
+                BLL.Xoa(NhanVien);
                 Flag_Status = false;
                 MessageBox.Show("Xoá nhân viên thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -275,6 +284,29 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                         e.Value = "Phục vụ";
                         break;
                 }
+            }
+        }
+
+        private void cbb_SapXepTheo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_SapXepTheo.Text.ToLower().Trim())
+            {
+                case "tên nhân viên":
+                    dgv_DSNhanVien.DataSource = BLL.SapXep_TenNhanVien();
+                    dgv_DSNhanVien.Refresh();
+                    break;
+                case "số điện thoại":
+                    dgv_DSNhanVien.DataSource = BLL.SapXep_SoDienThoai();
+                    dgv_DSNhanVien.Refresh();
+                    break;
+                case "địa chỉ":
+                    dgv_DSNhanVien.DataSource = BLL.SapXep_DiaChi();
+                    dgv_DSNhanVien.Refresh();
+                    break;
+                case "email":
+                    dgv_DSNhanVien.DataSource = BLL.SapXep_Email();
+                    dgv_DSNhanVien.Refresh();
+                    break;
             }
         }
     }

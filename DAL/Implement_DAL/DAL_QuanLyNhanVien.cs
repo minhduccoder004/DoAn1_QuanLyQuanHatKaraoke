@@ -37,7 +37,10 @@ namespace DAL.Implement_DAL
 
         public override void Xoa(tblNhanVien _DTO)
         {
-            DB.tblNhanViens.Remove(_DTO);
+            var Delete = DB.tblNhanViens.Find(_DTO.MaNhanVien);
+
+            Delete.TrangThaiXoa = _DTO.TrangThaiXoa;
+
             DB.SaveChanges();
         }
     }
