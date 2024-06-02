@@ -4,6 +4,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,14 +25,49 @@ namespace BLL.Implement_BLL
             return DanhSachDoiTuong().Find(x => Equals(x.MaPhongDat.Trim(), ID.Trim()));
         }
 
+        public bool KiemTraPhongHopLe(string MaPhong, DateTime NgayDatPhong)
+        {
+            var Phong_KiemTra = DAL.LayDuLieu_BangPhongHat().Find(x => Equals(x.MaPhongHat.Trim(), MaPhong.Trim()));
+
+            if (Phong_KiemTra != null)
+            {
+
+                if (Phong_KiemTra.TrangThaiPhong == 1)
+                {
+                    var KiemTra_TrungNgayPhongDat = DanhSachDoiTuong().Find(x => Equals(x.MaPhong.Trim(), MaPhong.Trim()) && x.TrangThaiPhongDat != 2);
+
+                    if (KiemTra_TrungNgayPhongDat != null)
+                    {
+                        if (KiemTra_TrungNgayPhongDat.ThoiGianPhongDat.Value.Date != NgayDatPhong.Date)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public List<tblDichVu> LayDichVuTheoLoai(string MaDichVu)
         {
             return DAL.LayDuLieu_BangDichVu().FindAll(x => Equals(x.tblLoaiDichVu.MaLoaiDichVu.Trim(), MaDichVu.Trim()));
         }
 
-        public List<tblPhongHat> LayPhongHatTheoLoai(string MaPhong)
+        public List<tblPhongHat> LayPhongHatTheoLoai(string MaLoaiPhong)
         {
-            return DAL.LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaPhong.Trim()) && x.TrangThaiPhong == 0);
+            return DAL.LayDuLieu_BangPhongHat().FindAll(x => Equals(x.tblLoaiPhong.MaLoaiPhong.Trim(), MaLoaiPhong.Trim()));
         }
 
         public List<tblLoaiDichVu> LoaiDichVus()

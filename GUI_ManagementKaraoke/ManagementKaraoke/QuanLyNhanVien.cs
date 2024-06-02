@@ -200,12 +200,31 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                 tblNhanVien NV = BLL.GetByID(txt_MaNhanVien.Text);
                 if (Flag_DoiAnh)
                 {
-                    xuLyAnh.XoaAnh(NV.FileAnh != null ? NV.FileAnh : "");
+                    xuLyAnh.XoaAnh(NV.FileAnh ?? "");
                     NV.FileAnh = TenAnh;
                     Flag_DoiAnh = false;
                 }
+
+                NV.SoDienThoai = txt_SoDienThoai.Text.Trim();
+                NV.TenNhanVien = txt_TenNhanVien.Text.Trim();
+                NV.Email = txt_Email.Text.Trim();
+                NV.DiaChi = txt_DiaChi.Text.Trim();
+                if (rbt_Nam.Checked)
+                {
+                    NV.GioiTinh = "Nam";
+                }
+                if (rbt_Nu.Checked)
+                {
+                    NV.GioiTinh = "Nữ";
+                }
+                NV.NgaySinh = dtp_NgaySinh.Value;
+                NV.ChucVu = BLL.LayChucVu(cbb_ChucVu.Text.Trim());
+
                 BLL.Sua(NV);
-                xuLyAnh.SaoChepAnh_ThuMucPicture(DuongDanTuyetDoi, TenAnh);
+                if (DuongDanTuyetDoi != null)
+                {
+                    xuLyAnh.SaoChepAnh_ThuMucPicture(DuongDanTuyetDoi, TenAnh);
+                }
                 Flag_Status = false;
                 MessageBox.Show("Đã sửa thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

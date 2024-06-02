@@ -36,3 +36,6 @@
 - ngày 31-05-2024:
   + (12:01 AM) Hoàn thiện sơ bộ, thiếu test case
   + (5:30 PM) Hoàn thiện toàn bộ.
+- ngày 02-06-2024:
+  + (8:38 PM) Fix các lỗi linh tinh, add Tìm kiếm tất cả, ....
+  + note: Sau này update phân trang cho các datagridview.

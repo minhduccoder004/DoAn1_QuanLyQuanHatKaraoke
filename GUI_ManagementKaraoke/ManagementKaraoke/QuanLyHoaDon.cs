@@ -316,7 +316,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             if (e.RowIndex != -1)
             {
                 txt_MaHoaDon.Text = dgv_HoaDonBan.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txt_TenKhachHang.Text = dgv_HoaDonBan.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txt_TenKhachHang.Text = BLL.LayTenKhachHang(dgv_HoaDonBan.Rows[e.RowIndex].Cells[2].Value.ToString());
                 txt_NhanVien.Text = BLL.LayTenNhanVien(dgv_HoaDonBan.Rows[e.RowIndex].Cells[1].Value.ToString());
                 txt_ThoiGianTaoHoaDon.Text = Convert.ToDateTime(dgv_HoaDonBan.Rows[e.RowIndex].Cells[3].Value).ToString();
                 txt_ThanhTien.Text = BLL.Format_Tien(Convert.ToDouble(dgv_HoaDonBan.Rows[e.RowIndex].Cells[4].Value));
@@ -328,13 +328,33 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             }
         }
 
+        public void LamMoi()
+        {
+            // Đổ lại dữ liệu dgv
+            dgv_HoaDonBan.DataSource = BLL.DanhSach_HoaDonBan();
+            dgv_HoaDonBan.Refresh();
+            dgv_MatHangUsed.DataSource = new List<tblGoiMatHang>();
+            dgv_MatHangUsed.Refresh();
+            dgv_DichVuUsed.DataSource = new List<tblGoiDichVu>();
+            dgv_DichVuUsed.Refresh();
+
+            // xoá dữ liệu txt
+            txt_MaHoaDon.Text = "....................";
+            txt_NhanVien.Text = "....................";
+            txt_TenKhachHang.Text = "....................";
+            txt_ThanhTien.Text = "....................";
+            txt_ThoiGianTaoHoaDon.Text = "....................";
+        }
+
         private void bt_LamMoi_Click(object sender, EventArgs e)
         {
             // Đổ lại dữ liệu dgv
             dgv_HoaDonBan.DataSource = BLL.DanhSach_HoaDonBan();
-
+            dgv_HoaDonBan.Refresh();
             dgv_MatHangUsed.DataSource = new List<tblGoiMatHang>();
+            dgv_MatHangUsed.Refresh();
             dgv_DichVuUsed.DataSource = new List<tblGoiDichVu>();
+            dgv_DichVuUsed.Refresh();
 
             // xoá dữ liệu txt
             txt_MaHoaDon.Text = "....................";

@@ -25,12 +25,12 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         // Khởi tạo lớp BLL
         BLL_TimKiem BLL = new BLL_TimKiem();
         // Mảng tìm kiếm các form 
-        readonly string[] arr_SearchByTrangChu = { "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên" };
-        readonly string[] arr_SearchByQLHoaDon = { "Tên khách hàng", "Tên nhân viên" };
+        readonly string[] arr_SearchByTrangChu = { "Tất cả", "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên" };
+        readonly string[] arr_SearchByQLHoaDon = { "Tất cả", "Tên khách hàng", "Tên nhân viên" };
         readonly string[] arr_SearchByThongKe = { "Không có !!" };
-        readonly string[] arr_SearchByQLKhachHang = { "Tên khách hàng", "Số điện thoại" };
-        readonly string[] arr_SearchByQLNhanVien = { "Tên nhân viên", "Số điện thoại", "Địa chỉ", "Năm sinh", "Email" };
-        readonly string[] arr_SearchByQLPhongHat = { "Tên phòng", "Loại phòng" };
+        readonly string[] arr_SearchByQLKhachHang = { "Tất cả", "Tên khách hàng", "Số điện thoại" };
+        readonly string[] arr_SearchByQLNhanVien = { "Tất cả", "Tên nhân viên", "Số điện thoại", "Địa chỉ", "Năm sinh", "Email" };
+        readonly string[] arr_SearchByQLPhongHat = { "Tất cả", "Tên phòng", "Loại phòng" };
         // Khởi tạo thuộc tính
         List<tblPhongHat> DanhSachPhongHat;
         List<tblPhongDat> DanhSachPhongDat;
@@ -46,6 +46,10 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
         public void DoiTenForm(string TenForm)
         {
             lb_infoFrm.Text = TenForm;
+        }
+        public void LamMoi()
+        {
+            txt_ThongTinTimKiem.Text = string.Empty;
         }
 
         private void lb_infoFrm_TextChanged(object sender, EventArgs e)
@@ -97,7 +101,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
                     break;
                 case "quản lý phòng hát":
 
-                    SuKien_PhongHats(BLL.DuLieuTimKiemPhongHat(DanhSachPhongHat, cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text)) ;
+                    SuKien_PhongHats(BLL.DuLieuTimKiemPhongHat(DanhSachPhongHat, cbb_TimKiemTheo.Text, txt_ThongTinTimKiem.Text));
 
                     break;
             }
@@ -136,7 +140,7 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             e.DanhSachPhongDat = tblPhongDats;
             Event_PhongDats?.Invoke(this, e);
         }
-         
+
         public void BatSuKien_LayDanhSach_PhongDat(object sender, Event_LayDSPhongDat e)
         {
             DanhSachPhongDat = e.DanhSachPhongDat;

@@ -63,7 +63,7 @@
             this.cbb_TimKiemTheo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
             this.cbb_TimKiemTheo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));
             this.cbb_TimKiemTheo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_TimKiemTheo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.cbb_TimKiemTheo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
             this.cbb_TimKiemTheo.ItemHeight = 30;
             this.cbb_TimKiemTheo.Location = new System.Drawing.Point(128, 30);
             this.cbb_TimKiemTheo.Name = "cbb_TimKiemTheo";
@@ -74,7 +74,7 @@
             // 
             this.label_TimKiemTheo.AutoSize = true;
             this.label_TimKiemTheo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TimKiemTheo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.label_TimKiemTheo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
             this.label_TimKiemTheo.Location = new System.Drawing.Point(9, 36);
             this.label_TimKiemTheo.Name = "label_TimKiemTheo";
             this.label_TimKiemTheo.Size = new System.Drawing.Size(118, 19);
@@ -85,7 +85,7 @@
             // 
             this.lb_infoFrm.AutoSize = true;
             this.lb_infoFrm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_infoFrm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
+            this.lb_infoFrm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
             this.lb_infoFrm.Location = new System.Drawing.Point(95, 10);
             this.lb_infoFrm.Name = "lb_infoFrm";
             this.lb_infoFrm.Size = new System.Drawing.Size(49, 19);
@@ -97,8 +97,8 @@
             // 
             this.label_ChucNang.AutoSize = true;
             this.label_ChucNang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ChucNang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(126)))), ((int)(((byte)(255)))));
-            this.label_ChucNang.Location = new System.Drawing.Point(12, 10);
+            this.label_ChucNang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
+            this.label_ChucNang.Location = new System.Drawing.Point(9, 10);
             this.label_ChucNang.Name = "label_ChucNang";
             this.label_ChucNang.Size = new System.Drawing.Size(87, 17);
             this.label_ChucNang.TabIndex = 0;
@@ -147,13 +147,13 @@
             this.txt_ThongTinTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_ThongTinTimKiem.FocusedState.BorderColor = System.Drawing.Color.Transparent;
             this.txt_ThongTinTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ThongTinTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_ThongTinTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
             this.txt_ThongTinTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_ThongTinTimKiem.Location = new System.Drawing.Point(36, 12);
             this.txt_ThongTinTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_ThongTinTimKiem.Name = "txt_ThongTinTimKiem";
             this.txt_ThongTinTimKiem.PasswordChar = '\0';
-            this.txt_ThongTinTimKiem.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_ThongTinTimKiem.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(12)))), ((int)(((byte)(156)))));
             this.txt_ThongTinTimKiem.PlaceholderText = "Nhập thông tin muốn tìm kiếm ....";
             this.txt_ThongTinTimKiem.SelectedText = "";
             this.txt_ThongTinTimKiem.Size = new System.Drawing.Size(466, 48);
@@ -162,6 +162,7 @@
             // 
             // InfoForm
             // 
+            this.AcceptButton = this.bt_TimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(206)))), ((int)(((byte)(232)))));

@@ -111,6 +111,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[0]);
             MoForm(TrangChu, pn_container);
+            TrangChu.LamMoi();
+            infoForm.LamMoi();
         }
         // sự kiện click quản lý hoá đơn
         public void Click_QuanLyHoaDon(object sender, EventArgs e)
@@ -118,7 +120,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[1]);
             MoForm(QL_HoaDon, pn_container);
-
+            QL_HoaDon.LamMoi();
+            infoForm.LamMoi();
         }
         // sự kiện click thống kê
         public void Click_ThongKe(object sender, EventArgs e)
@@ -126,6 +129,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[2]);
             MoForm(ThongKe, pn_container);
+            ThongKe.LamMoi();
+            infoForm.LamMoi();
         }
         // sự kiện click quản lý khách hàng
         public void Click_QuanLyKhachHang(object sender, EventArgs e)
@@ -133,6 +138,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[3]);
             MoForm(QL_KhachHang, pn_container);
+            QL_KhachHang.LamMoi();
+            infoForm.LamMoi();
         }
         // sự kiện click quản lý nhân viên
         public void Click_QuanLyNhanVien(object sender, EventArgs e)
@@ -140,6 +147,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[4]);
             MoForm(QL_NhanVien, pn_container);
+            QL_NhanVien.LamMoi();
+            infoForm.LamMoi();
         }
         // sự kiện click quản lý phòng hát
         public void Click_QuanLyPhongHat(object sender, EventArgs e)
@@ -147,6 +156,8 @@ namespace GUI_ManagementKaraoke
             pn_container.Controls.Clear();
             infoForm.DoiTenForm(arr_info[5]);
             MoForm(QL_PhongHat, pn_container);
+            QL_PhongHat.LamMoi();
+            infoForm.LamMoi();
         }
         public void Click_DatPhong(object sender, EventArgs e)
         {

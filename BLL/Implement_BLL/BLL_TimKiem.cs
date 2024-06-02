@@ -19,6 +19,11 @@ namespace BLL.Implement_BLL
          
             switch (LoaiTimKiem.ToLower())
             {
+                case "tất cả":
+                    return DanhSachHoaDonBan.FindAll(x =>
+                             x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.Trim().ToLower()) ||
+                             x.tblNhanVien.TenNhanVien.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim())
+                        );
                 case "tên khách hàng":
                     return DanhSachHoaDonBan.FindAll(x => x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.Trim().ToLower()));
                 case "tên nhân viên":
@@ -32,8 +37,17 @@ namespace BLL.Implement_BLL
         {
             switch (LoaiTimKiem.ToLower())
             {
+                case "tất cả":
+                    return DAL.DuLieuBangKhachHang().FindAll(x =>
+                            x.TenKhachHang.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower())
+                        );
                 case "tên khách hàng":
-                    return DAL.DuLieuBangKhachHang().FindAll(x => x.TenKhachHang.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangKhachHang().FindAll(x =>
+                    {
+                        string tenKhachHang = x.TenKhachHang;
+                        return tenKhachHang.Trim().ToLower().Contains(ThongTinTimKiem.ToLower());
+                    });
                 case "số điện thoại":
                     return DAL.DuLieuBangKhachHang().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 default:
@@ -46,8 +60,20 @@ namespace BLL.Implement_BLL
             // "Tên nhân viên", "Số điện thoại", "Địa chỉ", "Năm sinh", "Email"
             switch (LoaiTimKiem.ToLower())
             {
+                case "tất cả":
+                    return DAL.DuLieuBangNhanVien().FindAll(x => 
+                            x.TenNhanVien.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.DiaChi.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.NgaySinh.Value.Year.ToString().Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.Email.Trim().ToLower().Contains(ThongTinTimKiem.ToLower())
+                        );
                 case "tên nhân viên":
-                    return DAL.DuLieuBangNhanVien().FindAll(x => x.TenNhanVien.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
+                    return DAL.DuLieuBangNhanVien().FindAll(x =>
+                    {
+                        string tenNhanVien = x.TenNhanVien;
+                        return tenNhanVien.Trim().ToLower().Contains(ThongTinTimKiem.ToLower());
+                    });
                 case "số điện thoại":
                     return DAL.DuLieuBangNhanVien().FindAll(x => x.SoDienThoai.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "địa chỉ":
@@ -66,6 +92,13 @@ namespace BLL.Implement_BLL
             // "Tên khách hàng", "Số điện thoại", "Tên phòng", "Tên nhân viên"
             switch (LoaiTimKiem.ToLower())
             {
+                case "tất cả":
+                    return DanhSachPhongDat.FindAll(x => 
+                            x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()) ||
+                            x.tblKhachHang.SoDienThoai.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()) ||
+                            x.tblPhongHat.TenPhongHat.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()) ||
+                            x.tblNhanVien.TenNhanVien.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim())
+                        );
                 case "tên khách hàng":
                     return DanhSachPhongDat.FindAll(x => x.tblKhachHang.TenKhachHang.ToLower().Trim().Contains(ThongTinTimKiem.ToLower().Trim()));
                 case "số điện thoại":
@@ -84,6 +117,11 @@ namespace BLL.Implement_BLL
             // "Tên phòng", "Loại phòng"
             switch (LoaiTimKiem.ToLower())
             {
+                case "tất cả":
+                    return DanhSachPhongHat.FindAll(x => 
+                            x.TenPhongHat.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()) ||
+                            x.tblLoaiPhong.TenLoaiPhong.Trim().ToLower().Contains(ThongTinTimKiem.ToLower())
+                        );
                 case "tên phòng":
                     return DanhSachPhongHat.FindAll(x => x.TenPhongHat.Trim().ToLower().Contains(ThongTinTimKiem.ToLower()));
                 case "loại phòng":

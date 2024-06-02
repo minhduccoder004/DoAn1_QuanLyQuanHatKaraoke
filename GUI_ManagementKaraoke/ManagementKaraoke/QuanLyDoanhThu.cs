@@ -152,6 +152,35 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             dgv_ItemsUsed.Columns[1].HeaderText = "Số lượng";
         }
 
+        public void LamMoi()
+        {
+            // Đổ dữ liệu combobox
+            cbb_KieuXem.DataSource = arr_LuaChon;
+            cbb_KieuXem.SelectedIndex = 1;
+
+            // format dữ liệu dtp
+            dtp_Tu.Value = DateTime.Today;
+            dtp_Den.Value = DateTime.Today;
+
+            // Dữ liệu đồ thị
+            DoDuLieu_DoThi();
+
+            // Dữ liệu top 5 nhân viên
+            Top5NhanVien();
+
+            // Dữ liệu top 5 phòng hát
+            Top5PhongHat();
+
+            // Tổng hoá đơn và doanh thu
+            Tong_HoaDon_ThuNhap();
+
+            // Số lượng truy cập
+            SoLuongTruyCap();
+
+            // Mặt hàng sử dụng nhiều
+            DanhSachMatHang_TheMostUsed();
+        }
+
         #endregion
         /*------------------------------------------------------------------------------------------------*/
 

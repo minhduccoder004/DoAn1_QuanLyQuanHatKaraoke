@@ -43,6 +43,9 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
             cbb_LoaiDichVu.DisplayMember = "TenLoaiDichVu";
             cbb_LoaiDichVu.ValueMember = "MaLoaiDichVu";
             cbb_LoaiDichVu.SelectedIndex = -1;
+
+
+            dtp_NgayDatPhong.Value = DateTime.Today;
         }
 
         private void cbb_LoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,63 +105,84 @@ namespace GUI_ManagementKaraoke.ManagementKaraoke
 
         private void bt_DatPhong_Click(object sender, EventArgs e)
         {
-            tblPhongDat PD = new tblPhongDat();
 
-            PD.MaPhongDat = BLL.TaoMaPhongDat();
-            if (cb_KhachHangVangLai.Checked)
+            // Kiểm tra phòng hợp lệ
+            if (BLL.KiemTraPhongHopLe(cbb_Phong.SelectedValue.ToString().Trim(), dtp_NgayDatPhong.Value))
             {
-                PD.MaKhachHang = "KH000               ";
-            }
-            else
-            {
-                var TonTai = BLL.TimKiemKhachHangTheoSoDienThoai(txt_SoDienThoai.Text);
-                if (TonTai != null)
+                // Nếu phòng hợp lệ thì như sau
+
+                tblPhongDat PD = new tblPhongDat();
+
+                PD.MaPhongDat = BLL.TaoMaPhongDat();
+                if (cb_KhachHangVangLai.Checked)
                 {
-                    PD.MaKhachHang = TonTai.MaKhachHang;
+                    PD.MaKhachHang = "KH000               ";
                 }
                 else
                 {
-                    tblKhachHang KH = new tblKhachHang();
-                    KH.MaKhachHang = BLL.TaoMaKhachHang();
-                    PD.MaKhachHang = KH.MaKhachHang;
-                    KH.TenKhachHang = txt_TenKhachHang.Text;
-                    KH.SoDienThoai = txt_SoDienThoai.Text;
-                    BLL.Them_KhachHang(KH);
+                    var TonTai = BLL.TimKiemKhachHangTheoSoDienThoai(txt_SoDienThoai.Text);
+                    if (TonTai != null)
+                    {
+                        PD.MaKhachHang = TonTai.MaKhachHang;
+                    }
+                    else
+                    {
+                        tblKhachHang KH = new tblKhachHang();
+                        KH.MaKhachHang = BLL.TaoMaKhachHang();
+                        PD.MaKhachHang = KH.MaKhachHang;
+                        KH.TenKhachHang = txt_TenKhachHang.Text;
+                        KH.SoDienThoai = txt_SoDienThoai.Text;
+                        BLL.Them_KhachHang(KH);
+                    }
                 }
+                PD.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString();
+                PD.MaPhong = cbb_Phong.SelectedValue.ToString();
+
+                PD.ThoiGianPhongDat = BLL.ThoiGianDatPhong(dtp_NgayDatPhong.Value, Convert.ToInt32(nud_Gio.Value), Convert.ToInt32(nud_Phut.Value));
+                PD.TrangThaiPhongDat = 0;
+
+                BLL.Them_PhongDat(PD);
+                QuanLys.LamMoi();
+
+                tblHoaDonBan HDB = new tblHoaDonBan();
+                HDB.MaHoaDonBan = BLL.TaoMaHoaDonBan();
+                HDB.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString().Trim();
+                HDB.MaKhachHang = PD.MaKhachHang;
+                HDB.MaPhongDat = PD.MaPhongDat;
+                HDB.TrangThaiHoaDon = 0;
+
+                BLL.TaoHoaDon(HDB);
+
+                if (cb_SuDungDichVu.Checked)
+                {
+                    tblGoiDichVu GDV = new tblGoiDichVu();
+
+                    GDV.MaPhongDat = PD.MaPhongDat;
+                    GDV.MaDichVu = cbb_DichVu.SelectedValue.ToString().Trim();
+                    GDV.MaHoaDonBan = HDB.MaHoaDonBan;
+
+                    BLL.Them_GoiDichVu(GDV);
+                }
+
+
+                MessageBox.Show("Đặt phòng thành công !!");
+
+                Close();
+
+
             }
-            PD.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString();
-            PD.MaPhong = cbb_Phong.SelectedValue.ToString();
-
-            PD.ThoiGianPhongDat = BLL.ThoiGianDatPhong(dtp_NgayDatPhong.Value, Convert.ToInt32(nud_Gio.Value), Convert.ToInt32(nud_Phut.Value));
-            PD.TrangThaiPhongDat = 0;
-
-            BLL.Them_PhongDat(PD);
-            QuanLys.LamMoi();
-
-            tblHoaDonBan HDB = new tblHoaDonBan();
-            HDB.MaHoaDonBan = BLL.TaoMaHoaDonBan();
-            HDB.MaNhanVien = cbb_NhanVienPhucVu.SelectedValue.ToString().Trim();
-            HDB.MaKhachHang = PD.MaKhachHang;
-            HDB.MaPhongDat = PD.MaPhongDat;
-            HDB.TrangThaiHoaDon = 0;
-
-            BLL.TaoHoaDon(HDB);
-
-            if (cb_SuDungDichVu.Checked)
+            else
             {
-                tblGoiDichVu GDV = new tblGoiDichVu();
-
-                GDV.MaPhongDat = PD.MaPhongDat;
-                GDV.MaDichVu = cbb_DichVu.SelectedValue.ToString().Trim();
-                GDV.MaHoaDonBan = HDB.MaHoaDonBan;
-
-                BLL.Them_GoiDichVu(GDV);
+                // Nếu phòng không hợp lệ thì như sau
+                MessageBox.Show("Phòng muốn đặt đang bận, hãy chọn phòng khác !!!");
             }
 
 
-            MessageBox.Show("Đặt phòng thành công !!");
 
-            Close();
+
+
+
+            
         }
 
         private void err_SoDienThoai_MouseHover(object sender, EventArgs e)

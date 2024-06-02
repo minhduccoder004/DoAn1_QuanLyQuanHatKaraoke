@@ -14,7 +14,7 @@ namespace BLL.Interface_BLL
         void Them_GoiDichVu(tblGoiDichVu tblGoiDichVu);
         void TaoHoaDon(tblHoaDonBan tblHoaDonBan);
         List<tblLoaiPhong> LoaiPhongs();
-        List<tblPhongHat> LayPhongHatTheoLoai(string MaPhong);
+        List<tblPhongHat> LayPhongHatTheoLoai(string MaLoaiPhong);
         List<tblLoaiDichVu> LoaiDichVus();
         List<tblDichVu> LayDichVuTheoLoai(string MaDichVu);
         List<tblNhanVien> NV_PhucVus();
@@ -23,5 +23,6 @@ namespace BLL.Interface_BLL
         string TaoMaHoaDonBan();
         DateTime ThoiGianDatPhong(DateTime NgayThangNam, int Gio, int Phut);
         tblKhachHang TimKiemKhachHangTheoSoDienThoai(string SoDienThoai);
+        bool KiemTraPhongHopLe(string MaPhong, DateTime NgayDatPhong);
     }
 }
